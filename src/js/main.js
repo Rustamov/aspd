@@ -13,6 +13,84 @@ let $body,
 
 $(document).ready(function () {
     $body = $("body");
+
+
+    
+
+    leftMenu();
+
+    function leftMenu () {
+        let leftNav = $('.left-nav'),
+            leftNavIsOpen = leftNav.hasClass('open'),
+            openClass = 'left-nav-open',
+            opening = false,
+            transitionTime = 500,
+            timeout;
+
+
+
+        $body.on('click touch', '.js-left-nav-trigger', function (e) {
+            e.preventDefault();
+            navToggle();
+        });
+
+
+        $body.on('click touch', function (event) {
+            let obj = $(event.target);
+
+            if ( !opening && leftNav.hasClass('open') && !obj.closest('.left-nav').length && !obj.closest('.fancybox-container').length ) {
+                navToggle()
+            };
+        });
+
+        $body.on('keydown', function(e) {
+            if ( !opening && leftNavIsOpen && (e.keyCode  === 27)) { // escape key maps to keycode '27'
+                navToggle()
+            };
+        });
+
+        function navToggle() {
+            if ( opening ) {
+                return 
+            }
+
+            opening = true;
+
+            leftNavIsOpen = leftNav.hasClass('open');
+
+            leftNav.toggleClass('open', !leftNavIsOpen);
+
+            if (!leftNavIsOpen) {
+                $body.toggleClass(openClass, true);
+                window.globalOptions.freeze();
+            }
+        
+            if ( timeout ) {
+                clearTimeout(timeout)
+            }
+
+            timeout = setTimeout(function() {
+                leftNavIsOpen = leftNav.hasClass('open');
+
+                if (!leftNavIsOpen) {
+                    $body.toggleClass(openClass, false);
+                    window.globalOptions.unfreeze();
+                }
+                opening = false;
+            }, transitionTime)
+            
+        };
+
+        $('.left-nav__content').on('scroll',function(e) {
+            if ( $('.left-nav__content').scrollTop() > 10 ) {
+                $body.addClass('left-nav-scroll');
+            } else {
+                $body.removeClass('left-nav-scroll');
+            }
+        });
+    };
+
+
 });
 
 window.globalOptions = {
@@ -65,12 +143,11 @@ window.globalOptions = {
             scrollSpeed = 800;
 
 
-        if ( href == '#interior' 
-            || href == '#magazines'
-        ) {
-            scrollOnMenuBtn = true;
-        }
-
+        // if ( href == '#interior' 
+        //     || href == '#magazines'
+        // ) {
+        //     scrollOnMenuBtn = true;
+        // }
 
         setTimeout(function() {
             scrollTo();

@@ -1,20 +1,48 @@
-@import '_libs';
-@import '_fonts';
-@import '_varaibles';
-@import '_mixins';
-@import '_sprite';
-@import '_ui';
+@import 'libs';
+@import 'fonts';
+@import 'varaibles';
+@import 'mixins';
+@import 'sprite';
+@import 'ui';
+
+@import 'header';
+@import 'footer';
+@import 'main-page';
 
 @include sprites($spritesheet-sprites); //if icons empty will throw error
 
 
 body {
   min-width: 320px;
-  font-family: $ffRoboto;
-  font-size: 20px;
+  font-family: $ffManrope;
+  font-size: 16px;
   line-height: 1.15;
-  color: #000000;
-  background: #fff;
+  color: #fff;
+  background: #000;
+}
+
+@media (min-width: 1400px) and (min-height: 700px) {
+  html,body {
+    font-size: 18px
+  }
+}
+
+@media (min-width: 1601px) and (min-height: 850px) {
+  html,body {
+    font-size: 20px
+  }
+}
+
+// @media (min-width: 1890px) and (min-height: 930px) {
+//   html,body {
+//     font-size: 20px
+//   }
+// }
+
+.wrapper {
+  overflow: hidden;
+  padding-left: $leftPagePadding;
+  // padding-left: px-to-rem(120);
 }
 
 
@@ -62,9 +90,17 @@ body {
 }
 
 /* End Back top */
+.container {
+  max-width: 100%;
 
+  padding: 0 px-to-rem(160);
 
+  @include screen('xll') {
+    max-width: 1920px;
+  }
+}
 
+  
 .breadcrumbs-block {
   @include rule(margin, (xs: 0 0 25px, lg: 0 0 35px));
 }
@@ -77,7 +113,7 @@ body {
   @include rule(flex-wrap, (xs: nowrap, lg: wrap));
   @include rule(overflow-x, (xs: auto, lg: hidden));;
   align-items: center;
-  font-family: $ffRoboto;
+  // font-family: $ffRoboto;
   font-size: 14px;
   line-height: 1.5;
   font-weight: 400;
@@ -112,5 +148,12 @@ body {
       font-style: normal;
   }
 }
+
+
+
+.s-main-top {
+  
+}
+
 
 

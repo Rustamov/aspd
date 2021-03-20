@@ -140,7 +140,28 @@ frame {
   color: inherit;
   fill: currentColor;
 
- 
+  &-left-menu-arrow-right {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: px-to-rem(3);
+  }
+  &-arrow-down {
+    fill: none;
+    stroke: currentColor;
+  }
+  &-menu-arrow-down {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: px-to-rem(2);
+  }
+  &-more-arrow-right {
+    fill: none;
+    stroke: currentColor;
+  }
+  &-round-arrow-right {
+    fill: none;
+    stroke: currentColor;
+  }
 }
 
 .link-resset {

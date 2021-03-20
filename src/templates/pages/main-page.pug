@@ -3,8 +3,30 @@ include ../helpers/mixins
 
 block variables
 	- const title = "Main page"
+	- const bodyClass = "main-page"
 
 block content
 	main.main
-		.container
-			p main-page
+		.pagepiling
+			#top.main-section
+				+b.SECTION.s-main-top
+					+e.inner
+						+e.inner-cnt
+							.container
+								+e.block
+									+e.block-title
+										+e.H1.block-title-inner У нас есть опыт в решении любых вопросов, связанных с акустикой
+								
+									+e.A.block-more(d)
+										+e.block-more-icon
+											+icon('round-arrow-right')
+
+
+
+					
+					+e.bg
+						+e.VIDEO(autoplay="" muted="" preload="auto" loop="" poster='/video/main-page//bg-video-poster.jpg').bg-video
+							source(src='/video/main-page/bg-video.mp4' type='video/mp4')
+							source(src='/video/main-page/bg-video.webm' type='video/webm')
+
+

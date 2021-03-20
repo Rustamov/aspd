@@ -1,5 +1,5 @@
 $rem: 20;
-$ffRoboto: 'Roboto', sans-serif;
+$ffManrope: 'Manrope', sans-serif;
 
 $color1: #272424;
 $color2: #AB103A;
@@ -8,9 +8,12 @@ $color4: #DCDCDC;
 $color5: #ccc;
 
 $breakpoints: (
+  'xll': 1850px,
   'xl': 1200px,
   'lg': 992px,
   'md': 768px,
   'sm': 576px,
   'xs': 320px
 );
+
+$leftPagePadding: 6rem; //120px
