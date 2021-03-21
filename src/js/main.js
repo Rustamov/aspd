@@ -1,6 +1,13 @@
 svg4everybody(); //for svg spite in ie
 objectFitImages();
 
+gsap.from('.s-main-item__header-title', {
+    scrollTrigger: '.s-main-item__header-title',
+    x: 400,
+    duration: 3,
+    opacity: 0
+})
+
 let $body,
     wWidth = 0,
     wHeight = 0,

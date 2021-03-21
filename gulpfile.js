@@ -57,6 +57,8 @@ var path = {
             'node_modules/svg4everybody/dist/svg4everybody.legacy.min.js',
             'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
             'node_modules/object-fit-images/dist/ofi.min.js',
+            'node_modules/gsap/dist/gsap.min.js',
+            'node_modules/gsap/dist/ScrollTrigger.min.js',
             // 'node_modules/jquery-zoom/jquery.zoom.min.js',
             //'node_modules/wowjs/dist/wow.min.js',
             //'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',

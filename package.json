@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
+    "gsap": "^3.6.0",
     "jquery": "^3.6.0",
     "jquery-mask-plugin": "^1.14.16",
     "normalize.css": "^8.0.1",
