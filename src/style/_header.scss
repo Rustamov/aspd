@@ -84,7 +84,7 @@
         left: 0;
         margin: 0;
         width: $leftPagePadding;
-        border-right: 1px solid rgba(192,192,255, 0.2);
+        border-right: 1px solid rgba(255,255,255, 0.2);
         
         display: flex;
         justify-content: center;
@@ -104,6 +104,7 @@
         text-align: left;
         z-index: 1;
         background: #000;
+        
         height: 100vh;
         overflow: auto;
         padding: 0 px-to-rem(80) 0 $leftPagePadding;
@@ -112,7 +113,7 @@
         opacity: 0;
         pointer-events: none;
 
-        transition: 0.5s;    
+        transition: 0.7s;    
   
         .left-nav.open & {
             transform: scale(1);
@@ -129,7 +130,7 @@
             flex-direction: column;
             // align-items: center;
             justify-content: space-between;
-            padding: px-to-rem(30) 0 px-to-rem(30) px-to-rem(45);
+            padding: px-to-rem(38) 0 px-to-rem(30) px-to-rem(40);
             width: 100%;
             height: 100%;
 
@@ -141,7 +142,7 @@
                 left: 55%;
                 left: calc(55% + 1rem);
                 width: 1px;
-                background: rgba(192,192,255, 0.2);
+                background: rgba(255,255,255, 0.2);
                 pointer-events: none;
             }
         }
@@ -299,7 +300,7 @@
                 transition: color 0.3s;
                 
                 @include hover {
-                    color: rgba(192,192,255, 0.7);
+                    color: rgba(255,255,255, 0.7);
                 }
             }
         }
@@ -341,7 +342,7 @@
                 transition: color 0.3s;
                 
                 @include hover {
-                    color: rgba(192,192,255, 0.7);
+                    color: rgba(255,255,255, 0.7);
                 }
             }
         }
@@ -414,6 +415,7 @@
     }
     &__link {
         @extend .link-resset;
+        display: block;
         padding: px-to-rem(16) px-to-rem(16);
         transition: color 0.3s;
         font-weight: 700;
@@ -428,13 +430,13 @@
         }
 
         @include hover {
-            color: rgba(192,192,255, 0.7);
+            color: rgba(255,255,255, 0.7);
         }
 
         &-arrow {
             position: absolute;
             top: 50%;
-            right: 0;
+            right: px-to-rem(16);
             transform: translateY(-50%);
             
             .svg-icon {
@@ -449,18 +451,48 @@
         &-dropdown {
             position: absolute;
             top: 100%;
-            min-width: px-to-rem(200);
-            max-width: px-to-rem(400);
-            transform: translateY(10px);
-            background: #000;
+            left: 50%;
+            min-width: px-to-rem(300);
+            max-width: px-to-rem(500);
+            transform: translate(-50%, 10px);
+            background: rgba(0, 0, 0, 0.4);
             opacity: 0;
             pointer-events: none;
             transition: transform 0.3s, opacity 0.3s;
+            box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.3);
            
             .header-nav__item:hover & {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translate(-50%, 0);
                 pointer-events: visible;
+            }
+        }
+
+        &-list {
+            @extend .list-resset;
+            padding: px-to-rem(5) 0;
+
+        }
+
+        &-link {
+            @extend .link-resset;
+            display: block;
+            padding: px-to-rem(10) px-to-rem(20);
+            transition: color 0.3s, background 0.3s;
+            font-weight: 600;
+            font-size: px-to-rem(14);
+            line-height: calc(22/16);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            
+            &--arrow {
+                position: relative;
+                padding-right: px-to-rem(36);
+            }
+            
+            @include hover {
+                background: rgba(0, 0, 0, 1);
+                color: rgba(255,255,255, 0.7);
             }
         }
     }
@@ -468,21 +500,25 @@
 
 .header {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     right: 0;
     left: 0;
     height: px-to-rem(100);
     padding: px-to-rem(30) 0 0;
-    background: #000;
-
-    // &__container {
-    //     max-width: ;
-    // }
+    
+    .left-nav-open & {
+        z-index: 5;
+    }
 
     &__row {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
+
+    &__left-nav {
+        position: absolute;
+    }
 }
+

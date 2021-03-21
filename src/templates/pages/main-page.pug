@@ -2,8 +2,8 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-	- const title = "Main page"
-	- const bodyClass = "main-page"
+	- const title = 'Main page'
+	- const bodyClass = 'main-page'
 
 block content
 	main.main
@@ -11,22 +11,205 @@ block content
 			#top.main-section
 				+b.SECTION.s-main-top
 					+e.inner
-						+e.inner-cnt
-							.container
-								+e.block
+						//- +e.inner-cnt
+						.container
+							+e.block
+								+e.block-inner
 									+e.block-title
 										+e.H1.block-title-inner У нас есть опыт в решении любых вопросов, связанных с акустикой
 								
-									+e.A.block-more(d)
+									+e.A.block-more(href='#')
 										+e.block-more-icon
-											+icon('round-arrow-right')
+											svg.svg-icon(viewBox='0 0 67 67' fill='none' xmlns='http://www.w3.org/2000/svg')
+												circle(cx='33.5' cy='33.5' r='32' stroke-width='3')
+												path(d='M31 28l5.743 5.743L31 39.485' stroke-width='1.5' stroke-linecap='round')
 
+					+e.BUTTON.next(type='button')
+						+e.next-icon
+							+icon('arrow-down')
 
 
 					
 					+e.bg
-						+e.VIDEO(autoplay="" muted="" preload="auto" loop="" poster='/video/main-page//bg-video-poster.jpg').bg-video
+						+e.VIDEO(autoplay muted preload='auto' loop poster='/video/main-page//bg-video-poster.jpg').bg-video
 							source(src='/video/main-page/bg-video.mp4' type='video/mp4')
 							source(src='/video/main-page/bg-video.webm' type='video/webm')
+
+
+			#recording-studio.main-section
+				+b.SECTION.s-main-item.--recording-studio
+					+e.HEADER.header
+						.container
+							+e.H2.header-title Студии звукозаписи, теле и радиовещания
+						
+					+e.body
+						+e.body-inner
+							.container
+								+e.block.--recording-studio
+									+e.block-inner
+										+e.block-text.text
+											p Проектирование, строительство, поставка оборудования, интеграция систем.
+									
+										+e.A.block-more(href='#')
+											| Подробнее 
+											+e.block-more-icon
+												+icon('more-arrow-right')
+
+						+e.body-bg
+							+e.IMG.body-bg-img(src="/img/main/recording-studio.jpg" alt="Студии звукозаписи, теле и радиовещания")
+
+			#cinema-hall.main-section
+				+b.SECTION.s-main-item.--cinema-hall
+					+e.HEADER.header
+						.container
+							+e.H2.header-title Концертные и театральные залы, кинотеатры, конференц залы
+						
+					+e.body
+						+e.body-inner
+							.container
+								+e.block.--cinema-hall
+									+e.block-inner
+										+e.block-text.text
+											p Улучшение разборчивости речи. Создание правильной структуры первых отражений звука и диффузного звукового поля, обеспечение требуемого времени реверберации. Звукоизоляция.
+									
+										+e.A.block-more(href='#')
+											| Подробнее 
+											+e.block-more-icon
+												+icon('more-arrow-right')
+
+						+e.body-bg
+							+e.IMG.body-bg-img(src="/img/main/cinema-hall.jpg" alt="Концертные и театральные залы, кинотеатры, конференц залы")
+
+			#school.main-section
+				+b.SECTION.s-main-item.--school
+					+e.HEADER.header
+						.container
+							+e.H2.header-title Образовательные учреждения
+						
+					+e.body
+						+e.body-inner
+							.container
+								+e.block.--school
+									+e.block-inner
+										+e.block-text.text
+											p Звукоизоляция классов и аудиторий, создание комфортной акустической среды для обучения, в соответствии с международным стандартом DIN 18041.  
+									
+										+e.A.block-more(href='#')
+											| Подробнее 
+											+e.block-more-icon
+												+icon('more-arrow-right')
+
+						+e.body-bg
+							+e.IMG.body-bg-img(src="/img/main/school.jpg" alt="Образовательные учреждения")
+
+			#night-clubs.main-section
+				+b.SECTION.s-main-item.--night-clubs
+					+e.HEADER.header
+						.container
+							+e.H2.header-title Ночные клубы и караоке
+						
+					+e.body
+						+e.body-inner
+							.container
+								+e.block.--night-clubs
+									+e.block-inner
+										+e.block-text.text
+											p Создание качественного звука
+									
+										+e.A.block-more(href='#')
+											| Подробнее 
+											+e.block-more-icon
+												+icon('more-arrow-right')
+
+						+e.body-bg
+							+e.IMG.body-bg-img(src="/img/main/night-clubs.jpg" alt="Ночные клубы и караоке")
+
+			#offices.main-section
+				+b.SECTION.s-main-item.--offices
+					+e.HEADER.header
+						.container
+							+e.H2.header-title Офисные здания, отели, частные резиденции
+						
+					+e.body
+						+e.body-inner
+							.container
+								+e.block.--offices
+									+e.block-inner
+										+e.block-text.text
+											p Звукоизоляция переговорных комнат и кабинетов, помощь в сертификации по международным стандартам LEED и CISCO. Создание комнат домашних кинотеатров.
+									
+										+e.A.block-more(href='#')
+											| Подробнее 
+											+e.block-more-icon
+												+icon('more-arrow-right')
+
+						+e.body-bg
+							+e.IMG.body-bg-img(src="/img/main/offices.jpg" alt="Офисные здания, отели, частные резиденции")
+
+			#gym.main-section
+				+b.SECTION.s-main-item.--gym
+					+e.HEADER.header
+						.container
+							+e.H2.header-title Спортивные сооружения
+						
+					+e.body
+						+e.body-inner
+							.container
+								+e.block.--gym
+									+e.block-inner
+										+e.block-text.text
+											p Акустическая обработка внутренних поверхностей спортивных сооружений для соблюдения нормативной работы систем оповещения Public Address.
+									
+										+e.A.block-more(href='#')
+											| Подробнее 
+											+e.block-more-icon
+												+icon('more-arrow-right')
+
+						+e.body-bg
+							+e.IMG.body-bg-img(src="/img/main/gym.jpg" alt="Спортивные сооружения")
+
+			#medical-center.main-section
+				+b.SECTION.s-main-item.--medical-center
+					+e.HEADER.header
+						.container
+							+e.H2.header-title Медицинские центры
+						
+					+e.body
+						+e.body-inner
+							.container
+								+e.block.--medical-center
+									+e.block-inner
+										+e.block-text.text
+											p Звукоизоляция врачебных кабинетов, операционных больниц и палат санаториев в соответствии с СП 51.13330.2011
+									
+										+e.A.block-more(href='#')
+											| Подробнее 
+											+e.block-more-icon
+												+icon('more-arrow-right')
+
+						+e.body-bg
+							+e.IMG.body-bg-img(src="/img/main/medical-center.jpg" alt="Медицинские центры")
+
+			#government.main-section
+				+b.SECTION.s-main-item.--government
+					+e.HEADER.header
+						.container
+							+e.H2.header-title Правительственные здания и учреждения
+						
+					+e.body
+						+e.body-inner
+							.container
+								+e.block.--government
+									+e.block-inner
+										+e.block-text.text
+											p Звукоизоляция кабинетов, офисов, залов судебных заседаний
+									
+										+e.A.block-more(href='#')
+											| Подробнее 
+											+e.block-more-icon
+												+icon('more-arrow-right')
+
+						+e.body-bg
+							+e.IMG.body-bg-img(src="/img/main/government.jpg" alt="Правительственные здания и учреждения")
 
 

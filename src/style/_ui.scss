@@ -146,8 +146,8 @@ frame {
     stroke-width: px-to-rem(3);
   }
   &-arrow-down {
-    fill: none;
-    stroke: currentColor;
+    // fill: none;
+    // stroke: currentColor;
   }
   &-menu-arrow-down {
     fill: none;
@@ -155,8 +155,8 @@ frame {
     stroke-width: px-to-rem(2);
   }
   &-more-arrow-right {
-    fill: none;
-    stroke: currentColor;
+    // fill: none;
+    // stroke: currentColor;
   }
   &-round-arrow-right {
     fill: none;
@@ -563,33 +563,38 @@ frame {
 
 }
 
-
-@include media-breakpoint-down(lg) {
-}
-
-@include media-breakpoint-down(md) {
-}
-
-@include media-breakpoint-down(sm) {
-}
-
-@include media-breakpoint-down(xs) {
+.ui-sitemap {
+  margin: 150px 0 0 100px;
 }
 
 
+// @include media-breakpoint-down(lg) {
+// }
 
-@include media-breakpoint-up(sm) {
-}
+// @include media-breakpoint-down(md) {
+// }
 
-@include media-breakpoint-up(md) {
-}
+// @include media-breakpoint-down(sm) {
+// }
 
-@include media-breakpoint-up(lg) {
-}
+// @include media-breakpoint-down(xs) {
+// }
 
-@include media-breakpoint-up(xl) {
-}
+
+
+// @include media-breakpoint-up(sm) {
+// }
+
+// @include media-breakpoint-up(md) {
+// }
+
+// @include media-breakpoint-up(lg) {
+// }
+
+// @include media-breakpoint-up(xl) {
+// }
 
 /*
 @include rule(, (xs: , lg: ));
 */
+
