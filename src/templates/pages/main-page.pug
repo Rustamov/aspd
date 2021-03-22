@@ -7,8 +7,8 @@ block variables
 
 block content
 	main.main
-		.pagepiling
-			#top.main-section
+		.m-sections
+			#top.m-section
 				+b.SECTION.s-main-top
 					+e.inner
 						//- +e.inner-cnt
@@ -24,7 +24,7 @@ block content
 												circle(cx='33.5' cy='33.5' r='32' stroke-width='3')
 												path(d='M31 28l5.743 5.743L31 39.485' stroke-width='1.5' stroke-linecap='round')
 
-					+e.BUTTON.next(type='button')
+					+e.A.next.js-scroll-to-id(href="#recording-studio")
 						+e.next-icon
 							+icon('arrow-down')
 
@@ -36,7 +36,7 @@ block content
 							source(src='/video/main-page/bg-video.webm' type='video/webm')
 
 
-			#recording-studio.main-section
+			#recording-studio.m-section
 				+b.SECTION.s-main-item.--recording-studio
 					+e.HEADER.header
 						.container
@@ -58,7 +58,7 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/recording-studio.jpg" alt="Студии звукозаписи, теле и радиовещания")
 
-			#cinema-hall.main-section
+			#cinema-hall.m-section
 				+b.SECTION.s-main-item.--cinema-hall
 					+e.HEADER.header
 						.container
@@ -80,7 +80,7 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/cinema-hall.jpg" alt="Концертные и театральные залы, кинотеатры, конференц залы")
 
-			#school.main-section
+			#school.m-section
 				+b.SECTION.s-main-item.--school
 					+e.HEADER.header
 						.container
@@ -102,7 +102,7 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/school.jpg" alt="Образовательные учреждения")
 
-			#night-clubs.main-section
+			#night-clubs.m-section
 				+b.SECTION.s-main-item.--night-clubs
 					+e.HEADER.header
 						.container
@@ -124,7 +124,7 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/night-clubs.jpg" alt="Ночные клубы и караоке")
 
-			#offices.main-section
+			#offices.m-section
 				+b.SECTION.s-main-item.--offices
 					+e.HEADER.header
 						.container
@@ -146,7 +146,7 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/offices.jpg" alt="Офисные здания, отели, частные резиденции")
 
-			#gym.main-section
+			#gym.m-section
 				+b.SECTION.s-main-item.--gym
 					+e.HEADER.header
 						.container
@@ -168,7 +168,7 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/gym.jpg" alt="Спортивные сооружения")
 
-			#medical-center.main-section
+			#medical-center.m-section
 				+b.SECTION.s-main-item.--medical-center
 					+e.HEADER.header
 						.container
@@ -190,7 +190,7 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/medical-center.jpg" alt="Медицинские центры")
 
-			#government.main-section
+			#government.m-section
 				+b.SECTION.s-main-item.--government
 					+e.HEADER.header
 						.container

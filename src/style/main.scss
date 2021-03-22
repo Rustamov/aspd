@@ -100,6 +100,18 @@ body {
   }
 }
 
+
+.c-scrollbar {
+  // position: fixed;
+  // z-index: 4;
+  height: 100vh;
+}
+.c-scrollbar_thumb {
+
+  background-color: #fff;
+
+}
+
   
 .breadcrumbs-block {
   @include rule(margin, (xs: 0 0 25px, lg: 0 0 35px));
