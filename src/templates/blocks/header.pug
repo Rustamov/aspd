@@ -48,90 +48,92 @@
                             +e.A.link(href='#') Контакты
 
 
-            +e.left-nav
-                +b.NAV.left-nav  
-                    +e.panel
-                        +e.panel-button
-                            +e.BUTTON.trigger.js-left-nav-trigger(type='button' name='trigger')
-                                +e.SPAN.trigger-icon
-                                    +e.I.trigger-icon-line.--one
-                                    +e.I.trigger-icon-line.--second
-
-                    +e.content
-                        +e.content-inner
-                            //- +e.container.container
-                            +e.content-logo
-                                +b.A.header-logo(href='/')
-                                    +e.IMG.img(src='/img/svg/logo.svg' alt='Логотип')
-
-                            
-                            +e.content-block
-                                +e.content-block-col-1
-                                    +e.UL.list
-                                        +e.LI.item
-                                            +e.A.link(href='#')
-                                                | Компания
-                                                +e.link-arrow
-                                                    +icon('left-menu-arrow-right')                                                
-
-                                        +e.LI.item
-                                            +e.A.link(href='#')
-                                                | Услуги
-                                                +e.link-arrow
-                                                    +icon('left-menu-arrow-right')                                            
-
-                                        +e.LI.item
-                                            +e.A.link(href='#') 
-                                                | Направления
-                                                +e.link-arrow
-                                                    +icon('left-menu-arrow-right')
-
-                                        +e.LI.item
-                                            +e.A.link(href='#')
-                                                | Проекты
-                                                +e.link-arrow
-                                                    +icon('left-menu-arrow-right')
-
-                                        +e.LI.item
-                                            +e.A.link(href='#')
-                                                | Статьи
-                                                +e.link-arrow
-                                                    +icon('left-menu-arrow-right')
-
-                                        +e.LI.item
-                                            +e.A.link(href='#') 
-                                                | Контакты
-                                                +e.link-arrow
-                                                    +icon('left-menu-arrow-right')                                            
-
-
-                                +e.content-block-col-2
-                                    +e.inf
-                                        +e.inf-email
-                                            +e.A.inf-email-link(href='mailto:info@aspd.ru') info@aspd.ru
-
-                                        +e.SPAN.inf-schedule
-                                            +e.SPAN.inf-schedule-label Режим работы:
-                                            +e.SPAN.inf-schedule-text
-                                                | с 9:00 до 18:00
-                                                br
-                                                | Без выходных
-
-                                        +e.SPAN.inf-address
-                                            +e.SPAN.inf-address-label Адрес:
-                                            +e.SPAN.inf-address-text
-                                                | 107078, г.Москва, 
-                                                br
-                                                | Орликов переулок 8
-
-                                        +e.SPAN.inf-phones
-                                            +e.SPAN.inf-phones-label Звоните нам:
-                                            +e.SPAN.inf-phones-items
-                                                +e.SPAN.inf-phones-item
-                                                    +e.A.inf-phones-link(href='tel:+79251317179') + 7 (925) 131 7179
-                                                +e.SPAN.inf-phones-item
-                                                    +e.A.inf-phones-link(href='tel:+74999751119') + 7 (499) 975 1119
-
-                            +e.I.sep-line
+            //- +e.left-nav
                 
++b.NAV.left-nav  
+    +e.panel
+        +e.panel-button
+            +e.BUTTON.trigger.js-left-nav-trigger(type='button' name='trigger')
+                +e.SPAN.trigger-icon
+                    +e.I.trigger-icon-line.--one
+                    +e.I.trigger-icon-line.--second
+                +e.SPAN.trigger-label Меню
+                
+
+    +e.content
+        +e.content-inner
+            //- +e.container.container
+            +e.content-logo
+                +b.A.header-logo(href='/')
+                    +e.IMG.img(src='/img/svg/logo.svg' alt='Логотип')
+
+            
+            +e.content-block
+                +e.content-block-col-1
+                    +e.UL.list
+                        +e.LI.item
+                            +e.A.link(href='#')
+                                | Компания
+                                +e.link-arrow
+                                    +icon('left-menu-arrow-right')                                                
+
+                        +e.LI.item
+                            +e.A.link(href='#')
+                                | Услуги
+                                +e.link-arrow
+                                    +icon('left-menu-arrow-right')                                            
+
+                        +e.LI.item
+                            +e.A.link(href='#') 
+                                | Направления
+                                +e.link-arrow
+                                    +icon('left-menu-arrow-right')
+
+                        +e.LI.item
+                            +e.A.link(href='#')
+                                | Проекты
+                                +e.link-arrow
+                                    +icon('left-menu-arrow-right')
+
+                        +e.LI.item
+                            +e.A.link(href='#')
+                                | Статьи
+                                +e.link-arrow
+                                    +icon('left-menu-arrow-right')
+
+                        +e.LI.item
+                            +e.A.link(href='#') 
+                                | Контакты
+                                +e.link-arrow
+                                    +icon('left-menu-arrow-right')                                            
+
+
+                +e.content-block-col-2
+                    +e.inf
+                        +e.inf-email
+                            +e.A.inf-email-link(href='mailto:info@aspd.ru') info@aspd.ru
+
+                        +e.SPAN.inf-schedule
+                            +e.SPAN.inf-schedule-label Режим работы:
+                            +e.SPAN.inf-schedule-text
+                                | с 9:00 до 18:00
+                                br
+                                | Без выходных
+
+                        +e.SPAN.inf-address
+                            +e.SPAN.inf-address-label Адрес:
+                            +e.SPAN.inf-address-text
+                                | 107078, г.Москва, 
+                                br
+                                | Орликов переулок 8
+
+                        +e.SPAN.inf-phones
+                            +e.SPAN.inf-phones-label Звоните нам:
+                            +e.SPAN.inf-phones-items
+                                +e.SPAN.inf-phones-item
+                                    +e.A.inf-phones-link(href='tel:+79251317179') + 7 (925) 131 7179
+                                +e.SPAN.inf-phones-item
+                                    +e.A.inf-phones-link(href='tel:+74999751119') + 7 (499) 975 1119
+
+            +e.I.sep-line
 

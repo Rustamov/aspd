@@ -49,7 +49,7 @@
           width: 1px;
 
           background-color: currentcolor;
-          transition: top 0.5s 0.3s, transform 0.5s 0.3s, opacity 0.5s 0.3s, background-color 0s 0s, right 0.5s 0.3s;
+          transition: top 0.5s 0s, transform 0.5s 0s, opacity 0.5s 0.3s, background-color 0s 0s, right 0.5s 0.3s;
   
 
           &--one {
@@ -58,6 +58,9 @@
             .left-nav.open & {
                 transform: translateX(0) rotate(45deg);
             }
+            body:not(.left-nav-open) .left-nav__panel-button:hover & {
+                top: -40%;
+            }
           }
           &--second {
             transform: translateX(0.3rem);
@@ -65,11 +68,34 @@
             .left-nav.open & {
                 transform: translateX(0) rotate(-45deg);
             }
+            body:not(.left-nav-open) .left-nav__panel-button:hover & {
+                transform: translateX(0.3rem) scale(0);
+            }
           }
          
           
         }
       }
+
+      &-label {
+            position: absolute;
+            top: 0;
+            left: px-to-rem(12);
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 2px;
+            display: block;
+            opacity: 0;
+            color: #fff;
+
+            transition: all 0.4s ease;
+            transform: rotate(-90deg) translateX(-50px);
+        }
+        .left-nav:not(.open) &:hover &-label {
+            transform: rotate(-90deg) translateX(-75px);
+            opacity: 1;
+        }
+
   
   
   
@@ -79,6 +105,7 @@
   
     &__panel {
         position: fixed;
+        z-index: 3;
         top: 0;
         left: 0;
         height: 100vh;
@@ -499,7 +526,7 @@
 }
 
 .header {
-    position: absolute;
+    position: fixed;
     z-index: 3;
     top: 0;
     right: 0;

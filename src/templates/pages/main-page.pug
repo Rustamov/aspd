@@ -16,9 +16,9 @@ block content
 							+e.block
 								+e.block-inner
 									+e.block-title
-										+e.H1.block-title-inner У нас есть опыт в решении любых вопросов, связанных с акустикой
+										+e.H1.block-title-inner.js-text-fadeup-lines(data-duration="0.5" data-delay="1") У нас есть опыт в решении любых вопросов, связанных с акустикой
 								
-									+e.A.block-more(href='#')
+									+e.A.block-more.js-fadeup(href='#' data-duration="0.5" data-delay="1.2")
 										+e.block-more-icon
 											svg.svg-icon(viewBox='0 0 67 67' fill='none' xmlns='http://www.w3.org/2000/svg')
 												circle(cx='33.5' cy='33.5' r='32' stroke-width='3')
@@ -37,177 +37,185 @@ block content
 
 
 			#recording-studio.m-section
-				+b.SECTION.s-main-item.--recording-studio
+				+b.SECTION.s-main-item.--recording-studio.js-reveal
 					+e.HEADER.header
 						.container
-							+e.H2.header-title Студии звукозаписи, теле и радиовещания
+							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0.2") Студии звукозаписи, теле и радиовещания
 						
 					+e.body
 						+e.body-inner
 							.container
 								+e.block.--recording-studio
 									+e.block-inner
-										+e.block-text.text
-											p Проектирование, строительство, поставка оборудования, интеграция систем.
+										+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="10%")
+											p.text-cover Проектирование, строительство, поставка оборудования, интеграция систем.
 									
-										+e.A.block-more(href='#')
-											| Подробнее 
-											+e.block-more-icon
-												+icon('more-arrow-right')
+										+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="10%" data-duration="0.5" data-delay="0.4")
+											+e.A.block-more(href="#")
+												| Подробнее 
+												+e.block-more-icon
+													+icon('more-arrow-right')
 
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/recording-studio.jpg" alt="Студии звукозаписи, теле и радиовещания")
 
 			#cinema-hall.m-section
-				+b.SECTION.s-main-item.--cinema-hall
+				+b.SECTION.s-main-item.--cinema-hall.js-reveal
 					+e.HEADER.header
 						.container
-							+e.H2.header-title Концертные и театральные залы, кинотеатры, конференц залы
+							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0.2") Концертные и театральные залы, кинотеатры, конференц залы
 						
 					+e.body
 						+e.body-inner
 							.container
 								+e.block.--cinema-hall
 									+e.block-inner
-										+e.block-text.text
-											p Улучшение разборчивости речи. Создание правильной структуры первых отражений звука и диффузного звукового поля, обеспечение требуемого времени реверберации. Звукоизоляция.
+										+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="10%")
+											p.text-cover Улучшение разборчивости речи. Создание правильной структуры первых отражений звука и диффузного звукового поля, обеспечение требуемого времени реверберации. Звукоизоляция.
 									
-										+e.A.block-more(href='#')
-											| Подробнее 
-											+e.block-more-icon
-												+icon('more-arrow-right')
+										+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="10%" data-duration="0.5" data-delay="0.4")
+											+e.A.block-more(href="#")
+												| Подробнее 
+												+e.block-more-icon
+													+icon('more-arrow-right')
 
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/cinema-hall.jpg" alt="Концертные и театральные залы, кинотеатры, конференц залы")
 
 			#school.m-section
-				+b.SECTION.s-main-item.--school
+				+b.SECTION.s-main-item.--school.js-reveal
 					+e.HEADER.header
 						.container
-							+e.H2.header-title Образовательные учреждения
+							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0.2") Образовательные учреждения
 						
 					+e.body
 						+e.body-inner
 							.container
 								+e.block.--school
 									+e.block-inner
-										+e.block-text.text
-											p Звукоизоляция классов и аудиторий, создание комфортной акустической среды для обучения, в соответствии с международным стандартом DIN 18041.  
+										+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="10%")
+											p.text-cover Звукоизоляция классов и аудиторий, создание комфортной акустической среды для обучения, в соответствии с международным стандартом DIN 18041.  
 									
-										+e.A.block-more(href='#')
-											| Подробнее 
-											+e.block-more-icon
-												+icon('more-arrow-right')
+										+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="10%" data-duration="0.5" data-delay="0.4")
+											+e.A.block-more(href="#")
+												| Подробнее 
+												+e.block-more-icon
+													+icon('more-arrow-right')
 
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/school.jpg" alt="Образовательные учреждения")
 
 			#night-clubs.m-section
-				+b.SECTION.s-main-item.--night-clubs
+				+b.SECTION.s-main-item.--night-clubs.js-reveal
 					+e.HEADER.header
 						.container
-							+e.H2.header-title Ночные клубы и караоке
+							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0.2") Ночные клубы и караоке
 						
 					+e.body
 						+e.body-inner
 							.container
 								+e.block.--night-clubs
 									+e.block-inner
-										+e.block-text.text
-											p Создание качественного звука
+										+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="10%")
+											p.text-cover Создание качественного звука
 									
-										+e.A.block-more(href='#')
-											| Подробнее 
-											+e.block-more-icon
-												+icon('more-arrow-right')
+										+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="10%" data-duration="0.5" data-delay="0.4")
+											+e.A.block-more(href="#")
+												| Подробнее 
+												+e.block-more-icon
+													+icon('more-arrow-right')
 
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/night-clubs.jpg" alt="Ночные клубы и караоке")
 
 			#offices.m-section
-				+b.SECTION.s-main-item.--offices
+				+b.SECTION.s-main-item.--offices.js-reveal
 					+e.HEADER.header
 						.container
-							+e.H2.header-title Офисные здания, отели, частные резиденции
+							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0.2") Офисные здания, отели, частные резиденции
 						
 					+e.body
 						+e.body-inner
 							.container
 								+e.block.--offices
 									+e.block-inner
-										+e.block-text.text
-											p Звукоизоляция переговорных комнат и кабинетов, помощь в сертификации по международным стандартам LEED и CISCO. Создание комнат домашних кинотеатров.
+										+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="10%")
+											p.text-cover Звукоизоляция переговорных комнат и кабинетов, помощь в сертификации по международным стандартам LEED и CISCO. Создание комнат домашних кинотеатров.
 									
-										+e.A.block-more(href='#')
-											| Подробнее 
-											+e.block-more-icon
-												+icon('more-arrow-right')
+										+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="10%" data-duration="0.5" data-delay="0.4")
+											+e.A.block-more(href="#")
+												| Подробнее 
+												+e.block-more-icon
+													+icon('more-arrow-right')
 
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/offices.jpg" alt="Офисные здания, отели, частные резиденции")
 
 			#gym.m-section
-				+b.SECTION.s-main-item.--gym
+				+b.SECTION.s-main-item.--gym.js-reveal
 					+e.HEADER.header
 						.container
-							+e.H2.header-title Спортивные сооружения
+							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0.2") Спортивные сооружения
 						
 					+e.body
 						+e.body-inner
 							.container
 								+e.block.--gym
 									+e.block-inner
-										+e.block-text.text
-											p Акустическая обработка внутренних поверхностей спортивных сооружений для соблюдения нормативной работы систем оповещения Public Address.
+										+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="10%")
+											p.text-cover Акустическая обработка внутренних поверхностей спортивных сооружений для соблюдения нормативной работы систем оповещения Public Address.
 									
-										+e.A.block-more(href='#')
-											| Подробнее 
-											+e.block-more-icon
-												+icon('more-arrow-right')
+										+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="10%" data-duration="0.5" data-delay="0.4")
+											+e.A.block-more(href="#")
+												| Подробнее 
+												+e.block-more-icon
+													+icon('more-arrow-right')
 
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/gym.jpg" alt="Спортивные сооружения")
 
 			#medical-center.m-section
-				+b.SECTION.s-main-item.--medical-center
+				+b.SECTION.s-main-item.--medical-center.js-reveal
 					+e.HEADER.header
 						.container
-							+e.H2.header-title Медицинские центры
+							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0.2") Медицинские центры
 						
 					+e.body
 						+e.body-inner
 							.container
 								+e.block.--medical-center
 									+e.block-inner
-										+e.block-text.text
-											p Звукоизоляция врачебных кабинетов, операционных больниц и палат санаториев в соответствии с СП 51.13330.2011
+										+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="10%")
+											p.text-cover Звукоизоляция врачебных кабинетов, операционных больниц и палат санаториев в соответствии с СП 51.13330.2011
 									
-										+e.A.block-more(href='#')
-											| Подробнее 
-											+e.block-more-icon
-												+icon('more-arrow-right')
+										+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="10%" data-duration="0.5" data-delay="0.4")
+											+e.A.block-more(href="#")
+												| Подробнее 
+												+e.block-more-icon
+													+icon('more-arrow-right')
 
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/medical-center.jpg" alt="Медицинские центры")
 
 			#government.m-section
-				+b.SECTION.s-main-item.--government
+				+b.SECTION.s-main-item.--government.js-reveal
 					+e.HEADER.header
 						.container
-							+e.H2.header-title Правительственные здания и учреждения
+							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0.2") Правительственные здания и учреждения
 						
 					+e.body
 						+e.body-inner
 							.container
 								+e.block.--government
 									+e.block-inner
-										+e.block-text.text
-											p Звукоизоляция кабинетов, офисов, залов судебных заседаний
+										+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="10%")
+											p.text-cover Звукоизоляция кабинетов, офисов, залов судебных заседаний
 									
-										+e.A.block-more(href='#')
-											| Подробнее 
-											+e.block-more-icon
-												+icon('more-arrow-right')
+										+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="10%" data-duration="0.5" data-delay="0.4")
+											+e.A.block-more(href="#")
+												| Подробнее 
+												+e.block-more-icon
+													+icon('more-arrow-right')
 
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/government.jpg" alt="Правительственные здания и учреждения")
