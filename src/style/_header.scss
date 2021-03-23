@@ -59,7 +59,7 @@
                 transform: translateX(0) rotate(45deg);
             }
             body:not(.left-nav-open) .left-nav__panel-button:hover & {
-                top: -40%;
+                top: -20%;
             }
           }
           &--second {
@@ -80,19 +80,19 @@
       &-label {
             position: absolute;
             top: 0;
-            left: px-to-rem(12);
+            left: px-to-rem(10);
             text-transform: uppercase;
-            font-size: 10px;
+            font-size: px-to-rem(14);
             letter-spacing: 2px;
             display: block;
             opacity: 0;
             color: #fff;
 
             transition: all 0.4s ease;
-            transform: rotate(-90deg) translateX(-50px);
+            transform: rotate(-90deg) translateX(-60px);
         }
         .left-nav:not(.open) &:hover &-label {
-            transform: rotate(-90deg) translateX(-75px);
+            transform: rotate(-90deg) translateX(-80px);
             opacity: 1;
         }
 

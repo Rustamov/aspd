@@ -196,6 +196,150 @@ $(document).ready(function () {
         //     tl.to(layer, {y: movement, ease: "none"}, 0)
         // });
 
+        const topSectionText = new SplitType(document.querySelector('.s-main-top__block-title-inner'), {
+            types: 'lines',
+            absolute: false
+        });
+        gsap.set(topSectionText.lines, {
+            rotateX: 90
+        });
+        
+        gsap.set('.s-main-top__block-more', {
+            opacity: 0,
+            y: 20
+        });
+
+
+        let topBgVideo = document.querySelector('.s-main-top__bg-video');
+
+        topBgVideo.addEventListener('play', function(e) {
+            setTimeout(() => {
+                console.log(1);
+                gsap.to(topSectionText.lines, {
+                    rotateX: 0,
+                    transformOrigin: "left center",
+                    delay: 0,
+                    duration: 0.5,
+                    stagger: {
+                        amount: 0.1
+                    },
+                });
+
+                gsap.to('.s-main-top__block-more', {
+                    opacity: 1,
+                    y: 0,
+                    delay: 0.2
+                });
+            }, 2000);
+        });
+
+        let topBgVideoTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: '.s-main-top',
+              scroller: '.js-smooth-scroll',
+            //   start: "0% 0%",
+            //   end: "100% 100%",
+            //   end: "top botto",
+            //   scrub: 0.1,
+              toggleActions: "play resume none none",
+              onLeave: (e) => {
+                  topBgVideo.pause();
+              },
+              onEnterBack: (e) => {
+                  topBgVideo.play();
+
+              }
+            }
+        });
+
+        topBgVideoTl.from(topBgVideo, {
+        });
+
+        // function doTopSectionAnimations(run) {
+        //     // let isAnim
+        //     animateText(document.querySelector('.s-main-top__block-title-inner'), run);
+
+            
+
+        //     function animateText(el, run) {
+ 
+
+                
+
+        //         if (!run) return
+    
+                
+    
+        //         // gsap.utils.toArray(".s-main-item__body-bg-img").forEach(layer => {
+        //         //     let section = $(layer).closest('.s-main-item');
+        
+        //         //     let tl = gsap.timeline({
+        //         //         scrollTrigger: {
+        //         //           trigger: section,
+        //         //           scroller: '.js-smooth-scroll',
+        //         //           start: "0% 0%",
+        //         //         //   end: "top botto",
+        //         //           scrub: 0.1,
+        //         //           toggleActions: "restart pause reverse none"
+        //         //         }
+        //         //       });
+        
+        //         //     let movement = (layer.offsetHeight / 3)
+        //         //     tl.to(layer, {y: movement, ease: "none"}, 0)
+        //         // });
+        
+        //     }
+    
+    
+        //     // for (el of document.querySelectorAll('.js-fadeup')) {
+        //     //     animateFadeUpOnSrcoll(el);
+        //     // }        
+        //     // function animateFadeUpOnSrcoll(el) {
+        //     //     const delay = el.dataset.delay ? +el.dataset.delay : 0;
+        //     //     const duration = el.dataset.duration ? +el.dataset.duration : 0.5;
+    
+    
+        //     //     let tl = gsap.timeline({
+        //     //         scrollTrigger: {
+        //     //           trigger: el,
+        //     //           scroller: '.js-smooth-scroll',
+        //     //           start: "85% 85%",
+        //     //         //   end: "top botto",
+        //     //         //   scrub: 0.1,
+        //     //           toggleActions: "restart resume none none"
+        //     //         }
+        //     //     });
+    
+        //     //     tl.from(el, {
+        //     //         y: 20,
+        //     //         opacity: 0,
+        //     //         delay: delay,
+        //     //         duration: duration,
+        //     //     });
+    
+        //     //     // gsap.utils.toArray(".s-main-item__body-bg-img").forEach(layer => {
+        //     //     //     let section = $(layer).closest('.s-main-item');
+        
+        //     //     //     let tl = gsap.timeline({
+        //     //     //         scrollTrigger: {
+        //     //     //           trigger: section,
+        //     //     //           scroller: '.js-smooth-scroll',
+        //     //     //           start: "0% 0%",
+        //     //     //         //   end: "top botto",
+        //     //     //           scrub: 0.1,
+        //     //     //           toggleActions: "restart pause reverse none"
+        //     //     //         }
+        //     //     //       });
+        
+        //     //     //     let movement = (layer.offsetHeight / 3)
+        //     //     //     tl.to(layer, {y: movement, ease: "none"}, 0)
+        //     //     // });
+        
+        //     // }
+        // }
+
+
+
         gsap.utils.toArray(".s-main-item__body-bg-img").forEach(layer => {
             let section = $(layer).closest('.s-main-item');
 
@@ -210,7 +354,7 @@ $(document).ready(function () {
                 }
               });
 
-            tl.from(layer, {scale: 1.08, duration: 1}, 0)
+            tl.from(layer, {scale: 1.1, duration: 1}, 0)
         });
 
         gsap.utils.toArray(".s-main-item__body-bg-img").forEach(layer => {
@@ -220,14 +364,14 @@ $(document).ready(function () {
                 scrollTrigger: {
                   trigger: section,
                   scroller: '.js-smooth-scroll',
-                  start: "0% 0%",
+                //   start: "0% 0%",
                 //   end: "top botto",
                   scrub: 0.1,
                   toggleActions: "restart pause reverse none"
                 }
               });
 
-            let movement = (layer.offsetHeight / 3)
+            let movement = (layer.offsetHeight / 2);
             tl.to(layer, {y: movement, ease: "none"}, 0)
         });
 
@@ -250,7 +394,8 @@ $(document).ready(function () {
                   start: "85% 85%",
                 //   end: "top botto",
                 //   scrub: 0.1,
-                  toggleActions: "restart resume none none"
+                  toggleActions: "play resume none none",
+                 
                 }
             });
 

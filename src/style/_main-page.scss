@@ -160,7 +160,7 @@
         height: 100vh;
         position: relative;
         // z-index: 10;
-    // border: 1px solid #f00;
+        // border: 1px solid #f00;
 
 
     
@@ -183,6 +183,7 @@
             
             &-img {
                 @include fill-img;
+                margin-top: -50vh; 
                 // width: auto;
                 // height: auto;
                 // min-width: 100%;
