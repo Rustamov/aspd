@@ -8,8 +8,8 @@ block variables
 block content
 	main.main
 		.m-sections
-			#top.m-section
-				+b.SECTION.s-main-top
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-top#main-top
 					+e.inner
 						//- +e.inner-cnt
 						.container
@@ -27,8 +27,6 @@ block content
 					+e.A.next.js-scroll-to-id(href="#recording-studio")
 						+e.next-icon
 							+icon('arrow-down')
-
-
 					
 					+e.bg
 						+e.VIDEO(autoplay muted preload='auto' loop poster='/video/main-page//bg-video-poster.jpg').bg-video
@@ -36,8 +34,8 @@ block content
 							source(src='/video/main-page/bg-video.webm' type='video/webm')
 
 
-			#recording-studio.m-section
-				+b.SECTION.s-main-item.--recording-studio.js-reveal
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-item.--recording-studio.js-reveal#recording-studio
 					+e.HEADER.header
 						.container
 							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0") Студии звукозаписи, теле и радиовещания
@@ -59,8 +57,8 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/recording-studio.jpg" alt="Студии звукозаписи, теле и радиовещания")
 
-			#cinema-hall.m-section
-				+b.SECTION.s-main-item.--cinema-hall.js-reveal
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-item.--cinema-hall.js-reveal#cinema-hall
 					+e.HEADER.header
 						.container
 							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0") Концертные и театральные залы, кинотеатры, конференц залы
@@ -82,8 +80,8 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/cinema-hall.jpg" alt="Концертные и театральные залы, кинотеатры, конференц залы")
 
-			#school.m-section
-				+b.SECTION.s-main-item.--school.js-reveal
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-item.--school.js-reveal#school
 					+e.HEADER.header
 						.container
 							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0") Образовательные учреждения
@@ -105,8 +103,8 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/school.jpg" alt="Образовательные учреждения")
 
-			#night-clubs.m-section
-				+b.SECTION.s-main-item.--night-clubs.js-reveal
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-item.--night-clubs.js-reveal#night-clubs
 					+e.HEADER.header
 						.container
 							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0") Ночные клубы и караоке
@@ -128,8 +126,8 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/night-clubs.jpg" alt="Ночные клубы и караоке")
 
-			#offices.m-section
-				+b.SECTION.s-main-item.--offices.js-reveal
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-item.--offices.js-reveal#offices
 					+e.HEADER.header
 						.container
 							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0") Офисные здания, отели, частные резиденции
@@ -151,8 +149,8 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/offices.jpg" alt="Офисные здания, отели, частные резиденции")
 
-			#gym.m-section
-				+b.SECTION.s-main-item.--gym.js-reveal
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-item.--gym.js-reveal#gym
 					+e.HEADER.header
 						.container
 							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0") Спортивные сооружения
@@ -174,8 +172,8 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/gym.jpg" alt="Спортивные сооружения")
 
-			#medical-center.m-section
-				+b.SECTION.s-main-item.--medical-center.js-reveal
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-item.--medical-center.js-reveal#medical-center
 					+e.HEADER.header
 						.container
 							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0") Медицинские центры
@@ -197,8 +195,8 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/medical-center.jpg" alt="Медицинские центры")
 
-			#government.m-section
-				+b.SECTION.s-main-item.--government.js-reveal
+			.m-section(data-scroll-section)
+				+b.SECTION.s-main-item.--government.js-reveal#government
 					+e.HEADER.header
 						.container
 							+e.H2.header-title.js-text-fadeup-lines(data-duration="0.7" data-delay="0") Правительственные здания и учреждения
@@ -220,4 +218,14 @@ block content
 						+e.body-bg
 							+e.IMG.body-bg-img(src="/img/main/government.jpg" alt="Правительственные здания и учреждения")
 
-
+		+b.m-sections-nav
+			+e.UL.list
+				+e.LI.item.is-active(data-id="main-top")
+				+e.LI.item(data-id="recording-studio")
+				+e.LI.item(data-id="cinema-hall")
+				+e.LI.item(data-id="school")
+				+e.LI.item(data-id="night-clubs")
+				+e.LI.item(data-id="offices")
+				+e.LI.item(data-id="gym")
+				+e.LI.item(data-id="medical-center")
+				+e.LI.item(data-id="government")

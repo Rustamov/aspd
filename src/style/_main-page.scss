@@ -41,6 +41,13 @@
         &-title {
             display: block;
             margin: 0 0 px-to-rem(50);
+
+            @include screen('xl') {
+                opacity: 0;
+                .is-show-content & {
+                    opacity: 1;
+                }
+            }
     
             &-inner {
                 margin: 0;
@@ -61,6 +68,13 @@
 
             @include hover {
                 color: rgba(255, 255, 255, 0.7);
+            }
+
+            @include screen('xl') {
+                opacity: 0;
+                .is-show-content & {
+                    opacity: 1;
+                }
             }
 
             &-icon {
@@ -183,7 +197,7 @@
             
             &-img {
                 @include fill-img;
-                margin-top: -50vh; 
+                // margin-top: -50vh; 
                 // width: auto;
                 // height: auto;
                 // min-width: 100%;
@@ -197,6 +211,16 @@
         @extend .main-box-shadow;
         max-width: px-to-rem(900);
         margin-left: px-to-rem(100);
+
+        @include screen('xl') {
+            &::before {
+                opacity: 0;
+                transition: opacity 0.5s 0.3s;
+            }
+            &.is-shadow::before {
+                opacity: 1;
+            }
+        }
         
         &-inner {
             position: relative;
@@ -277,3 +301,50 @@
 
 }
     
+
+.m-sections-nav {
+    position: fixed;
+    z-index: 2;
+    top: 50vh;
+    right: px-to-rem(40);
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+
+    &__list {
+        @extend .list-resset;
+    }
+    &__item {
+        position: relative;
+        width: px-to-rem(30);
+        height: px-to-rem(30);
+        color: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+
+
+        &.is-active {
+            color: rgba(255, 255, 255, 1);
+        }
+        &:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+        &:not(:last-child) {
+            margin-bottom: px-to-rem(20);
+        }
+
+        &::before {
+            @include center-block;
+            content: '';
+            width: px-to-rem(10);
+            height: px-to-rem(10);
+            border-radius: 50%;
+            color: currentColor;
+            border: 1px solid currentColor;
+            transition: color 0.3s;
+        }
+            &.is-active::before {
+                background: currentColor;
+            }
+    }
+    &__list {}
+}

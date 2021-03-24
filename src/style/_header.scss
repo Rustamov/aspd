@@ -89,10 +89,10 @@
             color: #fff;
 
             transition: all 0.4s ease;
-            transform: rotate(-90deg) translateX(-60px);
+            transform: rotate(-90deg) translateX(px-to-rem(-60));
         }
         .left-nav:not(.open) &:hover &-label {
-            transform: rotate(-90deg) translateX(-80px);
+            transform: rotate(-90deg) translateX(px-to-rem(-90));
             opacity: 1;
         }
 

@@ -88,12 +88,12 @@ div::after {
 Миксин для медиа-запросов
 Пример использования:
 div {
-  @include screen('phone') {
-    // Правила для разрешений выше 'phone'
+  @include screen('sm') {
+    // Правила для разрешений выше 'sm'
   }
 
-  @include screen('phone', max) {
-    // Правила для разрешений ниже 'phone'
+  @include screen('sm', max) {
+    // Правила для разрешений ниже 'sm'
   }
 }
 */
