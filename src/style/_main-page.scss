@@ -4,14 +4,16 @@
     &::before {
         content: '';
         position: absolute;
-        top: px-to-rem(-30);
-        right: px-to-rem(-80);
-        bottom: px-to-rem(-30);
-        left: px-to-rem(-80);
+        top: px-to-rem(-180);
+        right: px-to-rem(-180);
+        bottom: px-to-rem(-180);
+        left: px-to-rem(-180);
         background: #000;
-        opacity: 0.7;
-        filter: blur(150px);
-        border-radius: 134px;
+        // opacity: 0.3;
+        // filter: blur(150px);
+        border-radius: 234px;
+        background: url('../img/svg/text-shadow.svg') 50% 50% no-repeat;
+        background-size: contain;
     }
 }
 
@@ -218,7 +220,7 @@
                 transition: opacity 0.5s 0.3s;
             }
             &.is-shadow::before {
-                opacity: 1;
+                opacity: 0.7;
             }
         }
         

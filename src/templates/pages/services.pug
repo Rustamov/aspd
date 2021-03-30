@@ -1,0 +1,80 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = 'Services'
+	- const bodyClass = 'service-page'
+
+block content
+	main.main
+		+b.SECTION.s-services(data-scroll-section)
+			+e.inner
+				+e.row
+					+e.col
+						+b.A.service-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 01
+								+e.title
+									+e.SPAN.title-inner Акустическая экспертиза
+							
+								+e.more-wrap
+									+e.SPAN.more
+										| Подробнее 
+										+e.more-icon
+											+icon('more-arrow-right')
+							+e.bg
+								+e.IMG.bg-img(src='/img/services/services-1.jpg' alt="Акустическая экспертиза")
+
+					+e.col
+						+b.A.service-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 02
+								+e.title
+									+e.SPAN.title-inner Архитектурно акустическое проектирование
+							
+								+e.more-wrap
+									+e.SPAN.more
+										| Подробнее 
+										+e.more-icon
+											+icon('more-arrow-right')
+							+e.bg
+								+e.IMG.bg-img(src='/img/services/services-2.jpg' alt="Архитектурно акустическое проектирование")
+
+					+e.col
+						+b.A.service-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 03
+								+e.title
+									+e.SPAN.title-inner Строительство
+							
+								+e.more-wrap
+									+e.SPAN.more
+										| Подробнее 
+										+e.more-icon
+											+icon('more-arrow-right')
+							+e.bg
+								+e.IMG.bg-img(src='/img/services/services-3.jpg' alt="Строительство")
+
+					+e.col
+						+b.A.service-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 04
+								+e.title
+									+e.SPAN.title-inner Интеграция медиа систем
+							
+								+e.more-wrap
+									+e.SPAN.more
+										| Подробнее 
+										+e.more-icon
+											+icon('more-arrow-right')
+							+e.bg
+								+e.IMG.bg-img(src='/img/services/services-4.jpg' alt="Интеграция медиа систем")
+
+				
+
+
+		

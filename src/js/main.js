@@ -25,6 +25,8 @@ $(document).ready(function () {
         wHeight =  $(window).height();
     });
 
+    $body.addClass('js-on');
+
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector('.js-smooth-scroll'),
         smooth: true
@@ -48,8 +50,15 @@ $(document).ready(function () {
     if ($('.main-page').length) {
         mainPage();
     }
+    if ($('.service-page').length) {
+        servicePage();
+    }
+    if ($('.directions-page').length) {
+        directionsPage();
+    }
 
     headerVisible();
+    commonScript();
     
 
     $body.on('click', '.js-scroll-to-id', function(e) {
@@ -530,6 +539,104 @@ $(document).ready(function () {
             direction !== prevDirection && toggleHeader(direction, curScroll),
             prevScroll = curScroll
         }
+    }
+
+    function servicePage() {
+
+    }
+
+    function directionsPage() {
+        
+        // $('.directions-item video').each(function() {
+        //     let video = $(this)[0];
+
+        //     video.play();
+            
+        //     setTimeout(function() {
+        //         video.pause();
+        //     }, 100)
+        // });
+
+        // $body.on('mouseenter', '.directions-item', function(e) {
+        //     let item = $(this),
+        //         video = item.find('video')[0];
+            
+        //     video.play();
+        // });
+
+        // $body.on('mouseleave', '.directions-item', function(e) {
+        //     let item = $(this),
+        //         video = item.find('video')[0];
+            
+        //     setTimeout(function() {
+        //         video.pause();
+        //     }, 200)
+        // });
+    }
+
+    function commonScript() {
+        gsap.to('.service-item', {
+            scrollTrigger: {
+                trigger: '.service-item',
+                scroller: '.js-smooth-scroll',
+                start: "30% 80%",
+                
+            },
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            // delay: 2,
+            ease: "power1.out",
+            stagger: 0.05 
+            
+        }, 0);
+        
+        // gsap.utils.toArray(".directions-item").forEach(layer => {
+        //     let section = $(layer).closest('.s-directions');
+
+        //     let tl = gsap.timeline({
+        //         scrollTrigger: {
+        //           trigger: section,
+        //           scroller: '.js-smooth-scroll',
+        //           start: "30% 80%",
+                  
+        //         }
+        //       });
+
+        //     tl.to(layer, {
+        //         y: 0,
+        //         opacity: 1,
+        //         duration: 0.5,
+        //         // delay: 0.2,
+        //         ease: "power1.out",
+        //         stagger: { 
+        //             each: 0.1,
+        //             from: "center",
+        //             grid: "auto",
+        //             ease: "power2.inOut",
+        //           },
+                
+        //     }, 0);
+        // });
+
+
+        gsap.to('.directions-item', {
+            scrollTrigger: {
+                // trigger: '.s-directions',
+                trigger: '.directions-item',
+                scroller: '.js-smooth-scroll',
+                start: "30% 80%",
+                
+            },
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            // delay: 2,
+            ease: "power1.out",
+            stagger: 0.05 
+            
+        }, 0);
+        
     }
 
 

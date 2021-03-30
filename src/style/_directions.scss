@@ -1,0 +1,297 @@
+.s-directions {
+    margin: 0 0 px-to-rem(60);
+    padding: 0;
+    border-top: 1px solid rgba(255,255,255, 0.2);
+
+    &__inner {
+        height: 100vh;
+        height: calc(100vh - 5rem);
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__col {
+        width: 25%;
+        border-bottom: 1px solid rgba(255,255,255, 0.2);
+       
+        &:not(:last-child) {
+            border-right: 1px solid rgba(255,255,255, 0.2);
+        }
+    }
+}
+
+.directions-item {
+    $b: &;
+
+    @extend .link-resset;
+    display: block;
+    position: relative;
+    height: 100vh;
+    height: calc((100vh - 5rem) / 2);
+    overflow: hidden;
+
+    @include screen('xl') {
+        .js-on & {
+            opacity: 0;
+            transform: translate(0px, 30px);
+        }
+    }
+
+    &__inner {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: px-to-rem(35) px-to-rem(18) px-to-rem(35) px-to-rem(30);
+    }
+
+    &__num {
+        display: block;
+        margin: 0 0 px-to-rem(80);
+        
+        &-inner {
+            display: inline-block;
+            margin: 0;
+            font-size: px-to-rem(30);
+            font-weight: 500;
+            line-height: calc(40/30);
+            font-style: normal;
+            border-bottom: 2px solid currentColor;
+        }
+
+    }
+
+    &__title {
+        display: block;
+        
+        &-inner {
+            min-height: px-to-rem(120);
+            margin: 0;
+            font-size: px-to-rem(30);
+            font-weight: 500;
+            line-height: calc(40/30);
+            font-style: normal;
+            text-transform: none;
+        }
+    }
+
+    &__more {
+        $bMore: &;
+
+        @extend .link-resset;
+        display: inline-flex;
+        align-items: center;
+        font-size: px-to-rem(18);
+        font-weight: 700;
+        line-height: calc(28/18);
+
+        transition: color 0.3s;
+
+        @include hover {
+            // color: rgba(255, 255, 255, 0.7);
+        }
+
+        &-icon {
+            position: relative;
+            display: block;
+            margin-left: px-to-rem(30);
+            // width: px-to-rem(50);
+            // height: px-to-rem(50);
+            // border: 1px solid rgba(255, 255, 255, 0);
+            // border-radius: 50%;
+            transition: transform 0.5s;
+
+            .svg-icon {
+                // position: absolute;
+                // top: px-to-rem(17);
+                // left: px-to-rem(19);
+                width: px-to-rem(10);
+                height: px-to-rem(16);
+
+                // fill: none;
+                // stroke: currentColor;
+            }
+
+            // &:hover {
+            #{$bMore}:hover & {
+                transform: translateX(5px);
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;   
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;   
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            #{$b}:hover & {
+                background: rgba(0, 0, 0, 0.3);
+            } 
+        }
+
+       
+        &-video {
+            @include center-block;
+            width: auto;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s;
+
+            #{$b}:hover & {
+                opacity: 1;
+            } 
+        }
+    }
+}
+
+
+
+.s-directions-banner {
+    position: relative;
+    z-index: 1 ;
+    margin-top: -$headerHeight;
+    margin-left: -$leftPagePadding;
+    height: 100vh;
+
+
+
+    
+    &-inner {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        overflow: hidden;
+        
+        &-img {
+            @include fill-img;
+            // margin-top: -50vh; 
+            // width: auto;
+            // height: auto;
+            // min-width: 100%;
+            // min-height: 100%;
+        }
+    }
+
+
+
+    &__block {
+        @extend .main-box-shadow;
+        max-width: px-to-rem(900);
+        margin-left: px-to-rem(100);
+
+        @include screen('xl') {
+            &::before {
+                opacity: 0;
+                transition: opacity 0.5s 0.3s;
+            }
+            &.is-shadow::before {
+                opacity: 1;
+            }
+        }
+        
+        &-inner {
+            position: relative;
+            z-index: 1;
+        }
+        &-text {
+            display: block;
+            margin: 0 0 px-to-rem(60);
+            font-size: px-to-rem(40);
+            font-weight: 500;
+            line-height: calc(55/40);
+            font-style: normal;
+        }
+
+        &-more {
+            @extend .link-resset;
+            display: inline-flex;
+            align-items: center;
+            margin-left: px-to-rem(100);
+            font-size: px-to-rem(18);
+            font-weight: 700;
+            line-height: calc(28/18);
+
+            transition: color 0.3s;
+
+            @include hover {
+                // color: rgba(255, 255, 255, 0.7);
+            }
+
+            &-icon {
+                position: relative;
+                display: block;
+                margin-left: px-to-rem(30);
+                width: px-to-rem(50);
+                height: px-to-rem(50);
+                border: 1px solid rgba(255, 255, 255, 0);
+                border-radius: 50%;
+
+                .svg-icon {
+                    position: absolute;
+                    top: px-to-rem(17);
+                    left: px-to-rem(19);
+                    width: px-to-rem(10);
+                    height: px-to-rem(16);
+
+                    // fill: none;
+                    // stroke: currentColor;
+                }
+            }
+        }
+    }
+   
+    &__next {
+        @extend .button-resset;
+        position: absolute;
+        z-index: 1;
+        left: px-to-rem(160);
+        bottom: px-to-rem(40);
+        margin-left: px-to-rem(-15);
+        padding: px-to-rem(10) px-to-rem(15);
+        transition: color 0.3s;
+        cursor: pointer;
+
+
+        @include hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        &-icon {
+            display: block;
+
+            .svg-icon {
+                width: px-to-rem(18);
+                height: px-to-rem(74);
+            }
+        }
+    }
+
+}
+  

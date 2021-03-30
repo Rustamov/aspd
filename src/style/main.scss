@@ -8,6 +8,8 @@
 @import 'header';
 @import 'footer';
 @import 'main-page';
+@import 'services';
+@import 'directions';
 
 @include sprites($spritesheet-sprites); //if icons empty will throw error
 
@@ -41,8 +43,13 @@ body {
 
 .wrapper {
   overflow: hidden;
+  padding-top: $leftPagePadding;
   padding-left: $leftPagePadding;
   // padding-left: px-to-rem(120);
+
+  .main-page & {
+    padding-top: 0;
+  }
 }
 
 

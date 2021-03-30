@@ -1,0 +1,146 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = 'Directions item'
+	- const bodyClass = 'directions-page'
+
+block content
+	main.main
+		+b.SECTION.s-main-item(data-scroll-section)
+			+e.inner
+				.container
+					+e.block.--recording-studio
+						+e.block-inner
+							+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="0%")
+								p.text-cover Проектирование, строительство, поставка оборудования, интеграция систем.
+						
+							+e.block-more-wrap.fade-in-up(data-scroll data-scroll-call="fadeInUp" data-scroll-offset="0%" data-duration="0.5" data-delay="0.4")
+								+e.A.block-more(href="#")
+									| Подробнее 
+									+e.block-more-icon
+										+icon('more-arrow-right')
+
+			+e.bg
+				+e.IMG.bg-img(src="/img/main/recording-studio.jpg" alt="Студии звукозаписи, теле и радиовещания")
+
+
+		+b.SECTION.s-directions(data-scroll-section)
+			+e.inner
+				+e.row
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 01
+								+e.title
+									+e.SPAN.title-inner Студии звукозаписи, теле и радиовещания
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/recording-studio.jpg')
+									source(src='/video/directions/recording-studio.mp4' type='video/mp4')
+									source(src='/video/directions/recording-studio.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 02
+								+e.title
+									+e.H1.title-inner Концертные и театральные залы, кинотеатры, конференц залы
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/cinema-hall.jpg')
+									source(src='/video/directions/cinema-hall.mp4' type='video/mp4')
+									source(src='/video/directions/cinema-hall.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 03
+								+e.title
+									+e.H1.title-inner Образовательные учреждения
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/school.jpg')
+									source(src='/video/directions/school.mp4' type='video/mp4')
+									source(src='/video/directions/school.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 04
+								+e.title
+									+e.H1.title-inner Ночные клубы и караоке
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/night-clubs.jpg')
+									source(src='/video/directions/night-clubs.mp4' type='video/mp4')
+									source(src='/video/directions/night-clubs.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 05
+								+e.title
+									+e.H1.title-inner Офисные здания, отели, частные резиденции
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/offices.jpg')
+									source(src='/video/directions/offices.mp4' type='video/mp4')
+									source(src='/video/directions/offices.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 06
+								+e.title
+									+e.H1.title-inner Спортивные сооружения
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/gym.jpg')
+									source(src='/video/directions/gym.mp4' type='video/mp4')
+									source(src='/video/directions/gym.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 07
+								+e.title
+									+e.H1.title-inner Медицинские центры
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/medical-center.jpg')
+									source(src='/video/directions/medical-center.mp4' type='video/mp4')
+									source(src='/video/directions/medical-center.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 08
+								+e.title
+									+e.H1.title-inner Правительственные здания и учреждения
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/government.jpg')
+									source(src='/video/directions/government.mp4' type='video/mp4')
+									source(src='/video/directions/government.webm' type='video/webm')
+
+				
+
+
+		
