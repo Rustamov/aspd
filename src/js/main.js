@@ -58,6 +58,7 @@ $(document).ready(function () {
     }
 
     headerVisible();
+    formScript();
     commonScript();
     
 
@@ -81,6 +82,12 @@ $(document).ready(function () {
 
             if ($(i.el).closest('.s-main-item__block').length) {
                 $(i.el).closest('.s-main-item__block').addClass('is-shadow')
+            }
+            if ($(i.el).closest('.s-directions-banner__block').length) {
+                $(i.el).closest('.s-directions-banner__block').addClass('is-shadow')
+            }
+            if ($(i.el).closest('.s-services-banner__block').length) {
+                $(i.el).closest('.s-services-banner__block').addClass('is-shadow')
             }
 
             if (t && i.el.classList.contains("is-inview")) {
@@ -547,31 +554,7 @@ $(document).ready(function () {
 
     function directionsPage() {
         
-        // $('.directions-item video').each(function() {
-        //     let video = $(this)[0];
-
-        //     video.play();
-            
-        //     setTimeout(function() {
-        //         video.pause();
-        //     }, 100)
-        // });
-
-        // $body.on('mouseenter', '.directions-item', function(e) {
-        //     let item = $(this),
-        //         video = item.find('video')[0];
-            
-        //     video.play();
-        // });
-
-        // $body.on('mouseleave', '.directions-item', function(e) {
-        //     let item = $(this),
-        //         video = item.find('video')[0];
-            
-        //     setTimeout(function() {
-        //         video.pause();
-        //     }, 200)
-        // });
+        
     }
 
     function commonScript() {
@@ -591,34 +574,27 @@ $(document).ready(function () {
             
         }, 0);
         
-        // gsap.utils.toArray(".directions-item").forEach(layer => {
-        //     let section = $(layer).closest('.s-directions');
+        gsap.utils.toArray(".s-services-banner__bg-img").forEach(layer => {
+            let section = $(layer).closest('.s-services-banner'),
+                movement = (layer.offsetHeight / 1.2);
 
-        //     let tl = gsap.timeline({
-        //         scrollTrigger: {
-        //           trigger: section,
-        //           scroller: '.js-smooth-scroll',
-        //           start: "30% 80%",
-                  
-        //         }
-        //       });
+            gsap.set(layer, {
+                y: -(movement / 2)
+            })
 
-        //     tl.to(layer, {
-        //         y: 0,
-        //         opacity: 1,
-        //         duration: 0.5,
-        //         // delay: 0.2,
-        //         ease: "power1.out",
-        //         stagger: { 
-        //             each: 0.1,
-        //             from: "center",
-        //             grid: "auto",
-        //             ease: "power2.inOut",
-        //           },
-                
-        //     }, 0);
-        // });
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: section,
+                  scroller: '.js-smooth-scroll',
+                //   start: "0% 0%",
+                //   end: "top botto",
+                  scrub: 0.1,
+                  toggleActions: "restart pause reverse none"
+                }
+              });
 
+            tl.to(layer, {y: (movement / 2), ease: "none"}, 0)
+        });
 
         gsap.to('.directions-item', {
             scrollTrigger: {
@@ -636,9 +612,108 @@ $(document).ready(function () {
             stagger: 0.05 
             
         }, 0);
+
+
+        gsap.utils.toArray(".s-directions-banner__bg-img").forEach(layer => {
+            let section = $(layer).closest('.s-directions-banner'),
+                movement = (layer.offsetHeight / 1.2);
+
+            gsap.set(layer, {
+                y: -(movement / 2)
+            })
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: section,
+                  scroller: '.js-smooth-scroll',
+                //   start: "0% 0%",
+                //   end: "top botto",
+                  scrub: 0.1,
+                  toggleActions: "restart pause reverse none"
+                }
+              });
+
+            tl.to(layer, {y: (movement / 2), ease: "none"}, 0)
+        });
         
     }
 
+    function formScript () {
+
+        $('[type=tel]').mask('+7 (000) 000-00-00');
+
+        Parsley
+            .addValidator('ruPhone', {
+                // string | number | integer | date | regexp | boolean
+                requirementType: 'string',
+
+                // validateString | validateDate | validateMultiple
+                validateString: function (value, requirement) {
+                    let regexp = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+                    
+                    return  regexp.test(value) 
+                },
+
+                messages: {
+                    ru: 'Неверный формат номера',
+                    en: 'Invalid number format'
+                }
+            })
+            .addValidator('personName', {
+                // string | number | integer | date | regexp | boolean
+                requirementType: 'string',
+
+                // validateString | validateDate | validateMultiple
+                validateString: function (value, requirement) {
+                    let regexp = /^[а-яА-ЯёЁa-zA-Z\ ]+$/;
+
+                    return  regexp.test(value) 
+                },
+
+                messages: {
+                  ru: 'Используйте только буквы',
+                  en: 'Use only letters'
+                }
+            })
+            .addMessages('ru', {
+                defaultMessage: "Некорректное значение.",
+                type: {
+                    email:        "Введите правильный е-mail",
+                    url:          "Введите URL адрес",
+                    number:       "Введите число",
+                    integer:      "Введите целое число",
+                    digits:       "Введите только цифры",
+                    alphanum:     "Введите буквенно-цифровое значение"
+                },
+                notblank:       "Это поле должно быть заполнено",
+                required:       "Поле обязательно для заполнения",
+                pattern:        "Это значение некорректно",
+                min:            "Это значение должно быть не менее чем %s",
+                max:            "Это значение должно быть не более чем %s",
+                range:          "Это значение должно быть от %s до %s",
+                minlength:      "Это значение должно содержать не менее %s символов",
+                maxlength:      "Это значение должно содержать не более %s символов",
+                length:         "Это значение должно содержать от %s до %s символов",
+                mincheck:       "Выберите не менее %s значений",
+                maxcheck:       "Выберите не более %s значений",
+                check:          "Выберите от %s до %s значений",
+                equalto:        "Это значение должно совпадать"
+            })
+            .setLocale('ru');
+
+        $('.js-validate').parsley({
+
+        });
+
+
+        $body.on('click touch', '.js-form-resset', function(e) {
+            let form = $(this).closest('form');
+
+            form.removeClass('is-form-sent');
+            window.globalOptions.formResset(form);
+        });
+
+    }
 
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
@@ -653,6 +728,24 @@ window.globalOptions = {
         sm: 768,
         xs: 576
     },
+    formResset: function(form) {
+        if ( !form.length ) {
+            return
+        }
+    
+        $('.input-text input, .input-text textarea', form).each(function() {
+            let input = $(this),
+                wrap = input.closest('.input-text');
+    
+            input.val('').trigger('input');
+    
+            wrap.toggleClass('input-text--dirty', input.val() != '');
+        });
+    
+        form.parsley().reset();
+    
+    },
+
     // freeze: function() {
     //     const h = $('html');
 

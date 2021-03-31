@@ -166,13 +166,11 @@
     position: relative;
     z-index: 1 ;
     margin-top: -$headerHeight;
-    margin-left: -$leftPagePadding;
     height: 100vh;
 
 
-
     
-    &-inner {
+    &__inner {
         position: relative;
         z-index: 1;
         height: 100%;
@@ -180,7 +178,7 @@
         align-items: center;
     }
 
-    &-bg {
+    &__bg {
         position: absolute;
         top: 0;
         right: 0;
@@ -202,7 +200,7 @@
 
 
     &__block {
-        @extend .main-box-shadow;
+        @extend .box-text-shadow;
         max-width: px-to-rem(900);
         margin-left: px-to-rem(100);
 
@@ -223,75 +221,44 @@
         &-text {
             display: block;
             margin: 0 0 px-to-rem(60);
-            font-size: px-to-rem(40);
+            font-size: px-to-rem(60);
             font-weight: 500;
-            line-height: calc(55/40);
+            line-height: calc(82/60);
             font-style: normal;
-        }
 
-        &-more {
-            @extend .link-resset;
-            display: inline-flex;
-            align-items: center;
-            margin-left: px-to-rem(100);
-            font-size: px-to-rem(18);
-            font-weight: 700;
-            line-height: calc(28/18);
-
-            transition: color 0.3s;
-
-            @include hover {
-                // color: rgba(255, 255, 255, 0.7);
-            }
-
-            &-icon {
-                position: relative;
+            h1,
+            h2,
+            h3,
+            h4,
+            p,
+            span {
                 display: block;
-                margin-left: px-to-rem(30);
-                width: px-to-rem(50);
-                height: px-to-rem(50);
-                border: 1px solid rgba(255, 255, 255, 0);
-                border-radius: 50%;
-
-                .svg-icon {
-                    position: absolute;
-                    top: px-to-rem(17);
-                    left: px-to-rem(19);
-                    width: px-to-rem(10);
-                    height: px-to-rem(16);
-
-                    // fill: none;
-                    // stroke: currentColor;
-                }
+                margin: 0;
+                font-size: inherit;
+                font-weight: inherit;
             }
         }
+
+
     }
-   
-    &__next {
-        @extend .button-resset;
-        position: absolute;
-        z-index: 1;
-        left: px-to-rem(160);
-        bottom: px-to-rem(40);
-        margin-left: px-to-rem(-15);
-        padding: px-to-rem(10) px-to-rem(15);
-        transition: color 0.3s;
-        cursor: pointer;
+}
 
+.s-directions-text {
+    padding: px-to-rem(75) 0 px-to-rem(75);
 
-        @include hover {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        &-icon {
-            display: block;
-
-            .svg-icon {
-                width: px-to-rem(18);
-                height: px-to-rem(74);
-            }
-        }
+    &__text {
+        max-width: px-to-rem(740);
     }
+}
 
+.s-directions-projects {
+    padding: px-to-rem(75) 0 px-to-rem(75);
+
+    &__top {
+        margin: 0 0 px-to-rem(70);
+    }
+    &__title {
+        @extend .section-title;
+    }
 }
   

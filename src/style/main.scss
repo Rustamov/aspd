@@ -8,6 +8,7 @@
 @import 'header';
 @import 'footer';
 @import 'main-page';
+@import 'projects';
 @import 'services';
 @import 'directions';
 
@@ -19,6 +20,7 @@ body {
   font-family: $ffManrope;
   font-size: 16px;
   line-height: 1.15;
+  font-weight: 500;
   color: #fff;
   background: #000;
 }
@@ -43,7 +45,7 @@ body {
 
 .wrapper {
   overflow: hidden;
-  padding-top: $leftPagePadding;
+  padding-top: $headerHeight;
   padding-left: $leftPagePadding;
   // padding-left: px-to-rem(120);
 
@@ -106,7 +108,19 @@ body {
     max-width: 1920px;
   }
 }
+.container-md {
+  max-width: 100%;
 
+  padding: 0 px-to-rem(260);
+
+  @include screen('xll') {
+    max-width: 1720px;
+  }
+}
+
+.section-desktop-nml {
+  margin-left: -$leftPagePadding;
+}
 
 .c-scrollbar {
   // position: fixed;
@@ -188,5 +202,117 @@ body {
   
 }
 
+
+.s-feedback {
+  padding: px-to-rem(75) 0 px-to-rem(75);
+
+  &__top {
+      margin: 0 0 px-to-rem(70);
+  }
+  &__title {
+      @extend .section-title;
+  }
+}
+
+.feedback {
+  overflow: visible;
+  &__form {
+    position: relative;
+  }
+
+  &__main {
+    .is-form-sent & {
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+      transition: 0.3s;
+    }
+  }
+
+  &__title {
+    display: block;
+    margin: 0 0 25px;
+    text-align: center;
+  }
+
+  &__text {
+    display: block;
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__fields {
+    margin: 0 0 23px;
+
+    &-item {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__required-mesage {
+    margin: 0 0 20px;
+    font-size: 12px;
+  }
+  &__agree {
+    margin: 0 0 30px;
+  }
+  &__submit {
+    text-align: center;
+  }
+
+  &__succeed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    margin: 0;
+    position: absolute;
+    width: 110%;
+    left: -5%;
+    top: 50%;
+    opacity: 0;
+    transform: translateY(0);
+    pointer-events: none;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+    
+    .is-form-sent & {
+      opacity: 1;
+      transform: translateY(-50%);
+      pointer-events: visible;
+    }
+
+    &-icon {
+      margin: 0 0 36px;
+
+      .svg-icon {
+        width: 60px;
+        height: 60px;
+        color: $color5;
+
+        @include screen('lg') {
+            width: 109px;
+            height: 109px;
+        }
+      }
+    }
+
+    &-title {
+        margin: 0 0 24px;
+    }
+    &-text {
+        margin: 0 0 34px;
+        font-size: 16px;
+    }
+
+  }
+}
 
 

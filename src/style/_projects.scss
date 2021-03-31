@@ -1,0 +1,56 @@
+.project-item {
+    @extend .link-resset;
+    position: relative;
+    display: flex;
+
+    &__picture {
+        position: relative;
+        width: px-to-rem(280);
+        min-width: px-to-rem(280);
+        height: 200px;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background-image: linear-gradient(65deg, rgba(16,9,27,.8), transparent 50%);
+        }
+
+        &-img {
+            @include fill-img;
+        }
+    }
+
+    &__main {
+        position: relative;
+        z-index: 1;
+        width: px-to-rem(220);
+        margin-left: px-to-rem(-50);
+        padding: px-to-rem(12) 0 0;
+    }
+    &__num {
+        display: block;
+        margin: 0 0 px-to-rem(50);
+
+        &-inner {
+            display: inline-block;
+            margin: 0;
+            font-size: px-to-rem(24);
+            font-weight: 500;
+            line-height: calc(32/24);
+            font-style: normal;
+            border-bottom: 1px solid currentColor;
+        }
+    }
+
+    &__text {
+        font-size: px-to-rem(18);
+    }
+
+
+}
