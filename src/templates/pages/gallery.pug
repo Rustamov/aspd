@@ -1,0 +1,334 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = 'Gallery'
+	- const bodyClass = 'gallery-page'
+
+block content
+	main.main
+		+b.SECTION.s-gallery.desktop-nml(data-scroll-section)
+			+e.header
+				.container-md
+					+e.header-title
+						+e.H1.header-title-text.js-text-fadeup-lines(data-duration="0.7" data-delay="0.5")
+							| Галерея
+							br
+							| проектов
+
+						+e.header-sign
+							+e.IMG.header-sign-img(src="/img/svg/word-gallery.svg" alt="galley word")
+
+			+e.main
+				.container
+					+e.list
+						+b.project-list
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-1.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 01
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-2.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 02
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-1.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 03
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-3.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 04
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-4.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 05
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-5.jpg" width="560" height="400" alt="Студия звукозаписи группы «Уч-Кудук»")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 06
+											+e.SPAN.text.text Студия звукозаписи группы «Уч-Кудук»
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-6.jpg" width="560" height="400" alt="Спорткомплекс «Янтарный», г. Калининград.  ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 07
+											+e.SPAN.text.text Спорткомплекс «Янтарный», г. Калининград.  
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-7.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 08
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+ 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-8.jpg" width="560" height="400" alt="Студия звукозаписи, Мосфильм, г. Москва")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 09
+											+e.SPAN.text.text Студия звукозаписи, Мосфильм, г. Москва
+ 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-1.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 10
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-2.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 11
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-1.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 12
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-7.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 13
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+ 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-3.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 14
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-4.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 15
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-5.jpg" width="560" height="400" alt="Студия звукозаписи группы «Уч-Кудук»")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 16
+											+e.SPAN.text.text Студия звукозаписи группы «Уч-Кудук»
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-6.jpg" width="560" height="400" alt="Спорткомплекс «Янтарный», г. Калининград.  ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 17
+											+e.SPAN.text.text Спорткомплекс «Янтарный», г. Калининград.  
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-7.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 18
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+ 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-8.jpg" width="560" height="400" alt="Студия звукозаписи, Мосфильм, г. Москва")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 19
+											+e.SPAN.text.text Студия звукозаписи, Мосфильм, г. Москва
+ 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-1.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 20
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-2.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 21
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-1.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 22
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-6.jpg" width="560" height="400" alt="Спорткомплекс «Янтарный», г. Калининград.  ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 23
+											+e.SPAN.text.text Спорткомплекс «Янтарный», г. Калининград. 
+
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-3.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 24
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-4.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 25
+											+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-5.jpg" width="560" height="400" alt="Студия звукозаписи группы «Уч-Кудук»")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 26
+											+e.SPAN.text.text Студия звукозаписи группы «Уч-Кудук»
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-6.jpg" width="560" height="400" alt="Спорткомплекс «Янтарный», г. Калининград.  ")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 27
+											+e.SPAN.text.text Спорткомплекс «Янтарный», г. Калининград.  
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-7.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 28
+											+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
+ 
+							+e.col
+								+b.A.project-item(href="#")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/projects/project-8.jpg" width="560" height="400" alt="Студия звукозаписи, Мосфильм, г. Москва")
+										
+										+e.SPAN.main
+											+e.SPAN.num
+												+e.SPAN.num-inner 29
+											+e.SPAN.text.text Студия звукозаписи, Мосфильм, г. Москва
+ 
+
+
+
+		

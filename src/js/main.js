@@ -229,10 +229,7 @@ $(document).ready(function () {
             scrollTrigger: {
               trigger: '.s-main-top',
               scroller: '.js-smooth-scroll',
-            //   start: "0% 0%",
-            //   end: "100% 100%",
-            //   end: "top botto",
-            //   scrub: 0.1,
+
               toggleActions: "play resume none none",
               onLeave: (e) => {
                   topBgVideo.pause();
@@ -249,16 +246,6 @@ $(document).ready(function () {
 
         function doTopSectionAnimations() {
             document.querySelector('.s-main-top').classList.add('is-show-content');
-
-            // gsap.to(topSectionText.lines, {
-            //     rotateX: 0,
-            //     transformOrigin: "left center",
-            //     delay: 0,
-            //     duration: 0.5,
-            //     stagger: {
-            //         amount: 0.1
-            //     },
-            // });
 
             gsap.to('.s-main-top__block-title-inner', {
                 opacity: 1,
@@ -281,10 +268,7 @@ $(document).ready(function () {
                 scrollTrigger: {
                   trigger: section,
                   scroller: '.js-smooth-scroll',
-                  start: "30% 80%",
-                //   end: "top botto",
-                //   scrub: 0.3,
-                //   toggleActions: "restart pause reverse none"
+                  start: "30% 80%",               
                 }
               });
 
@@ -303,8 +287,6 @@ $(document).ready(function () {
                 scrollTrigger: {
                   trigger: section,
                   scroller: '.js-smooth-scroll',
-                //   start: "0% 0%",
-                //   end: "top botto",
                   scrub: 0.1,
                   toggleActions: "restart pause reverse none"
                 }
@@ -312,107 +294,6 @@ $(document).ready(function () {
 
             tl.to(layer, {y: (movement / 2), ease: "none"}, 0)
         });
-
-        for (el of document.querySelectorAll('.js-text-fadeup-lines')) {
-            animateFadeUpTextLinesOnSrcoll(el);
-        }        
-        function animateFadeUpTextLinesOnSrcoll(el) {
-            const delay = el.dataset.delay ? +el.dataset.delay : 0;
-            const duration = el.dataset.duration ? +el.dataset.duration : 0.5;
-
-            const text = new SplitType(el, {
-                types: 'lines',
-                absolute: false
-            });
-
-            let tl = gsap.timeline({
-                scrollTrigger: {
-                  trigger: el,
-                  scroller: '.js-smooth-scroll',
-                  start: "85% 85%",
-                //   end: "top botto",
-                //   scrub: 0.1,
-                  toggleActions: "play resume none none",
-                 
-                }
-            });
-
-            tl.from(text.lines, {
-                rotateX: 90,
-                transformOrigin: "left center",
-                delay: delay,
-                duration: duration,
-                stagger: {
-                    amount: 0.1
-                },
-            });
-
-            // gsap.utils.toArray(".s-main-item__body-bg-img").forEach(layer => {
-            //     let section = $(layer).closest('.s-main-item');
-    
-            //     let tl = gsap.timeline({
-            //         scrollTrigger: {
-            //           trigger: section,
-            //           scroller: '.js-smooth-scroll',
-            //           start: "0% 0%",
-            //         //   end: "top botto",
-            //           scrub: 0.1,
-            //           toggleActions: "restart pause reverse none"
-            //         }
-            //       });
-    
-            //     let movement = (layer.offsetHeight / 3)
-            //     tl.to(layer, {y: movement, ease: "none"}, 0)
-            // });
-    
-        }
-
-
-        for (el of document.querySelectorAll('.js-fadeup')) {
-            animateFadeUpOnSrcoll(el);
-        }        
-        function animateFadeUpOnSrcoll(el) {
-            const delay = el.dataset.delay ? +el.dataset.delay : 0;
-            const duration = el.dataset.duration ? +el.dataset.duration : 0.5;
-
-
-            let tl = gsap.timeline({
-                scrollTrigger: {
-                  trigger: el,
-                  scroller: '.js-smooth-scroll',
-                  start: "85% 85%",
-                //   end: "top botto",
-                //   scrub: 0.1,
-                  toggleActions: "restart resume none none"
-                }
-            });
-
-            tl.from(el, {
-                y: 20,
-                opacity: 0,
-                delay: delay,
-                duration: duration,
-            });
-
-            // gsap.utils.toArray(".s-main-item__body-bg-img").forEach(layer => {
-            //     let section = $(layer).closest('.s-main-item');
-    
-            //     let tl = gsap.timeline({
-            //         scrollTrigger: {
-            //           trigger: section,
-            //           scroller: '.js-smooth-scroll',
-            //           start: "0% 0%",
-            //         //   end: "top botto",
-            //           scrub: 0.1,
-            //           toggleActions: "restart pause reverse none"
-            //         }
-            //       });
-    
-            //     let movement = (layer.offsetHeight / 3)
-            //     tl.to(layer, {y: movement, ease: "none"}, 0)
-            // });
-    
-        }
 
 
         for (el of document.querySelectorAll('.s-main-item__block-more')) {
@@ -558,6 +439,66 @@ $(document).ready(function () {
     }
 
     function commonScript() {
+        for (el of document.querySelectorAll('.js-text-fadeup-lines')) {
+            animateFadeUpTextLinesOnSrcoll(el);
+        }        
+        function animateFadeUpTextLinesOnSrcoll(el) {
+            const delay = el.dataset.delay ? +el.dataset.delay : 0;
+            const duration = el.dataset.duration ? +el.dataset.duration : 0.5;
+
+            const text = new SplitType(el, {
+                types: 'lines',
+                absolute: false
+            });
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: el,
+                  scroller: '.js-smooth-scroll',
+                  start: "85% 85%",
+                  toggleActions: "play resume none none",
+                 
+                }
+            });
+
+            tl.from(text.lines, {
+                rotateX: 90,
+                transformOrigin: "left center",
+                delay: delay,
+                duration: duration,
+                stagger: {
+                    amount: 0.1
+                },
+            });
+    
+        }
+
+
+        for (el of document.querySelectorAll('.js-fadeup')) {
+            animateFadeUpOnSrcoll(el);
+        }        
+        function animateFadeUpOnSrcoll(el) {
+            const delay = el.dataset.delay ? +el.dataset.delay : 0;
+            const duration = el.dataset.duration ? +el.dataset.duration : 0.5;
+
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: el,
+                  scroller: '.js-smooth-scroll',
+                  start: "85% 85%",
+                  toggleActions: "restart resume none none"
+                }
+            });
+
+            tl.from(el, {
+                y: 20,
+                opacity: 0,
+                delay: delay,
+                duration: duration,
+            });
+        }
+
         gsap.to('.service-item', {
             scrollTrigger: {
                 trigger: '.service-item',
@@ -635,6 +576,112 @@ $(document).ready(function () {
 
             tl.to(layer, {y: (movement / 2), ease: "none"}, 0)
         });
+
+
+        //Gallery
+        gsap.from('.s-gallery__header-sign-img', {
+            xPercent: 15,
+            opacity: 0,
+            duration: 1,
+            delay: 0.3
+        }, 0)
+
+        $(".project-item").each(function(index, element){
+            let item = $(this);
+            let itemInner = item.find('.project-item__inner');
+            let parentOffset = item.offset();
+            
+            let timeoutRun = false;
+            let timeout;
+
+            item.on('mousemove', function(event) {
+                let e = event;
+
+                if (timeoutRun) return
+                
+                update(e);
+                timeoutRun = true;  
+                    
+                timeout = setTimeout(function() {
+                    timeoutRun = false
+                }, 40)    
+            });
+
+            item.on('mouseleave', function(event) {
+                if (timeout) clearTimeout(timeout);
+                timeoutRun = false; 
+
+                gsap.to(itemInner, {
+                    duration: 0.3, 
+                    delay: 0.2, 
+                    rotationX: 0,
+                    rotationY: 0,
+                    rotationZ: 0,
+                    scale: 1,
+                });
+
+            });
+
+            $window.on('resize', function() {
+                parentOffset = item.offset();
+            });
+
+            function update(event) {
+                let itemX = event.pageX - $(event.currentTarget).offset().left;
+                let itemY = event.pageY - $(event.currentTarget).offset().top;
+
+                let widthHalf = item.width() / 2;
+                let heightHalf = item.height() / 2;
+                let axisFromCenterX = widthHalf - itemX;
+                let axisFromCenterY = heightHalf - itemY;
+
+                let maxRotateX = 15;
+                let rotateX = axisFromCenterX / (widthHalf / maxRotateX);
+
+                let maxRotateY = 15;
+                let rotateY = -(axisFromCenterY / (heightHalf / maxRotateY));
+
+                gsap.to(itemInner, {duration: 0.5, 
+                    rotationX: rotateY,
+                    rotationY: rotateX,
+                    rotationZ: 0,
+                    scale: 1.05,
+                    ease:Back.easeOut
+                });
+
+            }
+        });
+
+        setTimeout(function() {
+            gsap.utils.toArray(".project-item").forEach(layer => {
+                let section = $(layer);
+    
+                gsap.set(layer, {
+                    y: 50,
+                    opacity: 0,
+                })
+    
+                let tl = gsap.timeline({
+                    scrollTrigger: {
+                      trigger: section,
+                      scroller: '.js-smooth-scroll',
+                    //   start: "10% 20%",
+                    //   end: "top botto",
+                    //   scrub: 0.1,
+                    //   toggleActions: "restart pause reverse none"
+                    }
+                  });
+    
+                tl.to(layer, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.3
+                }, 0)
+            });
+        }, 500)
+
+        
+
         
     }
 

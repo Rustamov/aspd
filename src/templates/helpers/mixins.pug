@@ -5,3 +5,64 @@ mixin icon(name,mod)
 	else
 		svg(class="svg-icon svg-icon-" + name)
 			use(xlink:href="img/sprite/symbol/sprite.svg#" + name)
+
+mixin feedback
+	+b.feedback&attributes(attributes)
+		+e.form
+			form.js-validate(action="#" autocomplete="off")
+				// add class "is-form-sent" after sent form
+				+e.main
+					+e.H2.title Оставьте заявку
+
+					+e.fields
+						+e.fields-item
+							label.input-text
+								span.input-text__label Ваше имя
+								input.input-text__field(type="text" name="Name" placeholder="Введите имя" required="") 
+
+						+e.fields-item
+							label.input-text
+								span.input-text__label Наименование компании
+								input.input-text__field(type="text" name="Company" placeholder="Введите название компании") 
+
+						+e.fields-item
+							label.input-text
+								span.input-text__label Номер телефона
+								input.input-text__field(type="tel" name="Tel" placeholder="Введите номер телефона" required="" data-parsley-ru-phone)
+
+						+e.fields-item
+							label.input-text
+								span.input-text__label Email
+								input.input-text__field(type="email" name="Email" placeholder="Введите почту")
+
+						+e.fields-item
+							label.input-text
+								span.input-text__label Комментарий
+								textarea.input-text__field(name="Comment" placeholder="Ваш комментраий" rows="4")
+
+
+
+					+e.bottom
+						+e.bottom-submit
+							+b.BUTTON.btn(type="submit") 
+								+e.SPAN.label Отправить заявку
+								+e.I.arrow
+									+icon('more-arrow-right')
+
+						+e.bottom-agree.text
+							+e.P.agree 
+								| Нажимая на кнопку, вы соглашаетесь с 
+								a(href="#") «политикой персональныз данных»
+
+				+e.succeed
+					+e.succeed-icon 
+						+icon('round-check-mark')
+					
+					+e.succeed-title Ваша заявка, принята!
+
+					+e.succeed-text.text
+						b Наш менеджер перезвонит вам 
+						| в самое ближайшее время
+
+					+e.succeed-button
+						+b.BUTTON.btn.js-form-resset(type="button") Ок

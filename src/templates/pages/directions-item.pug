@@ -7,7 +7,7 @@ block variables
 
 block content
 	main.main
-		+b.SECTION.s-directions-banner.section-desktop-nml(data-scroll-section)
+		+b.SECTION.s-directions-banner.desktop-nml(data-scroll-section)
 			+e.inner
 				.container
 					+e.block.--recording-studio
@@ -19,7 +19,7 @@ block content
 				+e.IMG.bg-img(src="/img/main/recording-studio.jpg" alt="Студии звукозаписи, теле и радиовещания")
 
 
-		+b.SECTION.s-directions-text.section-desktop-nml(data-scroll-section)
+		+b.SECTION.s-directions-text.desktop-nml(data-scroll-section)
 			.container-md
 				+e.text.text
 					p Все без исключения области профессиональной звуковой индустрии находятся в фокусе деятельности нашей компании. За последнее десятилетие произошли значительные достижения в технологиях передачи звука в пространстве.
@@ -28,212 +28,176 @@ block content
 					p Мы осуществляем комплексное проектирование студий звукозаписи, проектирование аппаратных, строительство  и техническое оснащение как крупных многофункциональных звукозаписывающих комплексов, в том числе студий перезаписи сертифицированных по Dolby premier,  так и небольших студий звукозаписи.
 
 
-		+b.SECTION.s-directions-projects.section-desktop-nml(data-scroll-section)
+		+b.SECTION.s-directions-projects.desktop-nml(data-scroll-section)
 			.container-md
 				+e.top 
 					+e.H2.title Выполненные проекты
 
 				+e.list
-					+b.A.project-item(href="#")
-						+e.SPAN.picture
-							+e.IMG.picture-img(src="/img/projects/project-1.jpg")
-						
-						+e.SPAN.main
-							+e.SPAN.num
-								+e.SPAN.num-inner 01
-							+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
-
-					+b.A.project-item(href="#")
-						+e.SPAN.picture
-							+e.IMG.picture-img(src="/img/projects/project-1.jpg")
-						
-						+e.SPAN.main
-							+e.SPAN.num
-								+e.SPAN.num-inner 01
-							+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
-
-					+b.A.project-item(href="#")
-						+e.SPAN.picture
-							+e.IMG.picture-img(src="/img/projects/project-1.jpg")
-						
-						+e.SPAN.main
-							+e.SPAN.num
-								+e.SPAN.num-inner 01
-							+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
-
-					+b.A.project-item(href="#")
-						+e.SPAN.picture
-							+e.IMG.picture-img(src="/img/projects/project-1.jpg")
-						
-						+e.SPAN.main
-							+e.SPAN.num
-								+e.SPAN.num-inner 01
-							+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
-
-
-		+b.SECTION.s-feedback.--directions.section-desktop-nml#feedback(data-scroll-section)
-			.container-md
-				+e.list
-					+b.feedback
-						+e.form
-							form.js-validate(action="#" autocomplete="off")
-								// add class "is-form-sent" after sent form
-								+e.main
-									+e.H2.title Оставьте заявку
-
-									+e.text.text
-										b Не теряйте время в поисках, 
-										| просто оставьте заявку и мы поможем вам в выборе!
-
-
-									+e.fields
-										+e.fields-item
-											label.input-text
-												span.input-text__label Ваше имя
-												input.input-text__field(type="text" name="Name" placeholder="Введите имя") 
-
-										+e.fields-item
-											label.input-text
-												span.input-text__label Номер телефона
-												input.input-text__field(type="tel" name="tel" placeholder="Введите номер телефона" required="" data-parsley-ru-phone)
-
-									+e.bottom
-										+e.bottom-submit
-											+b.BUTTON.btn(type="submit") Отправить
-
-										+e.bottom-agree
-											+e.agree Нажимая на кнопку, вы соглашаетесь с «политикой персональныз данных»
-
-								+e.succeed
-									+e.succeed-icon
-										+icon('round-check-mark')
-									
-									+e.succeed-title Ваша заявка, принята!
-
-									+e.succeed-text.text
-										b Наш менеджер перезвонит вам 
-										| в самое ближайшее время
-
-									+e.succeed-button
-										+b.BUTTON.btn(type="button") Ок
-
-
-						+b.SECTION.s-directions(data-scroll-section)
+					+e.col
+						+b.A.project-item(href="#")
 							+e.inner
-								+e.row
-									+e.col
-										+b.A.directions-item(href="#")
-											+e.inner
-												+e.num
-													+e.num-inner 01
-												+e.title
-													+e.SPAN.title-inner Студии звукозаписи, теле и радиовещания
-											
-											+e.bg
-												+e.SPAN.bg-cover
-												+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/recording-studio.jpg')
-													source(src='/video/directions/recording-studio.mp4' type='video/mp4')
-													source(src='/video/directions/recording-studio.webm' type='video/webm')
+								+e.SPAN.picture
+									+e.IMG.picture-img(src="/img/projects/project-1.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+								
+								+e.SPAN.main
+									+e.SPAN.num
+										+e.SPAN.num-inner 01
+									+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+					+e.col
+						+b.A.project-item(href="#")
+							+e.inner
+								+e.SPAN.picture
+									+e.IMG.picture-img(src="/img/projects/project-2.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+								
+								+e.SPAN.main
+									+e.SPAN.num
+										+e.SPAN.num-inner 02
+									+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
 
-									+e.col
-										+b.A.directions-item(href="#")
-											+e.inner
-												+e.num
-													+e.num-inner 02
-												+e.title
-													+e.H1.title-inner Концертные и театральные залы, кинотеатры, конференц залы
-											
-											+e.bg
-												+e.SPAN.bg-cover
-												+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/cinema-hall.jpg')
-													source(src='/video/directions/cinema-hall.mp4' type='video/mp4')
-													source(src='/video/directions/cinema-hall.webm' type='video/webm')
+					+e.col
+						+b.A.project-item(href="#")
+							+e.inner
+								+e.SPAN.picture
+									+e.IMG.picture-img(src="/img/projects/project-1.jpg" width="560" height="400" alt="Аппаратно-студийный комплекс видео и звукозаписи школы ")
+								
+								+e.SPAN.main
+									+e.SPAN.num
+										+e.SPAN.num-inner 03
+									+e.SPAN.text.text Аппаратно-студийный комплекс видео и звукозаписи школы 
+					+e.col
+						+b.A.project-item(href="#")
+							+e.inner
+								+e.SPAN.picture
+									+e.IMG.picture-img(src="/img/projects/project-3.jpg" width="560" height="400" alt="Эфирная студия. Телеканал РЕН ТВ.")
+								
+								+e.SPAN.main
+									+e.SPAN.num
+										+e.SPAN.num-inner 04
+									+e.SPAN.text.text Эфирная студия. Телеканал РЕН ТВ.
 
-									+e.col
-										+b.A.directions-item(href="#")
-											+e.inner
-												+e.num
-													+e.num-inner 03
-												+e.title
-													+e.H1.title-inner Образовательные учреждения
-											
-											+e.bg
-												+e.SPAN.bg-cover
-												+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/school.jpg')
-													source(src='/video/directions/school.mp4' type='video/mp4')
-													source(src='/video/directions/school.webm' type='video/webm')
 
-									+e.col
-										+b.A.directions-item(href="#")
-											+e.inner
-												+e.num
-													+e.num-inner 04
-												+e.title
-													+e.H1.title-inner Ночные клубы и караоке
-											
-											+e.bg
-												+e.SPAN.bg-cover
-												+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/night-clubs.jpg')
-													source(src='/video/directions/night-clubs.mp4' type='video/mp4')
-													source(src='/video/directions/night-clubs.webm' type='video/webm')
+		+b.SECTION.s-feedback.--directions.desktop-nml#feedback(data-scroll-section)
+			.container-md
+				+e.form
+					+feedback
 
-									+e.col
-										+b.A.directions-item(href="#")
-											+e.inner
-												+e.num
-													+e.num-inner 05
-												+e.title
-													+e.H1.title-inner Офисные здания, отели, частные резиденции
-											
-											+e.bg
-												+e.SPAN.bg-cover
-												+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/offices.jpg')
-													source(src='/video/directions/offices.mp4' type='video/mp4')
-													source(src='/video/directions/offices.webm' type='video/webm')
+		+b.SECTION.s-directions.--inner(data-scroll-section)
+			+e.inner
+				+e.row
+					+e.col
+						//- +b.A.directions-item(href="#")
+						//- 	+e.inner
+						//- 		+e.num
+						//- 			+e.num-inner 01
+						//- 		+e.title
+						//- 			+e.SPAN.title-inner Студии звукозаписи, теле и радиовещания
+							
+						//- 	+e.bg
+						//- 		+e.SPAN.bg-cover
+						//- 		+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/recording-studio.jpg')
+						//- 			source(src='/video/directions/recording-studio.mp4' type='video/mp4')
+						//- 			source(src='/video/directions/recording-studio.webm' type='video/webm')
 
-									+e.col
-										+b.A.directions-item(href="#")
-											+e.inner
-												+e.num
-													+e.num-inner 06
-												+e.title
-													+e.H1.title-inner Спортивные сооружения
-											
-											+e.bg
-												+e.SPAN.bg-cover
-												+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/gym.jpg')
-													source(src='/video/directions/gym.mp4' type='video/mp4')
-													source(src='/video/directions/gym.webm' type='video/webm')
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 02
+								+e.title
+									+e.H1.title-inner Концертные и театральные залы, кинотеатры, конференц залы
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/cinema-hall.jpg')
+									source(src='/video/directions/cinema-hall.mp4' type='video/mp4')
+									source(src='/video/directions/cinema-hall.webm' type='video/webm')
 
-									+e.col
-										+b.A.directions-item(href="#")
-											+e.inner
-												+e.num
-													+e.num-inner 07
-												+e.title
-													+e.H1.title-inner Медицинские центры
-											
-											+e.bg
-												+e.SPAN.bg-cover
-												+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/medical-center.jpg')
-													source(src='/video/directions/medical-center.mp4' type='video/mp4')
-													source(src='/video/directions/medical-center.webm' type='video/webm')
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 03
+								+e.title
+									+e.H1.title-inner Образовательные учреждения
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/school.jpg')
+									source(src='/video/directions/school.mp4' type='video/mp4')
+									source(src='/video/directions/school.webm' type='video/webm')
 
-									+e.col
-										+b.A.directions-item(href="#")
-											+e.inner
-												+e.num
-													+e.num-inner 08
-												+e.title
-													+e.H1.title-inner Правительственные здания и учреждения
-											
-											+e.bg
-												+e.SPAN.bg-cover
-												+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/government.jpg')
-													source(src='/video/directions/government.mp4' type='video/mp4')
-													source(src='/video/directions/government.webm' type='video/webm')
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 04
+								+e.title
+									+e.H1.title-inner Ночные клубы и караоке
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/night-clubs.jpg')
+									source(src='/video/directions/night-clubs.mp4' type='video/mp4')
+									source(src='/video/directions/night-clubs.webm' type='video/webm')
 
-				
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 05
+								+e.title
+									+e.H1.title-inner Офисные здания, отели, частные резиденции
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/offices.jpg')
+									source(src='/video/directions/offices.mp4' type='video/mp4')
+									source(src='/video/directions/offices.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 06
+								+e.title
+									+e.H1.title-inner Спортивные сооружения
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/gym.jpg')
+									source(src='/video/directions/gym.mp4' type='video/mp4')
+									source(src='/video/directions/gym.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 07
+								+e.title
+									+e.H1.title-inner Медицинские центры
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/medical-center.jpg')
+									source(src='/video/directions/medical-center.mp4' type='video/mp4')
+									source(src='/video/directions/medical-center.webm' type='video/webm')
+
+					+e.col
+						+b.A.directions-item(href="#")
+							+e.inner
+								+e.num
+									+e.num-inner 08
+								+e.title
+									+e.H1.title-inner Правительственные здания и учреждения
+							
+							+e.bg
+								+e.SPAN.bg-cover
+								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/government.jpg')
+									source(src='/video/directions/government.mp4' type='video/mp4')
+									source(src='/video/directions/government.webm' type='video/webm')
+
+
 
 
 		
