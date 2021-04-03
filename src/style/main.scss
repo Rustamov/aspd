@@ -11,6 +11,7 @@
 @import 'projects';
 @import 'services';
 @import 'directions';
+@import 'about';
 
 @include sprites($spritesheet-sprites); //if icons empty will throw error
 
@@ -246,10 +247,8 @@ body {
 
     &-submit {
       margin: 0 50px 0 0;
+      font-size: 20px;
     }
-  }
-  &__submit {
-    text-align: center;
   }
 
   &__agree {
@@ -321,3 +320,177 @@ body {
 
 
 
+.s-error {
+  position: relative;
+  z-index: 1 ;
+  margin-top: -$headerHeight;
+  padding-top: $headerHeight;
+  height: 100vh;
+  min-height: 500px;
+
+
+  
+  &__inner {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      
+  }
+
+  &__bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.8);
+        pointer-events: none;
+      }
+      
+      &-img {
+          @include fill-img;
+          // margin-top: -50vh; 
+          // width: auto;
+          // height: auto;
+          // min-width: 100%;
+          // min-height: 100%;
+      }
+  }
+
+
+
+  &__block {
+      &-inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+  }
+
+  &__icon {
+    display: block;
+    margin: 0 0 px-to-rem(47);
+
+    &-img {
+      display: block;
+      width: px-to-rem(96);
+      height: px-to-rem(96);
+    }
+  }
+  &__text-1 {
+    display: block;
+    margin: 0 0 px-to-rem(5);
+    font-size: px-to-rem(40);
+    font-weight: 700;
+    line-height: calc(55/40);
+    font-style: normal;
+    opacity: 0.8;
+  }
+
+  &__text-2 {
+    display: block;
+    margin: 0 0 px-to-rem(80);
+    font-size: px-to-rem(25);
+    font-weight: 500;
+    line-height: calc(34/25);
+    font-style: normal;
+    opacity: 0.8;
+  }
+  &__text-3 {
+    display: block;
+    margin: 0 0 px-to-rem(55);
+    font-size: px-to-rem(25);
+    font-weight: 500;
+    line-height: calc(34/25);
+    font-style: normal;
+    opacity: 0.8;
+  }
+}
+
+
+.certificate-item {
+  @extend .link-resset;
+  display: block;
+  max-width: px-to-rem(240);
+ 
+  &__inner {
+    display: block;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 150%;
+    }
+  }
+
+
+  &__picture {
+    position: relative;
+    width: 100%;
+    min-width: px-to-rem(308);
+    height: px-to-rem(220);
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: -2px;
+      left: 0;
+      z-index: 1;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 30.65%, rgba(0, 0, 0, 1) 100%),;
+    }
+
+    
+
+
+    &-img {
+      @include fill-img;
+    }
+  }
+
+  &__main {
+      position: relative;
+      z-index: 1;
+      width: px-to-rem(220);
+      margin-left: px-to-rem(-50);
+      padding: px-to-rem(12) 0 0;
+      transform: translateZ(30px);
+  }
+  &__num {
+      display: block;
+      margin: 0 0 px-to-rem(50);
+
+      &-inner {
+          display: inline-block;
+          margin: 0;
+          font-size: px-to-rem(24);
+          font-weight: 500;
+          line-height: calc(32/24);
+          font-style: normal;
+          border-bottom: 1px solid currentColor;
+      }
+  }
+
+  &__text {
+      font-size: px-to-rem(18);
+  }
+}

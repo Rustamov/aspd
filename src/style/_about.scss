@@ -1,0 +1,148 @@
+.s-about-banner {
+    position: relative;
+    z-index: 1 ;
+    margin-top: -$headerHeight;
+    padding-top: $headerHeight;
+    height: 100vh;
+    min-height: 500px;
+    overflow: hidden;
+    
+    &__inner {
+        position: relative;
+        z-index: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        pointer-events: none;
+        overflow: hidden;
+        
+        &-img {
+            @include fill-img;
+
+        }
+    }
+
+
+
+    &__block {
+        @extend .box-text-shadow;
+        @extend .box-text-shadow--higher;
+        max-width: px-to-rem(680);
+
+        @include screen('xl') {
+            &::before {
+                opacity: 0;
+                transition: opacity 0.5s 0.3s;
+            }
+            &.is-shadow::before {
+                opacity: 1;
+            }
+        }
+        
+        &-inner {
+            position: relative;
+            z-index: 1;
+        }
+        &-text {
+            margin: 0 0 px-to-rem(100);
+
+            &-line-1 {
+                display: block;
+                margin: 0 0 px-to-rem(30);
+                font-size: px-to-rem(60);
+                font-weight: 500;
+                line-height: calc(82/60);
+                font-style: normal;
+
+                h1,
+                h2,
+                h3,
+                h4,
+                p,
+                span {
+                    display: block;
+                    margin: 0;
+                    font-size: inherit;
+                    font-weight: inherit;
+                }
+            }
+
+            &-line-2 {
+                display: block;
+                font-size: px-to-rem(20);
+                font-weight: 500;
+                font-style: normal;
+            }
+        }
+
+        &-more {
+            @extend .link-resset;
+            display: inline-block;
+            transition: color 0.3s;
+
+            @include hover {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            // @include screen('xl') {
+            //     opacity: 0;
+            //     .is-show-content & {
+            //         opacity: 1;
+            //     }
+            // }
+
+            &-icon {
+                display: block;
+
+                .svg-icon {
+                    width: px-to-rem(67);
+                    height: px-to-rem(67);
+
+                    fill: none;
+                    stroke: currentColor;
+                }
+            }
+        }
+
+
+    }
+}
+
+
+
+.s-certificates {
+    padding: px-to-rem(75) 0 px-to-rem(75);
+
+    &__top {
+        margin: 0 0 px-to-rem(70);
+    }
+    &__title {
+        @extend .section-title;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__col {
+        display: flex;
+        margin-bottom: px-to-rem(120);
+
+
+        @for $i from 1 to length($arrProjectColWidth) + 1 {
+            &:nth-child(#{$i}) {
+              width: nth(nth($arrProjectColWidth, $i), 1);
+              padding-left: nth(nth($arrProjectColWidth, $i), 2);
+            }
+          }
+    }
+
+}

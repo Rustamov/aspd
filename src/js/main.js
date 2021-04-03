@@ -89,6 +89,9 @@ $(document).ready(function () {
             if ($(i.el).closest('.s-services-banner__block').length) {
                 $(i.el).closest('.s-services-banner__block').addClass('is-shadow')
             }
+            if ($(i.el).closest('.s-about-banner__block').length) {
+                $(i.el).closest('.s-about-banner__block').addClass('is-shadow')
+            }
 
             if (t && i.el.classList.contains("is-inview")) {
                 gsap.to(t, duration, {
@@ -499,24 +502,8 @@ $(document).ready(function () {
             });
         }
 
-        gsap.to('.service-item', {
-            scrollTrigger: {
-                trigger: '.service-item',
-                scroller: '.js-smooth-scroll',
-                start: "30% 80%",
-                
-            },
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            // delay: 2,
-            ease: "power1.out",
-            stagger: 0.05 
-            
-        }, 0);
-        
-        gsap.utils.toArray(".s-services-banner__bg-img").forEach(layer => {
-            let section = $(layer).closest('.s-services-banner'),
+        gsap.utils.toArray(".js-parallax-img").forEach(layer => {
+            let section = $(layer).closest($(layer).data('trigger')),
                 movement = (layer.offsetHeight / 1.2);
 
             gsap.set(layer, {
@@ -536,6 +523,51 @@ $(document).ready(function () {
 
             tl.to(layer, {y: (movement / 2), ease: "none"}, 0)
         });
+
+        gsap.utils.toArray(".js-scroll-fade-up").forEach(layer => {
+            let section = $(layer),
+                delay = layer.dataset.delay ? +layer.dataset.delay : 0;
+                duration = layer.dataset.duration ? +layer.dataset.duration : 0.5;
+
+            gsap.set(layer, {
+                y: 50,
+                opacity: 0,
+            })
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    scroller: '.js-smooth-scroll',
+                //   start: "10% 20%",
+                //   end: "top botto",
+                //   scrub: 0.1,
+                //   toggleActions: "restart pause reverse none"
+                }
+                });
+
+            tl.to(layer, {
+                y: 0,
+                opacity: 1,
+                duration: duration,
+                delay: delay,
+            }, 0)
+        });
+
+        gsap.to('.service-item', {
+            scrollTrigger: {
+                trigger: '.service-item',
+                scroller: '.js-smooth-scroll',
+                start: "30% 80%",
+                
+            },
+            y: 0,
+            opacity: 1,
+            duration: 0.5,
+            // delay: 2,
+            ease: "power1.out",
+            stagger: 0.05 
+            
+        }, 0);
 
         gsap.to('.directions-item', {
             scrollTrigger: {
@@ -555,28 +587,7 @@ $(document).ready(function () {
         }, 0);
 
 
-        gsap.utils.toArray(".s-directions-banner__bg-img").forEach(layer => {
-            let section = $(layer).closest('.s-directions-banner'),
-                movement = (layer.offsetHeight / 1.2);
-
-            gsap.set(layer, {
-                y: -(movement / 2)
-            })
-
-            let tl = gsap.timeline({
-                scrollTrigger: {
-                  trigger: section,
-                  scroller: '.js-smooth-scroll',
-                //   start: "0% 0%",
-                //   end: "top botto",
-                  scrub: 0.1,
-                  toggleActions: "restart pause reverse none"
-                }
-              });
-
-            tl.to(layer, {y: (movement / 2), ease: "none"}, 0)
-        });
-
+        // 
 
         //Gallery
         gsap.from('.s-gallery__header-sign-img', {
@@ -680,6 +691,13 @@ $(document).ready(function () {
             });
         }, 500)
 
+
+
+        $body.on('click touch', '.slick-slide [data-fancybox]', function(e) {
+            e.preventDefault();
+            window.globalOptions.galleryOpen($(this));           
+
+        });
         
 
         
@@ -792,6 +810,41 @@ window.globalOptions = {
         form.parsley().reset();
     
     },
+
+    galleryOpen: function(item) {
+        let clickItem = item,
+            selector = '[data-fancybox=' + clickItem.data('fancybox') + ']';
+    
+        let imagesArr = [];
+
+        $(selector).filter(function(index, item) {
+            let currentItem = $(item);
+
+            if (currentItem.is(clickItem)) {
+                imagesArr.unshift(currentItem.attr('href'))
+            } else if (!currentItem.closest('.slick-slide').hasClass('slick-cloned')) {
+                imagesArr.push(currentItem.attr('href'))
+            }
+
+        });
+
+        let fancyboxArr = [];
+        
+        imagesArr.forEach(function(item) {
+            let obj = {};
+
+            obj.src = item;
+
+            fancyboxArr.push(obj);
+        });
+
+        $.fancybox.open(
+            fancyboxArr,
+            {
+                type : 'image'
+            }
+        );
+    }
 
     // freeze: function() {
     //     const h = $('html');

@@ -169,7 +169,9 @@
     position: relative;
     z-index: 1 ;
     margin-top: -$headerHeight;
+    padding-top: $headerHeight;
     height: 100vh;
+    min-height: 500px;
 
 
     
@@ -205,7 +207,6 @@
     &__block {
         @extend .box-text-shadow;
         max-width: px-to-rem(900);
-        margin-left: px-to-rem(100);
 
         @include screen('xl') {
             &::before {

@@ -1,12 +1,31 @@
-extends ../layouts/default
+extends ../layouts/error-page
 include ../helpers/mixins
 
 block variables
-	- const title = "404"
+	- const title = '404 item'
+	- const bodyClass = 'error-page'
 
 block content
-	
+	main.main
+		+b.SECTION.s-error.desktop-nml(data-scroll-section)
+			+e.inner
+				.container
+					+e.block
+						+e.block-inner
+							+e.icon
+								+e.IMG.icon-img(src="/img/svg/404-icon.svg" alt="Иконка")
 
+							+e.H1.text-1 К сожалению, такой страницы не существует
+							+e.P.text-2 или вы набрали неправильный адрес
+							
+							+e.P.text-3 Ничего страшного, просто перейдите на главную 
 
-
-
+							+e.link-wrap
+								+b.A.btn.--thin(href="/") 
+									+e.SPAN.label На главную
+									+e.I.arrow
+										+icon('more-arrow-right')
+							
+						
+			+e.bg
+				+e.IMG.bg-img(src="/img/404-bg.jpg" alt="К сожалению, такой страницы не существует")
