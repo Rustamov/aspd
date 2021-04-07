@@ -1,0 +1,107 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = 'Статьи'
+	- const bodyClass = 'articles-page'
+
+block content
+	main.main
+		+b.SECTION.s-articles-banner.desktop-nml(data-scroll-section)
+			+e.inner
+				.container
+					+e.block
+						+e.block-inner
+							+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="0%")
+								+e.block-text-line-1.text.text-cover
+									h1 Раздел статей
+
+							+e.A.block-more.js-scroll-fade-up(href='#' data-delay="1.3")
+								+e.block-more-icon
+									svg.svg-icon(viewBox='0 0 67 67' fill='none' xmlns='http://www.w3.org/2000/svg')
+										circle(cx='33.5' cy='33.5' r='32' stroke-width='3')
+										path(d='M31 28l5.743 5.743L31 39.485' stroke-width='1.5' stroke-linecap='round')
+						
+			+e.bg
+				+e.IMG.bg-img.js-parallax-img(src="/img/articles-banner-bg.jpg" alt="Раздел статей" data-trigger=".s-articles-banner")
+
+
+		+b.SECTION.s-articles.desktop-nml(data-scroll-section)
+			+e.inner
+				.container-md
+					+b.articles
+						+e.item.js-scroll-fade-up(data-offset="30% 90%")
+							+b.A.article-item(href="#")
+								+e.col-1
+									+e.SPAN.num 01
+								+e.col-2
+									+e.title Концертные залы
+									+e.text.text
+										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
+					
+						+e.item.js-scroll-fade-up(data-offset="30% 90%")
+							+b.A.article-item(href="#")
+								+e.col-1
+									+e.SPAN.num 02
+								+e.col-2
+									+e.title Студии звукозаписи
+									+e.text.text
+										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
+					
+						+e.item.js-scroll-fade-up(data-offset="30% 90%")
+							+b.A.article-item(href="#")
+								+e.col-1
+									+e.SPAN.num 03
+								+e.col-2
+									+e.title Конференц залы
+									+e.text.text
+										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
+					
+						+e.item.js-scroll-fade-up(data-offset="30% 90%")
+							+b.A.article-item(href="#")
+								+e.col-1
+									+e.SPAN.num 04
+								+e.col-2
+									+e.title Акустика
+									+e.text.text
+										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
+
+						+e.item.js-scroll-fade-up(data-offset="30% 90%")
+							+b.A.article-item(href="#")
+								+e.col-1
+									+e.SPAN.num 05
+								+e.col-2
+									+e.title Концертные залы
+									+e.text.text
+										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
+					
+						+e.item.js-scroll-fade-up(data-offset="30% 90%")
+							+b.A.article-item(href="#")
+								+e.col-1
+									+e.SPAN.num 06
+								+e.col-2
+									+e.title Студии звукозаписи
+									+e.text.text
+										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
+					
+						+e.item.js-scroll-fade-up(data-delay="30% 90%")
+							+b.A.article-item(href="#")
+								+e.col-1
+									+e.SPAN.num 07
+								+e.col-2
+									+e.title Конференц залы
+									+e.text.text
+										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
+					
+						+e.item.js-scroll-fade-up(data-offset="30% 90%")
+							+b.A.article-item(href="#")
+								+e.col-1
+									+e.SPAN.num 08
+								+e.col-2
+									+e.title Акустика
+									+e.text.text
+										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
+
+
+
+		

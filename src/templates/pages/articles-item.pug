@@ -1,0 +1,60 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = 'Страница одной статьи'
+	- const bodyClass = 'articles-page'
+
+block content
+	main.main
+		+b.SECTION.s-article-banner.desktop-nml(data-scroll-section)
+			+e.inner
+				.container
+					+e.block
+						+e.block-inner
+							+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="0%")
+								+e.block-text-line-1.text-cover Статья
+								+e.block-text-line-2.text.text-cover
+									h1 Концертные залы
+
+							+e.A.block-more.js-scroll-fade-up(href='#' data-delay="0.8")
+								+e.block-more-icon
+									svg.svg-icon(viewBox='0 0 67 67' fill='none' xmlns='http://www.w3.org/2000/svg')
+										circle(cx='33.5' cy='33.5' r='32' stroke-width='3')
+										path(d='M31 28l5.743 5.743L31 39.485' stroke-width='1.5' stroke-linecap='round')
+						
+			+e.bg
+				+e.IMG.bg-img.js-parallax-img(src="/img/temp/article.jpg" alt="Концертные залы" data-trigger=".s-article-banner")
+
+
+		+b.SECTION.s-article-cnt.desktop-nml(data-scroll-section)
+			+e.inner
+				.container
+					+e.row
+						+e.col-side.js-scroll-fade-up(data-offset="30% 90%")
+							+e.nav
+								+b.UL.article-nav
+									+e.LI.item
+										+e.A.link(href="#") Студии звукозаписи
+									+e.LI.item
+										+e.A.link(href="#") Конференц залы
+									+e.LI.item
+										+e.A.link(href="#") Акустика
+									+e.LI.item
+										+e.A.link(href="#") Концертные залы
+
+						+e.col-main.js-scroll-fade-up(data-offset="30% 90%")
+							+e.text.text
+								p Для современного мира базовый вектор развития, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для поэтапного и последовательного развития общества. 
+								p Повседневная практика показывает, что реализация намеченных плановых заданий предполагает независимые способы реализации укрепления моральных ценностей. Банальные, но неопровержимые выводы, а также некоторые особенности внутренней политики будут разоблаче ны. 
+							
+							
+							+e.picture
+								+e.IMG.picture-img(src="/img/temp/article-content.jpg" width="768" height="475" alt="Moskow 2019 г.")
+								
+								+e.SPAN.picture-inf
+									+e.SPAN.picture-inf-label Письмо от
+									+e.SPAN.picture-inf-year 2016 г.
+
+							
+					

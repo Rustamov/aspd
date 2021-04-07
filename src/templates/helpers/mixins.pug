@@ -15,7 +15,7 @@ mixin feedback
 					+e.H2.title Оставьте заявку
 
 					+e.fields
-						+e.fields-item
+						+e.fields-item 
 							label.input-text
 								span.input-text__label Ваше имя
 								input.input-text__field(type="text" name="Name" placeholder="Введите имя" required="") 
@@ -66,3 +66,55 @@ mixin feedback
 
 					+e.succeed-button
 						+b.BUTTON.btn.js-form-resset(type="button") Ок
+
+
+mixin writeUs
+	+b.write-us&attributes(attributes)
+		+e.form
+			form.js-validate(action="#" autocomplete="off")
+				// add class "is-form-sent" after sent form
+				+e.main
+					+e.H2.title Напишите нам
+
+					+e.fields
+						+e.fields-item.--third-part
+							label.input-text-2
+								input.input-text-2__field(type="text" name="Name" placeholder="Имя" required="") 
+
+						+e.fields-item.--third-part
+							label.input-text-2
+								input.input-text-2__field(type="email" name="Email" placeholder="Email")
+
+						+e.fields-item.--third-part
+							label.input-text-2
+								input.input-text-2__field(type="tel" name="Tel" placeholder="Телефон" required="" data-parsley-ru-phone)
+
+						+e.fields-item
+							label.input-text-2
+								textarea.input-text-2__field(name="Message" placeholder="Сообщение" rows="4")
+
+					+e.bottom
+						+e.bottom-submit
+							+b.BUTTON.btn(type="submit") 
+								+e.SPAN.label Отправить
+								+e.I.arrow
+									+icon('more-arrow-right')
+
+						+e.bottom-agree.text
+							+e.P.agree 
+								| Нажимая на кнопку, вы соглашаетесь с 
+								a(href="#") «политикой персональныз данных»
+
+				+e.succeed
+					+e.succeed-icon 
+						+icon('round-check-mark')
+					
+					+e.succeed-title Ваша заявка, принята!
+
+					+e.succeed-text.text
+						b Наш менеджер перезвонит вам 
+						| в самое ближайшее время
+
+					+e.succeed-button
+						+b.BUTTON.btn.js-form-resset(type="button") Ок
+

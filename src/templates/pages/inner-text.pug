@@ -1,0 +1,57 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = 'Внутренняя текстовая страница'
+	- const bodyClass = 'text-page'
+
+block content
+	main.main
+		+b.SECTION.s-content.desktop-nml(data-scroll-section)
+			+e.inner
+				+e.header
+					.container
+						+e.header-inner
+							+e.header-row
+								+e.header-col-img
+									+e.IMG.header-img(src="/img/temp/content.jpg" width="325" height="435" alt="Комплексное проектирование студий звукозаписи")
+									
+								+e.header-col-main
+									+e.H1.header-title Комплексное проектирование студий звукозаписи
+									+e.header-text.text
+										p Каждый из нас понимает очевидную вещь: внедрение современных методик требует анализа своевременного выполнения сверхзадачи. Идейные соображения высшего порядка.
+										p Следует отметить, что внедрение современных методик, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для своевременного выполнения сверхзадачи.
+
+									+e.A.header-more(href="#")
+										+e.header-more-icon
+											svg.svg-icon(viewBox='0 0 67 67' fill='none' xmlns='http://www.w3.org/2000/svg')
+												circle(cx='33.5' cy='33.5' r='32' stroke-width='3')
+												path(d='M31 28l5.743 5.743L31 39.485' stroke-width='1.5' stroke-linecap='round')
+
+						
+				+e.body
+					.container-md
+						+e.text.text
+							+e.H2.text-title Студии звукозаписи
+
+							table
+								tr
+									td 2016
+									td Moskow
+									td(style="text-align: right;") Cras dapibus
+								tr
+									td 2018
+									td Saint-Petersburg
+									td(style="text-align: right;") Donec pede justo
+								tr
+									td 2016
+									td Moskow
+									td(style="text-align: right;") Cras dapibus
+								tr
+									td 2018
+									td Saint-Petersburg
+									td(style="text-align: right;") Donec pede justo
+
+
+
+		

@@ -10,7 +10,7 @@ block content
 		+b.SECTION.s-about-banner.desktop-nml(data-scroll-section)
 			+e.inner
 				.container-md
-					+e.block.--recording-studio
+					+e.block
 						+e.block-inner
 							+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="0%")
 								+e.block-text-line-1.text.text-cover
@@ -38,23 +38,72 @@ block content
 				+e.top 
 					+e.H2.title Благодарственные письма
 
-				+e.list
-					+e.col
-						+b.A.certificate-item(href="/img/temp/certificate-1-big.jpg" data-fancyox)
-							+e.inner
-								+e.SPAN.picture
-									+e.IMG.picture-img(src="/img/temp/certificate-1.jpg" width="430" height="690" alt="Письмо от 2006г.")
-								
-								+e.SPAN.inf
-									+e.SPAN.inf-label Письмо от
-									+e.SPAN.inf-year 2016 г.
+				+e.main 
+					+e.slider-wrap.js-certificates-slider
+						+e.slider.js-certificates-slider-items
+							+e.slider-item
+								+b.A.certificate-item(href="/img/temp/certificate-1-big.jpg" data-fancybox="certificates")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/temp/certificate-1.jpg" width="430" height="690" alt="Письмо от 2006г.")
+										
+										+e.SPAN.inf
+											+e.SPAN.inf-label Письмо от
+											+e.SPAN.inf-year 2016 г.
 					
+							+e.slider-item
+								+b.A.certificate-item(href="/img/temp/certificate-1-big.jpg" data-fancybox="certificates")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/temp/certificate-1.jpg" width="430" height="690" alt="Письмо от 2006г.")
+										
+										+e.SPAN.inf
+											+e.SPAN.inf-label Письмо от
+											+e.SPAN.inf-year 2016 г.
+					
+							+e.slider-item
+								+b.A.certificate-item(href="/img/temp/certificate-1-big.jpg" data-fancybox="certificates")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/temp/certificate-1.jpg" width="430" height="690" alt="Письмо от 2006г.")
+										
+										+e.SPAN.inf
+											+e.SPAN.inf-label Письмо от
+											+e.SPAN.inf-year 2016 г.
+
+							+e.slider-item
+								+b.A.certificate-item(href="/img/temp/certificate-1-big.jpg" data-fancybox="certificates")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/temp/certificate-1.jpg" width="430" height="690" alt="Письмо от 2006г.")
+										
+										+e.SPAN.inf
+											+e.SPAN.inf-label Письмо от
+											+e.SPAN.inf-year 2016 г.
+					
+							+e.slider-item
+								+b.A.certificate-item(href="/img/temp/certificate-1-big.jpg" data-fancybox="certificates")
+									+e.inner
+										+e.SPAN.picture
+											+e.IMG.picture-img(src="/img/temp/certificate-1.jpg" width="430" height="690" alt="Письмо от 2006г.")
+										
+										+e.SPAN.inf
+											+e.SPAN.inf-label Письмо от
+											+e.SPAN.inf-year 2016 г.
+
+						+e.slider-controls
+							+e.slider-prev
+								+b.BUTTON.btn-arrow.--prev.js-slider-prev(type="button")
+									+icon('slide-prev-arrow')
+							+e.slider-next
+								+b.BUTTON.btn-arrow.--next.js-slider-next(type="button")
+									+icon('slide-next-arrow')
 
 
-		+b.SECTION.s-feedback.--about.desktop-nml#feedback(data-scroll-section)
+		+b.SECTION.s-write-us.desktop-nml#write-us(data-scroll-section)
 			.container-md
 				+e.form
-					+feedback
+					+writeUs
 
 
 

@@ -1,0 +1,72 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = 'Контакты'
+	- const bodyClass = 'contacts-page'
+
+block content
+	main.main
+		+b.SECTION.s-contacts-top.desktop-nml(data-scroll-section)
+			+e.inner
+				.container
+					+e.block
+						+e.H1.title Контакты
+						
+						+e.inf
+							+e.inf-col-address
+								+e.SPAN.inf-address
+									+e.SPAN.inf-address-label Адрес
+									+e.SPAN.inf-address-text
+										| 107078, г.Москва, 
+										br
+										| Орликов переулок 8
+
+							+e.inf-col-email
+								+e.inf-email
+									+e.SPAN.inf-email-label Email
+									+e.A.inf-email-link(href='mailto:info@aspd.ru') info@aspd.ru
+
+							+e.inf-col-phones
+								+e.SPAN.inf-phones
+									+e.SPAN.inf-phones-label Телефон
+									+e.SPAN.inf-phones-items
+										+e.SPAN.inf-phones-item
+											+e.A.inf-phones-link(href='tel:+79251317179') + 7 (925) 131 7179
+										+e.SPAN.inf-phones-item
+											+e.A.inf-phones-link(href='tel:+74999751119') + 7 (499) 975 1119
+
+						
+			+e.bg
+				+e.VIDEO(autoplay muted preload='auto' loop poster='/video/contacts/bg-video-poster.jpg').bg-video
+					source(src='/video/contacts/bg-video.mp4' type='video/mp4')
+					source(src='/video/contacts/bg-video.webm' type='video/webm')
+
+		+b.SECTION.s-contacts-place.desktop-nml(data-scroll-section)
+			+e.inner.js-scroll-fade-up(data-offset="30% 90%")
+				+e.row
+					+e.col-img
+						+e.picture
+							+e.IMG.picture-img(src="/img/contacts-place.jpg", alt="Адрес")
+
+					+e.col-map
+						script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU")
+						+e.map.map.js-map-yandex(
+							data-geolocation=""
+							data-zoom=""
+							)
+							ul.map__points.js-map-yandex-points(
+								data-zoom="16"
+								data-c-lat="55.771474"
+								data-c-long="37.649382"
+								)
+								li(
+									data-lat="55.771474"
+								 	data-long="37.649382"
+								 	data-title="107078, г.Москва, Орликов переулок 8"
+									)  
+							.map__area.js-map-yandex-area
+
+
+							
+					

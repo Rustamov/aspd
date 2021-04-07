@@ -59,6 +59,7 @@ $(document).ready(function () {
 
     headerVisible();
     formScript();
+    map();
     commonScript();
     
 
@@ -381,8 +382,6 @@ $(document).ready(function () {
                 let id = section.attr('id');
                 $(`.m-sections-nav__item`).removeClass('is-active');
                 $(`.m-sections-nav__item[data-id=${id}]`).addClass('is-active');
-
-                console.log(id)
             }
         });
 
@@ -527,7 +526,8 @@ $(document).ready(function () {
         gsap.utils.toArray(".js-scroll-fade-up").forEach(layer => {
             let section = $(layer),
                 delay = layer.dataset.delay ? +layer.dataset.delay : 0;
-                duration = layer.dataset.duration ? +layer.dataset.duration : 0.5;
+                duration = layer.dataset.duration ? +layer.dataset.duration : 0.5,
+                offset = layer.dataset.offset ? layer.dataset.offset : '30% 100%';
 
             gsap.set(layer, {
                 y: 50,
@@ -538,7 +538,7 @@ $(document).ready(function () {
                 scrollTrigger: {
                     trigger: section,
                     scroller: '.js-smooth-scroll',
-                //   start: "10% 20%",
+                    start: offset,
                 //   end: "top botto",
                 //   scrub: 0.1,
                 //   toggleActions: "restart pause reverse none"
@@ -698,9 +698,114 @@ $(document).ready(function () {
             window.globalOptions.galleryOpen($(this));           
 
         });
-        
 
-        
+
+        $('.js-certificates-slider').each(function() {
+            let wrap = $(this)
+                slider = wrap.find('.js-certificates-slider-items'),
+                prevBtn = wrap.find('.js-slider-prev'),
+                nextBtn = wrap.find('.js-slider-next')
+                ;
+
+            slider.slick({
+                // centerMode: true,
+                // variableWidth: true,
+                infinite: true,
+                adaptiveHeight: false,
+                arrows: true,
+                prevArrow: prevBtn,
+                nextArrow: nextBtn,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [
+                    {
+                        breakpoint: window.globalOptions.sizes.lg,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                        }
+                    },
+                    {
+                        breakpoint: window.globalOptions.sizes.md,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                        }
+                    },
+                    {
+                        breakpoint: window.globalOptions.sizes.sm,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                        }
+                    }
+                    // ,
+                    // {
+                    //     breakpoint: window.globalOptions.sizes.xs,
+                    //     settings: {
+                    //         slidesToShow: 1,
+                    //         slidesToScroll: 1,
+                    //     }
+                    // }
+                ]
+            }); 
+        });
+
+
+        $(".s-contacts-top").each(function(index, element){
+            let item = $(this);
+            let itemInner = item.find('.s-contacts-top__bg-video');
+            let parentOffset = item.offset();
+            
+            let timeoutRun = false;
+            let timeout;
+
+            item.on('mousemove', function(event) {
+                let e = event;
+
+                if (timeoutRun) return
+                
+                update(e);
+                timeoutRun = true;  
+                    
+                timeout = setTimeout(function() {
+                    timeoutRun = false
+                }, 40)    
+            });
+
+            item.on('mouseleave', function(event) {
+                if (timeout) clearTimeout(timeout);
+                timeoutRun = false; 
+
+                gsap.to(itemInner, {
+                    duration: 0.3, 
+                    delay: 0.2, 
+                    X: 0,
+                });
+
+            });
+
+            $window.on('resize', function() {
+                parentOffset = item.offset();
+            });
+
+            function update(event) {
+                let itemX = event.pageX - $(event.currentTarget).offset().left;
+                let itemY = event.pageY - $(event.currentTarget).offset().top;
+
+                let widthHalf = item.width() / 2;
+                let axisFromCenterX = widthHalf - itemX;
+
+                let maxMoveX = 30;
+                let moveX = axisFromCenterX / (widthHalf / maxMoveX);
+
+                gsap.to(itemInner, {duration: 1, 
+                    x: moveX,
+                    ease:Back.easeOut
+                });
+
+            }
+        });
     }
 
     function formScript () {
@@ -779,6 +884,69 @@ $(document).ready(function () {
         });
 
     }
+
+    function map() {
+        if ( $('.js-map-yandex').length === 0) {
+            return
+        } else {
+            $('.js-map-yandex').each(function() {
+                initMap($(this));
+            });
+        };
+
+
+        function initMap(el) {
+            var mapWrap = el,
+            mapPoints = mapWrap.find('.js-map-yandex-points'),
+            mapArea = mapWrap.find('.js-map-yandex-area'),
+            map;
+      
+      
+            if (map == undefined && window.ymaps != undefined) {
+                mapArea.html('');
+                ymaps.ready(function() {
+                    map = new ymaps.Map(mapArea[0], {
+                        center: [+mapPoints.data('c-lat'), +mapPoints.data('c-long')],
+                        zoom: +mapPoints.data('zoom'),
+                        controls: ['zoomControl', 'fullscreenControl', 'geolocationControl']
+                    });
+            
+            
+                    map.behaviors.disable('scrollZoom');
+                    if ( wWidth < window.globalOptions.sizes.lg ) {
+                        map.behaviors.disable('drag');
+                    };
+            
+            
+                    mapPoints.find('li').each(function () {
+                        if ( $(this).data('lat') ) {
+                            var $this = $(this),
+                                lat = +$this.data('lat'),
+                                lng = +$this.data('long'),
+                                title = $this.data('title')
+                                // pin = 'img/map-pin.png'
+                                ;
+                
+                            var placemark = new ymaps.Placemark(
+                                [lat, lng], {
+                                }, {
+                                    iconLayout: 'default#image',
+                                    // iconImageHref: pin,
+                                    // iconImageSize: [49, 61],
+                                    // iconImageOffset: [-25, -61],
+                                    hideIconOnBalloonOpen: false,
+                                    // balloonOffset: [3, -100]
+                                });
+                
+                            map.geoObjects.add(placemark);
+                        }
+                    });
+                });
+            };
+        }
+      
+
+    };
 
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
