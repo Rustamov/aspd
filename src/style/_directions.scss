@@ -1,5 +1,5 @@
 .s-directions {
-    margin: 0 0 px-to-rem(60);
+    margin: 0;
     padding: 0;
     border-top: 1px solid rgba(255,255,255, 0.2);
 
@@ -53,7 +53,7 @@
     display: block;
     position: relative;
     height: 90vh;
-    height: calc((100vh - 5rem) / 2);
+    height: calc((100vh - 10rem) / 2);
     overflow: hidden;
 
     @include screen('xl') {
@@ -64,7 +64,7 @@
     }
 
     .s-directions--inner & {
-        height: 50vh;
+        height: 45vh;
     }
 
     &__inner {
@@ -78,7 +78,11 @@
 
     &__num {
         display: block;
-        margin: 0 0 px-to-rem(80);
+        margin: 0 0 px-to-rem(50);
+
+        @media (min-height: 900px) {
+            margin-bottom: px-to-rem(80);
+        }
         
         &-inner {
             display: inline-block;
@@ -98,11 +102,15 @@
         &-inner {
             min-height: px-to-rem(120);
             margin: 0;
-            font-size: px-to-rem(30);
+            font-size: px-to-rem(26);
             font-weight: 500;
             line-height: calc(40/30);
             font-style: normal;
             text-transform: none;
+
+            @media (min-height: 900px) {
+                font-size: px-to-rem(30);
+            }
         }
     }
 

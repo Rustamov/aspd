@@ -27,7 +27,7 @@ h3 {
 }
 
 .text {
-  @include rule(font-size, (xs: 14px, lg: 18px));
+  @include rule(font-size, (xs: 16px, lg: 18px));
   line-height: calc(28/18);
   font-weight: 500;
   font-style: normal;
@@ -1054,5 +1054,24 @@ min-height: 120px;
     width: px-to-rem(20);
     height: px-to-rem(45);
     stroke: currentColor;
+  }
+}
+
+
+.map {
+  position: relative;
+  @include rule(height, (xs: 300px, lg: 420px));
+  width: 100%;
+
+  &__points {
+      display: none;
+  }
+  &__area {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: #ebebeb;
   }
 }

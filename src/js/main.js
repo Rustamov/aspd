@@ -218,7 +218,7 @@ $(document).ready(function () {
         topBgVideo.addEventListener('play', function(e) {
             videoAterTimer = setTimeout(() => {
                 doTopSectionAnimations();
-            }, 700);
+            }, 1000);
         });
 
 
@@ -254,7 +254,8 @@ $(document).ready(function () {
             gsap.to('.s-main-top__block-title-inner', {
                 opacity: 1,
                 y: 0,
-                delay: 0
+                delay: 0,
+                duration: 1,
             });
             gsap.to('.s-main-top__block-more', {
                 opacity: 1,
