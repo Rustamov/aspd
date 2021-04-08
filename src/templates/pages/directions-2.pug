@@ -1,0 +1,168 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = 'Directions 2'
+	- const bodyClass = 'directions-page'
+ 
+block content
+	main.main
+		+b.SECTION.s-directions-2(data-scroll-section)
+			+e.inner
+				+e.row
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 01
+								+e.title
+									+e.SPAN.title-inner Студии звукозаписи
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-1.jpg' alt="Студии звукозаписи")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 02
+								+e.title
+									+e.SPAN.title-inner Студия шумового озвучивания
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-2.jpg' alt="Студия шумового озвучивания")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 03
+								+e.title
+									+e.SPAN.title-inner Телевизионная аппаратная
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-3.jpg' alt="Телевизионная аппаратная")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 04
+								+e.title
+									+e.SPAN.title-inner Система светового оборудования студий
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-4.jpg' alt="Система светового оборудования студий")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 05
+								+e.title
+									+e.SPAN.title-inner Аппаратно-студийный блок
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-5.jpg' alt="Аппаратно-студийный блок")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 06
+								+e.title
+									+e.SPAN.title-inner Студия новостей
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-6.jpg' alt="Студия новостей")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 07
+								+e.title
+									+e.SPAN.title-inner Система конференцсвязи и синхронного перевода
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-7.jpg' alt="Система конференцсвязи и синхронного перевода")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 08
+								+e.title
+									+e.SPAN.title-inner Система 5D кинопоказа
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-8.jpg' alt="Система 5D кинопоказа")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 09
+								+e.title
+									+e.SPAN.title-inner Система обеспечения концертно-зрелищных мероприятий
+
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-9.jpg' alt="Система обеспечения концертно-зрелищных мероприятий")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 10
+								+e.title
+									+e.SPAN.title-inner Система оповещения и озвучивания Public Address
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-10.jpg' alt="Система оповещения и озвучивания Public Address")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 11
+								+e.title
+									+e.SPAN.title-inner Комментаторская система
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-11.jpg' alt="Комментаторская система")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 12
+								+e.title
+									+e.SPAN.title-inner Аппаратная интершума
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-12.jpg' alt="Аппаратная интершума")
+
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 13
+								+e.title
+									+e.SPAN.title-inner Система телевизионных и радиовещательных трансляций
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-13.jpg' alt="Система телевизионных и радиовещательных трансляций")
+					+e.col
+						+b.A.directions-item(href="/directions-item.html")
+							+e.inner
+								+e.num
+									+e.num-inner 14
+								+e.title
+									+e.SPAN.title-inner Система звукового обеспечения спортивных мероприятий
+							
+							+e.bg
+								+e.IMG.bg-img(src='/img/directions/item-14.jpg' alt="Система звукового обеспечения спортивных мероприятий")
+
+		+b.breadcrumbs-block(data-scroll-section)
+			.container
+				+breadcrumbs([], title)

@@ -124,27 +124,60 @@
 
     @extend .link-resset;
     display: flex;
-    transition: opacity 0.3s;
-
-    @include hover {
-        opacity: 0.8;
-    }
-
+    align-items: center;
+    
     &__col-1 {
         width: 30%;
         flex-shrink: 0;
-        padding: 0 px-to-rem(15);
+        padding: 0 px-to-rem(80) 0 0;
     }
     &__col-2 {
-        padding: 0 px-to-rem(30) 0 px-to-rem(15);
+        padding: 0 px-to-rem(30) 0 0;
         max-width: px-to-rem(700);
     }
 
-    &__num {
-        display: inline-block;
-        font-size: px-to-rem(24);
-        font-weight: 500;
-        border-bottom: 1px solid currentColor;
+    &__picture {
+        display: block;
+        position: relative;
+        width: px-to-rem(310);
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: 58%;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%)
+        }
+        &-img {
+            @include fill-img;
+
+            opacity: 0;
+            transition: opacity 0.5s;
+
+            #{$b}:hover & {
+                opacity: 1;
+            }
+
+        }
+
+        &-num {
+            position: absolute;
+            z-index: 2;
+            top: px-to-rem(15);
+            left: px-to-rem(15);
+            font-size: px-to-rem(24);
+            font-weight: 500;
+            border-bottom: 1px solid currentColor;
+        }
     }
     &__title {
         display: block;
@@ -161,10 +194,10 @@
 }
 
 .articles {
-    margin: px-to-rem(-75) 0;
+    margin: px-to-rem(-60) 0;
 
     &__item {
-        padding: px-to-rem(75) 0;
+        padding: px-to-rem(60) 0;
 
         &:not(:last-child) {
             border-bottom: 1px solid currentColor ;

@@ -2,7 +2,7 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-	- const title = 'Gallery'
+	- const title = 'Галерея'
 	- const bodyClass = 'gallery-page'
 
 block content
@@ -329,6 +329,9 @@ block content
 											+e.SPAN.text.text Студия звукозаписи, Мосфильм, г. Москва
  
 
+		+b.breadcrumbs-block(data-scroll-section)
+			.container
+				+breadcrumbs([], title)
 
 
 		

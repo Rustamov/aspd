@@ -569,22 +569,56 @@ $(document).ready(function () {
             
         }, 0);
 
-        gsap.to('.directions-item', {
-            scrollTrigger: {
-                // trigger: '.s-directions',
-                trigger: '.directions-item',
-                scroller: '.js-smooth-scroll',
-                start: "30% 80%",
+        // gsap.to('.directions-item', {
+        //     scrollTrigger: {
+        //         // trigger: '.s-directions',
+        //         trigger: '.directions-item',
+        //         scroller: '.js-smooth-scroll',
+        //         start: "30% 80%",
                 
-            },
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            // delay: 2,
-            ease: "power1.out",
-            stagger: 0.05 
+        //     },
+        //     y: 0,
+        //     opacity: 1,
+        //     duration: 0.5,
+        //     // delay: 2,
+        //     ease: "power1.out",
+        //     stagger: 0.05 
             
-        }, 0);
+        // }, 0);
+
+        gsap.utils.toArray(".directions-item").forEach((layer, index) => {
+            let section = $(layer),
+                delay = layer.dataset.delay ? +layer.dataset.delay : 0;
+                duration = layer.dataset.duration ? +layer.dataset.duration : 0.5,
+                offset = layer.dataset.offset ? layer.dataset.offset : '30% 95%';
+
+            gsap.set(layer, {
+                y: 50,
+                opacity: 0,
+            });
+
+            delay = (index % 4 ) / 10;
+            console.log(delay);
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: section,
+                    scroller: '.js-smooth-scroll',
+                    start: offset,
+                    
+                //   end: "top botto",
+                //   scrub: 0.1,
+                //   toggleActions: "restart pause reverse none"
+                }
+                });
+
+            tl.to(layer, {
+                y: 0,
+                opacity: 1,
+                duration: duration,
+                delay: delay,
+            }, 0)
+        });
 
 
         // 
@@ -676,7 +710,7 @@ $(document).ready(function () {
                     scrollTrigger: {
                       trigger: section,
                       scroller: '.js-smooth-scroll',
-                    //   start: "10% 20%",
+                      start: "30% 95%",
                     //   end: "top botto",
                     //   scrub: 0.1,
                     //   toggleActions: "restart pause reverse none"
@@ -686,7 +720,7 @@ $(document).ready(function () {
                 tl.to(layer, {
                     y: 0,
                     opacity: 1,
-                    duration: 0.3
+                    duration: 0.5
                 }, 0)
             });
         }, 500)

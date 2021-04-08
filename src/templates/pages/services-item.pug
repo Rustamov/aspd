@@ -2,7 +2,7 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-	- const title = 'Services item'
+	- const title = 'Услуги - детальная'
 	- const bodyClass = 'services-page'
 
 block content
@@ -110,5 +110,6 @@ block content
 								+e.IMG.bg-img(src='/img/services/services-4.jpg' alt="Интеграция медиа систем")
 
 
-
-		
+		+b.breadcrumbs-block(data-scroll-section)
+			.container
+				+breadcrumbs(['Услуги'], title)

@@ -2,7 +2,7 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-	- const title = 'Directions'
+	- const title = 'Направления'
 	- const bodyClass = 'directions-page'
 
 block content
@@ -19,7 +19,6 @@ block content
 									+e.SPAN.title-inner Студии звукозаписи, теле и радиовещания
 							
 							+e.bg
-								+e.SPAN.bg-cover
 								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/recording-studio.jpg')
 									source(src='/video/directions/recording-studio.mp4' type='video/mp4')
 									source(src='/video/directions/recording-studio.webm' type='video/webm')
@@ -33,7 +32,6 @@ block content
 									+e.H1.title-inner Концертные и театральные залы, кинотеатры, конференц залы
 							
 							+e.bg
-								+e.SPAN.bg-cover
 								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/cinema-hall.jpg')
 									source(src='/video/directions/cinema-hall.mp4' type='video/mp4')
 									source(src='/video/directions/cinema-hall.webm' type='video/webm')
@@ -47,7 +45,6 @@ block content
 									+e.H1.title-inner Образовательные учреждения
 							
 							+e.bg
-								+e.SPAN.bg-cover
 								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/school.jpg')
 									source(src='/video/directions/school.mp4' type='video/mp4')
 									source(src='/video/directions/school.webm' type='video/webm')
@@ -61,7 +58,6 @@ block content
 									+e.H1.title-inner Ночные клубы и караоке
 							
 							+e.bg
-								+e.SPAN.bg-cover
 								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/night-clubs.jpg')
 									source(src='/video/directions/night-clubs.mp4' type='video/mp4')
 									source(src='/video/directions/night-clubs.webm' type='video/webm')
@@ -75,7 +71,6 @@ block content
 									+e.H1.title-inner Офисные здания, отели, частные резиденции
 							
 							+e.bg
-								+e.SPAN.bg-cover
 								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/offices.jpg')
 									source(src='/video/directions/offices.mp4' type='video/mp4')
 									source(src='/video/directions/offices.webm' type='video/webm')
@@ -89,7 +84,6 @@ block content
 									+e.H1.title-inner Спортивные сооружения
 							
 							+e.bg
-								+e.SPAN.bg-cover
 								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/gym.jpg')
 									source(src='/video/directions/gym.mp4' type='video/mp4')
 									source(src='/video/directions/gym.webm' type='video/webm')
@@ -103,7 +97,6 @@ block content
 									+e.H1.title-inner Медицинские центры
 							
 							+e.bg
-								+e.SPAN.bg-cover
 								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/medical-center.jpg')
 									source(src='/video/directions/medical-center.mp4' type='video/mp4')
 									source(src='/video/directions/medical-center.webm' type='video/webm')
@@ -117,12 +110,13 @@ block content
 									+e.H1.title-inner Правительственные здания и учреждения
 							
 							+e.bg
-								+e.SPAN.bg-cover
 								+e.VIDEO.bg-video(autoplay muted preload='auto' loop poster='/video/directions/government.jpg')
 									source(src='/video/directions/government.mp4' type='video/mp4')
 									source(src='/video/directions/government.webm' type='video/webm')
 
-				
+		+b.breadcrumbs-block(data-scroll-section)
+			.container
+				+breadcrumbs([], title)
 
 
 		

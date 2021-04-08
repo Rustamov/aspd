@@ -150,55 +150,6 @@ body {
 }
 
   
-.breadcrumbs-block {
-  @include rule(margin, (xs: 0 0 25px, lg: 0 0 35px));
-}
-
-.breadcrumbs {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  @include rule(flex-wrap, (xs: nowrap, lg: wrap));
-  @include rule(overflow-x, (xs: auto, lg: hidden));;
-  align-items: center;
-  // font-family: $ffRoboto;
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: inherit;
-  
-  &__item {
-      display: inline-flex;
-      align-items: center;
-      font-weight: 400;
-      white-space: nowrap;
-      text-decoration: none;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-  }
-
-  &__link {
-      text-decoration: none;
-      color: inherit;
-      transition: color 0.2s;
-
-      @include hover {
-          color: $color1;
-      }
-  }
-
-  &__sep {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0 8px;
-      text-decoration: none;
-      font-weight: 300;
-      font-style: normal;
-  }
-}
-
-
 
 .s-main-top {
   
@@ -903,3 +854,56 @@ body {
   }
 
 }
+
+.breadcrumbs-block {
+  @include rule(margin, (xs: 0 0 25px, lg: 0 0 35px));
+  padding-top: px-to-rem(50);
+
+  
+}
+
+.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  @include rule(flex-wrap, (xs: nowrap, lg: wrap));
+  @include rule(overflow-x, (xs: auto, lg: hidden));;
+  align-items: center;
+  font-size: px-to-rem(16);
+  line-height: 1.5;
+  font-weight: 400;
+  color: inherit;
+  
+  &__item {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 400;
+      white-space: nowrap;
+      text-decoration: none;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+  }
+
+  &__link {
+    @extend .link-resset;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+
+    @include hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__sep {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 8px;
+      text-decoration: none;
+      font-weight: 300;
+      font-style: normal;
+  }
+}
+
+

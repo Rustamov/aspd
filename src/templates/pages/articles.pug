@@ -33,7 +33,9 @@ block content
 						+e.item.js-scroll-fade-up(data-offset="30% 90%")
 							+b.A.article-item(href="#")
 								+e.col-1
-									+e.SPAN.num 01
+									+e.SPAN.picture
+										+e.IMG.picture-img(src="/img/temp/article-item-1.jpg" alt="Концертные залы")
+										+e.SPAN.picture-num 01
 								+e.col-2
 									+e.title Концертные залы
 									+e.text.text
@@ -42,7 +44,9 @@ block content
 						+e.item.js-scroll-fade-up(data-offset="30% 90%")
 							+b.A.article-item(href="#")
 								+e.col-1
-									+e.SPAN.num 02
+									+e.SPAN.picture
+										+e.IMG.picture-img(src="/img/temp/article-item-2.jpg" alt="Студии звукозаписи")
+										+e.SPAN.picture-num 02
 								+e.col-2
 									+e.title Студии звукозаписи
 									+e.text.text
@@ -51,7 +55,9 @@ block content
 						+e.item.js-scroll-fade-up(data-offset="30% 90%")
 							+b.A.article-item(href="#")
 								+e.col-1
-									+e.SPAN.num 03
+									+e.SPAN.picture
+										+e.IMG.picture-img(src="/img/temp/article-item-3.jpg" alt="Конференц залы")
+										+e.SPAN.picture-num 03
 								+e.col-2
 									+e.title Конференц залы
 									+e.text.text
@@ -60,7 +66,9 @@ block content
 						+e.item.js-scroll-fade-up(data-offset="30% 90%")
 							+b.A.article-item(href="#")
 								+e.col-1
-									+e.SPAN.num 04
+									+e.SPAN.picture
+										+e.IMG.picture-img(src="/img/temp/article-item-4.jpg" alt="Акустика")
+										+e.SPAN.picture-num 04
 								+e.col-2
 									+e.title Акустика
 									+e.text.text
@@ -69,7 +77,9 @@ block content
 						+e.item.js-scroll-fade-up(data-offset="30% 90%")
 							+b.A.article-item(href="#")
 								+e.col-1
-									+e.SPAN.num 05
+									+e.SPAN.picture
+										+e.IMG.picture-img(src="/img/temp/article-item-1.jpg" alt="Концертные залы")
+										+e.SPAN.picture-num 05
 								+e.col-2
 									+e.title Концертные залы
 									+e.text.text
@@ -78,16 +88,20 @@ block content
 						+e.item.js-scroll-fade-up(data-offset="30% 90%")
 							+b.A.article-item(href="#")
 								+e.col-1
-									+e.SPAN.num 06
+									+e.SPAN.picture
+										+e.IMG.picture-img(src="/img/temp/article-item-2.jpg" alt="Студии звукозаписи")
+										+e.SPAN.picture-num 06
 								+e.col-2
 									+e.title Студии звукозаписи
 									+e.text.text
 										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
 					
-						+e.item.js-scroll-fade-up(data-delay="30% 90%")
+						+e.item.js-scroll-fade-up(data-offset="30% 90%")
 							+b.A.article-item(href="#")
 								+e.col-1
-									+e.SPAN.num 07
+									+e.SPAN.picture
+										+e.IMG.picture-img(src="/img/temp/article-item-3.jpg" alt="Конференц залы")
+										+e.SPAN.picture-num 07
 								+e.col-2
 									+e.title Конференц залы
 									+e.text.text
@@ -96,12 +110,14 @@ block content
 						+e.item.js-scroll-fade-up(data-offset="30% 90%")
 							+b.A.article-item(href="#")
 								+e.col-1
-									+e.SPAN.num 08
+									+e.SPAN.picture
+										+e.IMG.picture-img(src="/img/temp/article-item-4.jpg" alt="Акустика")
+										+e.SPAN.picture-num 08
 								+e.col-2
 									+e.title Акустика
 									+e.text.text
 										p А также стремящиеся вытеснить традиционное производство, нанотехнологии призывают нас к новым свершениям, которые, в свою очередь, должны быть разоблачены.
 
-
-
-		
+		+b.breadcrumbs-block(data-scroll-section)
+			.container
+				+breadcrumbs([], title)
