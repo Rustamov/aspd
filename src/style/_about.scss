@@ -35,7 +35,7 @@
     &__block {
         @extend .box-text-shadow;
         @extend .box-text-shadow--higher;
-        max-width: px-to-rem(680);
+        
 
         @include screen('xl') {
             &::before {
@@ -50,9 +50,21 @@
         &-inner {
             position: relative;
             z-index: 1;
+            display: flex;
+            align-items: center;
+        }
+        &-picture {
+            margin-right: px-to-rem(100);
+            width: px-to-rem(300);
+
+            &-img {
+                width: 100%;
+                height: auto;
+            }
         }
         &-text {
-            margin: 0 0 px-to-rem(100);
+            max-width: px-to-rem(680);
+            margin: 0;
 
             &-line-1 {
                 @extend .page-title;

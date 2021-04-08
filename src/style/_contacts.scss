@@ -18,7 +18,7 @@
     }
   
     &__block {
-      
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);;
     }
   
     &__title {
@@ -103,16 +103,13 @@
       left: -30px;
       pointer-events: none;
   
-      &::before {
-        content: '';
+      &-inner {
         position: absolute;
-        z-index: 1;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.4);;
-      }
+        }
       
       &-video {
         @include center-block;

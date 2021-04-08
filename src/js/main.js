@@ -789,7 +789,7 @@ $(document).ready(function () {
 
         $(".s-contacts-top").each(function(index, element){
             let item = $(this);
-            let itemInner = item.find('.s-contacts-top__bg-video');
+            let itemInner = item.find('.s-contacts-top__bg-inner');
             let parentOffset = item.offset();
             
             let timeoutRun = false;

@@ -38,9 +38,10 @@ block content
 
 						
 			+e.bg
-				+e.VIDEO(autoplay muted preload='auto' loop poster='/video/contacts/bg-video-poster.jpg').bg-video
-					source(src='/video/contacts/bg-video.mp4' type='video/mp4')
-					source(src='/video/contacts/bg-video.webm' type='video/webm')
+				+e.bg-inner
+					+e.VIDEO(autoplay muted preload='auto' loop poster='/video/contacts/bg-video-poster.jpg').bg-video
+						//- source(src='/video/contacts/bg-video.mp4' type='video/mp4')
+						source(src='/video/contacts/bg-video-fh.webm' type='video/webm')
 
 		+b.SECTION.s-contacts-place(data-scroll-section)
 			+e.inner.js-scroll-fade-up(data-offset="30% 90%")

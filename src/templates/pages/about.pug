@@ -9,9 +9,12 @@ block content
 	main.main
 		+b.SECTION.s-about-banner.desktop-nml(data-scroll-section)
 			+e.inner
-				.container-md
+				.container
 					+e.block
 						+e.block-inner
+							+e.block-picture.js-scroll-fade-up(data-offset="30% 100%" data-delay="1")
+								+e.IMG.block-picture-img(src="/img/about-person.jpg" alt="")
+
 							+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="0%")
 								+e.block-text-line-1.text.text-cover
 									h1 О нас
