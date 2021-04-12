@@ -8,7 +8,34 @@
 
 .left-nav {
 
+    &__panel {
+        position: fixed;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        margin: 0;
+        width: $leftPagePadding;
+        border-right: 1px solid rgba(255,255,255, 0.2);
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        @include screen(lg, max) {
+            left: auto;
+            right: 0;
+            width: px-to-rem(130);
+            height: $headerHeight;
+        }
+
+        
+
+        .left-nav-open & {
+            // background: #000;
+            z-index: 5;
+        }
+    }
     
     &__trigger {
       margin: 0;
@@ -26,7 +53,16 @@
       cursor: pointer;
       transition: 0.5s;
       outline: none;
-  
+
+      @include screen(lg, max) {
+        outline: 1px solid rgba(255, 255, 255, 0);;        
+      }
+    
+      &:active {
+        @include screen(lg, max) {
+            outline: 1px solid rgba(255, 255, 255, 0.3);;        
+        }
+    }
   
       &-icon {
         display: inline-block;
@@ -39,8 +75,7 @@
   
         transition: all 0.5s 0.3s;
         will-change: transform;
-  
- 
+
         &-line {
           position: absolute;
           top: 20%;
@@ -55,21 +90,39 @@
           &--one {
             transform: translateX(-0.3rem);
 
+            @include screen(lg, max) {
+                transform: rotate(90deg) translateX(-0.3rem);
+            }
+
             .left-nav.open & {
                 transform: translateX(0) rotate(45deg);
             }
             body:not(.left-nav-open) .left-nav__panel-button:hover & {
                 top: -20%;
+
+                @include screen(lg, max) {
+                    top: 20%;
+                    transform: rotate(90deg) translateX(-0.3rem);
+                }
             }
           }
           &--second {
             transform: translateX(0.3rem);
+            
+            @include screen(lg, max) {
+                transform: rotate(90deg) translateX(0.3rem);
+            }
 
             .left-nav.open & {
                 transform: translateX(0) rotate(-45deg);
+                
             }
             body:not(.left-nav-open) .left-nav__panel-button:hover & {
                 transform: translateX(0.3rem) scale(0);
+
+                @include screen(lg, max) {
+                    transform: rotate(90deg) translateX(0.3rem);
+                }
             }
           }
          
@@ -90,6 +143,10 @@
 
             transition: all 0.4s ease;
             transform: rotate(-90deg) translateX(px-to-rem(-60));
+            
+            @include screen(lg, max) {
+                display: none;
+            }
         }
         .left-nav:not(.open) &:hover &-label {
             transform: rotate(-90deg) translateX(px-to-rem(-90));
@@ -103,25 +160,7 @@
   
     }
   
-    &__panel {
-        position: fixed;
-        z-index: 3;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        margin: 0;
-        width: $leftPagePadding;
-        border-right: 1px solid rgba(255,255,255, 0.2);
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
-        .left-nav-open & {
-            // background: #000;
-            z-index: 5;
-        }
-    }
 
     &__content {
         position: fixed;
@@ -132,9 +171,7 @@
         z-index: 1;
         background: #000;
         
-        height: 100vh;
-        min-height: 500px;
-        overflow: auto;
+        
         padding: 0 px-to-rem(80) 0 $leftPagePadding;
         
         transform: scale(1);
@@ -142,6 +179,15 @@
         pointer-events: none;
 
         transition: 0.7s;    
+
+        @include screen(lg, max) {
+            padding: 0 px-to-rem(80) 0 px-to-rem(30);
+        }
+        @include screen(md, max) {
+            padding: 0;
+        }
+
+        
   
         .left-nav.open & {
             transform: scale(1);
@@ -158,10 +204,21 @@
             flex-direction: column;
             // align-items: center;
             justify-content: space-between;
-            padding: px-to-rem(38) 0 px-to-rem(30) px-to-rem(40);
+            padding: px-to-rem(15) 0 px-to-rem(30) px-to-rem(40);
             width: 100%;
-            height: 100%;
+            height: 100vh;
+            overflow: auto;
 
+            // max-height: calc(100vh - 100px);
+            // overflow: auto;
+
+            @include screen(lg, max) {
+                padding: px-to-rem(15) 0 px-to-rem(100) 0;
+            }
+            @include screen(md, max) {
+                padding: px-to-rem(130) 15px px-to-rem(100) 15px;
+            }
+        
             &::after {
                 content: '';    
                 position: absolute;
@@ -172,6 +229,11 @@
                 width: 1px;
                 background: rgba(255,255,255, 0.2);
                 pointer-events: none;
+
+                @include screen(md, max) {
+                    content: none;
+                    display: none;
+                }
             }
         }
         
@@ -179,6 +241,18 @@
             transform: translateY(-20px);
             opacity: 0;
             transition: all 0.5s 0.6s;
+            
+            margin-bottom: px-to-rem(30);
+
+            @include screen(md, max) {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: px-to-rem(19) 15px px-to-rem(14);
+                background: #000;
+                z-index: 2;
+            }
             
             .left-nav:not(.open) & {
               transition-delay: 0s;
@@ -195,12 +269,27 @@
 
             display: flex;
 
+            @include screen(md, max) {
+                flex-direction: column;
+                align-items: center;
+            }
+
             &-col-1 {
                 width: 55%;
+                @include screen(md, max) {
+                    width: 100%;
+                    padding-bottom: px-to-rem(50);
+                    margin-bottom: px-to-rem(30);
+
+                    border-bottom: 1px solid rgba(255,255,255, 0.2);
+                }
             }
             &-col-2 {
                 // width: 45%;
                 padding-left: px-to-rem(50);
+                @include screen(md, max) {
+                    padding: 0;
+                }
             }
         }
 
@@ -233,7 +322,9 @@
         margin-bottom: px-to-rem(34);
       }
   
-      
+      @include screen(md, max) {
+          text-align: center;
+      }
   
     }
   
@@ -247,6 +338,15 @@
         line-height: 1.1;
         font-weight: 700;
         transition: padding 0.5s;
+
+
+        @include screen(lg, max) {
+            font-size: px-to-rem(34);
+        }
+        @include screen(md, max) {
+            font-size: px-to-rem(30);
+            padding: 0 px-to-rem(30);
+        }
 
         &::before {
             content: '';
@@ -316,6 +416,11 @@
         .left-nav.open & {
           transform: translateX(0);
           opacity: 1;
+        }
+
+        @include screen(md, max) {
+            text-align: center;
+            font-size: px-to-rem(22);
         }
 
         &-email {
@@ -427,6 +532,11 @@
     width: px-to-rem(136);
     height: px-to-rem(72);
 
+    @include screen(md, max) {
+        width: px-to-rem(114);
+        height: px-to-rem(60);
+    }
+
     &__img {
         display: block;
         height: auto;
@@ -534,20 +644,34 @@
     right: 0;
     left: 0;
     height: px-to-rem(100);
-    padding: px-to-rem(30) 0 0;
+    padding: px-to-rem(14) 0 0;
+
+    @include screen(md, max) {
+        padding-top: px-to-rem(19);
+    }
     
     .left-nav-open & {
         // z-index: 5;
     }
 
+    &__container {
+        @include screen(lg, max) {
+            // max-width: 100%;
+            padding: 0 px-to-rem(30);
+        }
+        @include screen(md, max) {
+            // max-width: 100%;
+            padding: 0 15px;
+        }
+    }
     &__row {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
 
-    &__left-nav {
-        position: absolute;
+    &__nav {
+        @include rule(display, (lg: none), max);
     }
 }
 

@@ -3,6 +3,11 @@
     width: px-to-rem(136);
     height: px-to-rem(72);
 
+    @include screen(md, max) {
+        width: px-to-rem(114);
+        height: px-to-rem(60);
+    }
+
     &__img {
         display: block;
         height: auto;
@@ -33,6 +38,11 @@
         @include hover {
             color: rgba(255,255,255, 0.7);
         }
+
+        @include screen(lg, max) {
+            font-size: px-to-rem(20);
+            
+        }
      
     }
 
@@ -44,10 +54,20 @@
         column-count: 2;
         column-gap: px-to-rem(72);
         margin-bottom: px-to-rem(-32);
+
+        @include screen(md, max) {
+            column-count: 1;
+            column-gap: 0;
+            margin-bottom: px-to-rem(-24);
+        }
     }
     &__item {
         &:not(:last-child) {
             margin-bottom: px-to-rem(32);
+            @include screen(md, max) {
+                margin-bottom: px-to-rem(24);
+            }
+
         }
     }
     &__link {
@@ -62,6 +82,10 @@
         @include hover {
             color: rgba(255,255,255, 0.7);
         }
+
+        @include screen(lg, max) {
+            font-size: px-to-rem(18);
+        }
      
     }
 
@@ -69,11 +93,29 @@
 
 
 .footer {
-    padding: px-to-rem(100) 0 px-to-rem(150);
+    margin-left:-$leftPagePadding;
+
+    padding: px-to-rem(100) 0 px-to-rem(150) px-to-rem(30);
     background: #000;
+    
+    @include screen(lg, max) {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    @include screen(md, max) {
+        padding: px-to-rem(70) 0 px-to-rem(100);
+    }
+
 
     &__logo {
         margin-bottom: px-to-rem(170);
+        
+        @include screen(lg, max) {
+            display: flex;
+            justify-content: center;
+            margin-bottom: px-to-rem(100);
+        }
+
     }
 
     &__main {
@@ -82,18 +124,63 @@
         &-row {
             display: flex;
             justify-content: start;
+
+            @include screen(lg, max) {
+                flex-wrap: wrap;
+            }
         }
 
         &-col-inf {
             min-width: px-to-rem(200);
             margin-right: px-to-rem(95);
+            
+            @include screen(xl, max) {
+                margin-right: px-to-rem(50);
+            }
+
+            @include screen(lg, max) {
+                margin: 0 0 px-to-rem(70);
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            @include screen(md, max) {
+                width: 100%;
+            }
+
+
         }
         &-col-menu {
-            
+            @include screen(lg, max) {
+                margin: 0 0 px-to-rem(70);
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+            @include screen(md, max) {
+                width: 100%;
+            }
+
         }
         &-col-directions {
             margin-left: auto;
             margin-right: px-to-rem(100);
+
+
+            
+            @include screen(xl, max) {
+                margin-right: 0;
+            }
+
+            @include screen(lg, max) {
+                margin: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
         }
     }
 
@@ -102,14 +189,38 @@
         &-row {
             display: flex;
             justify-content: start;
+
+            @include screen(lg, max) {
+                flex-direction: column-reverse;
+            }
         }
 
         &-col-copy {
             min-width: px-to-rem(200);
             margin-right: px-to-rem(95);
+
+
+            
+            @include screen(xl, max) {
+                margin-right: px-to-rem(50);
+            }
+            @include screen(lg, max) {
+                margin: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }            
         }
         &-col-policy {
-            
+            @include screen(lg, max) {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                margin-bottom: px-to-rem(30);
+            }
+           
         }
 
     }
@@ -119,6 +230,10 @@
         font-size: px-to-rem(18);
         line-height: calc(28/18);
 
+        @include screen(lg, max) {
+            font-size: px-to-rem(22);
+            
+        }
        
 
         &-email {
@@ -132,6 +247,10 @@
                 
                 @include hover {
                     color: rgba(255,255,255, 0.7);
+                }
+
+                @include screen(lg, max) {
+                    font-size: px-to-rem(34);                    
                 }
             }
         }

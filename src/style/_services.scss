@@ -10,10 +10,16 @@
 
     &__row {
         display: flex;
+        flex-wrap: wrap;
+
     }
     &__col {
         width: 25%;
         border-bottom: 1px solid rgba(255,255,255, 0.2);
+
+        @include screen(lg, max) {
+            width: 50%;
+        }
         
         &:not(:last-child) {
             border-right: 1px solid rgba(255,255,255, 0.2);
@@ -38,9 +44,19 @@
             transform: translate(0px, 30px);
         }
     }
+    
+    @include screen(lg, max) {
+        height: calc((100vh - 10rem) / 2);
+        min-height: 250px;
+    }
+
 
     .s-services--inner & {
         height: 90vh;
+
+        @include screen(lg, max) {
+            height: calc(90vh / 2);
+        }
     }
 
     &__inner {
@@ -51,6 +67,10 @@
         flex-direction: column;
         justify-content: space-between;
         padding: px-to-rem(35) px-to-rem(18) px-to-rem(35) px-to-rem(30);
+        
+        @include screen(md, max) {
+            padding: px-to-rem(25) px-to-rem(10) px-to-rem(25) px-to-rem(20);
+        }
     }
 
     &__num {
@@ -64,6 +84,14 @@
             line-height: calc(40/30);
             font-style: normal;
             border-bottom: 2px solid currentColor;
+
+            @include screen(md, max) {
+                font-size: px-to-rem(26);
+            }
+
+            @include screen(sm, max) {
+                font-size: px-to-rem(22);
+            }
         }
 
     }
@@ -84,6 +112,14 @@
             line-height: calc(40/30);
             font-style: normal;
             text-transform: none;
+
+            @include screen(md, max) {
+                font-size: px-to-rem(26);
+                
+            }
+            @include screen(sm, max) {
+                font-size: px-to-rem(22);
+            }
         }
     }
 
@@ -101,6 +137,10 @@
 
         #{$b}:hover & {
             opacity: 1;
+        }
+
+        @include screen(md, max) {
+            font-size: px-to-rem(16);
         }
 
         &-icon {
@@ -174,7 +214,11 @@
     height: 100vh;
     min-height: 500px;
 
-
+    @include screen(lg, max) {
+        height: 80vw;
+        min-height: 250px;
+        overflow: hidden;
+    }
     
     &__inner {
         position: relative;
@@ -213,6 +257,10 @@
             &::before {
                 opacity: 0;
                 transition: opacity 0.5s 0.3s;
+
+                .touch & {
+                    opacity: 1;
+                }
             }
             &.is-shadow::before {
                 opacity: 1;
@@ -230,6 +278,14 @@
             font-weight: 500;
             line-height: calc(82/60);
             font-style: normal;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+            @include screen(lg, max) {
+                font-size: px-to-rem(50);
+            }
+            @include screen(md, max) {
+                font-size: px-to-rem(30);
+            }
 
             h1,
             h2,
@@ -251,7 +307,14 @@
 .s-services-text {
     padding: px-to-rem(75) 0 px-to-rem(75);
 
+    @include screen(lg, max) {
+        padding: px-to-rem(50) 0 px-to-rem(50);
+    }
     &__text {
         max-width: px-to-rem(740);
+   
+        @include screen(lg, max) {
+            max-width: 100%;    
+        }
     }
 }

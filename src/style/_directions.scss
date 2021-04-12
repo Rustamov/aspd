@@ -14,6 +14,13 @@
     &__col {
         width: 25%;
         border-bottom: 1px solid rgba(255,255,255, 0.2);
+
+        @include screen(lg, max) {
+            width: 50%;
+        }
+        @include screen(sm, max) {
+            width: 100%;
+        }
        
         &:not(:last-child) {
             border-right: 1px solid rgba(255,255,255, 0.2);
@@ -40,6 +47,13 @@
         border-top: 1px solid rgba(255,255,255, 0.2);
         border-bottom: 1px solid rgba(255,255,255, 0.2);
         border-right: 1px solid rgba(255,255,255, 0.2);
+
+        @include screen(lg, max) {
+            width: 50%;
+        }
+        @include screen(sm, max) {
+            width: 100%;
+        }
          
         &:not(:last-child) {
         }
@@ -52,15 +66,21 @@
     @extend .link-resset;
     display: block;
     position: relative;
-    height: 90vh;
+    height: 45vh;
     height: calc((100vh - 10rem) / 2);
     overflow: hidden;
+    min-height: px-to-rem(300);
 
     @include screen('xl') {
         .js-on & {
             opacity: 0;
             transform: translate(0px, 30px);
         }
+    }
+
+    @include screen(lg, max) {
+        // height: calc((100vh - 10rem) / 2);
+        
     }
 
     .s-directions--inner & {
@@ -82,6 +102,11 @@
 
         @media (min-height: 900px) {
             margin-bottom: px-to-rem(80);
+        }
+
+        @include screen(lg, max) {
+            margin-bottom: 20vw;
+            margin-bottom: 20%;
         }
         
         &-inner {
@@ -111,6 +136,11 @@
             @media (min-height: 900px) {
                 font-size: px-to-rem(30);
             }
+
+            @include screen(xl, max) {
+                font-size: px-to-rem(24);
+            }
+            
         }
     }
 
@@ -213,7 +243,11 @@
     height: 100vh;
     min-height: 500px;
 
-
+    @include screen(lg, max) {
+        height: 80vw;
+        min-height: 250px;
+        overflow: hidden;
+    }
     
     &__inner {
         position: relative;
@@ -243,7 +277,6 @@
     }
 
 
-
     &__block {
         @extend .box-text-shadow;
         max-width: px-to-rem(900);
@@ -252,6 +285,10 @@
             &::before {
                 opacity: 0;
                 transition: opacity 0.5s 0.3s;
+
+                .touch & {
+                    opacity: 1;
+                }
             }
             &.is-shadow::before {
                 opacity: 1;
@@ -269,6 +306,14 @@
             font-weight: 500;
             line-height: calc(82/60);
             font-style: normal;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+            @include screen(lg, max) {
+                font-size: px-to-rem(50);
+            }
+            @include screen(md, max) {
+                font-size: px-to-rem(30);
+            }
 
             h1,
             h2,
@@ -617,18 +662,49 @@ $arrProjectColWidth: (
     &__list {
         display: flex;
         flex-wrap: wrap;
+
+        @include screen(xl, max) {
+            margin: 0 -60px 0 -25px;
+        }
+        @include screen(lg, max) {
+            margin: 0 -30px 0 -25px;
+        }
+        @include screen(md, max) {
+            margin: 0;
+        }
     }
     &__col {
         display: flex;
         margin-bottom: px-to-rem(120);
 
-
-        @for $i from 1 to length($arrProjectColWidth) + 1 {
-            &:nth-child(#{$i}) {
-              width: nth(nth($arrProjectColWidth, $i), 1);
-              padding-left: nth(nth($arrProjectColWidth, $i), 2);
+        @include screen(md) {
+            @for $i from 1 to length($arrProjectColWidth) + 1 {
+                &:nth-child(#{$i}) {
+                width: nth(nth($arrProjectColWidth, $i), 1);
+                padding-left: nth(nth($arrProjectColWidth, $i), 2);
+                }
             }
-          }
+        }
+
+        @include screen(md, max) {
+			justify-content: center;
+			width: 100%;
+			margin-bottom: px-to-rem(50);
+			padding-left: 0;
+		}
+
+        &:nth-child(2n) {
+            @include screen(md, max) {
+                padding-left: 20%;
+            }
+
+			@media (max-width: 400px) {
+				padding-left: 10%;
+			}
+			@media (max-width: 350px) {
+				padding-left: 0%;
+			}
+		}
     }
 
 }

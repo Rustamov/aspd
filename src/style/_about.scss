@@ -41,6 +41,10 @@
             &::before {
                 opacity: 0;
                 transition: opacity 0.5s 0.3s;
+
+                .touch & {
+                    opacity: 1;
+                }
             }
             &.is-shadow::before {
                 opacity: 1;

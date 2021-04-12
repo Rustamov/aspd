@@ -27,10 +27,17 @@ h3 {
 }
 
 .text {
-  @include rule(font-size, (xs: 16px, lg: 18px));
+  font-size: 18px;
   line-height: calc(28/18);
   font-weight: 500;
   font-style: normal;
+
+  @include screen(lg, max) {
+    font-size: 16px;
+  }
+  @include screen(sm, max) {
+    font-size: 14px;
+  }
 
  
 
@@ -656,6 +663,10 @@ h3 {
       background-size: contain;
 
       pointer-events: none;
+
+      @include screen(md, max) {
+          
+      }
   }
     &--higher {
       &::before {
@@ -684,6 +695,14 @@ h3 {
   font-weight: 500;
   text-transform: none;
   font-style: normal;
+
+  @include screen(lg, max) {
+    font-size: px-to-rem(50);
+  }
+  @include screen(md, max) {
+      font-size: px-to-rem(30);
+  }
+
   // @include screen('')
 }
 

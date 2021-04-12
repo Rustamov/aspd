@@ -5,15 +5,7 @@
 @import 'sprite';
 @import 'ui';
 
-@import 'header';
-@import 'footer';
-@import 'main-page';
-@import 'projects';
-@import 'services';
-@import 'directions';
-@import 'about';
-@import 'articles';
-@import 'contacts';
+
 
 @include sprites($spritesheet-sprites); //if icons empty will throw error
 
@@ -33,12 +25,28 @@ body {
     font-size: 20px
   }
 }
+@media (min-width: 1400px) and (min-height: 700px) {
+  html,body {
+    font-size: 20px
+  }
+}
 
 @media (min-width: 1601px) and (min-height: 850px) {
   html,body {
     font-size: 22px
   }
 }
+html,body {
+  @include screen(xl, max) {
+    font-size: 16px;
+  }
+}
+html,body {
+  @include screen(sm, max) {
+    font-size: 14px;
+  }
+}
+
 
 // @media (min-width: 1890px) and (min-height: 930px) {
 //   html,body {
@@ -51,6 +59,10 @@ body {
   padding-top: $headerHeight;
   padding-left: $leftPagePadding;
   // padding-left: px-to-rem(120);
+  
+  @include screen(lg, max) {
+    padding-left: 0;
+  }
 
   .main-page & {
     padding-top: 0;
@@ -105,24 +117,49 @@ body {
 .container {
   max-width: 100%;
 
-  padding: 0 px-to-rem(160);
+  padding: 0 15px;
+  
+  @include screen('sm') {
+    padding: 0 30px;
+  }
+  @include screen('lg') {
+    padding: 0 px-to-rem(160);
 
+  }
+  @include screen('xl') {
+    padding: 0 px-to-rem(160);
+
+  }
   @include screen('xll') {
     max-width: 1920px;
   }
 }
 .container-md {
   max-width: 100%;
+  padding: 0 15px;
 
-  padding: 0 px-to-rem(260);
+  @include screen('sm') {
+    padding: 0 30px;
+  }
+  @include screen('lg') {
+    padding: 0 px-to-rem(260);
+  }
 
   @include screen('xll') {
     max-width: 1720px;
+  }
+
+  @include screen(xl, max) {
+    // padding: 0 px-to-rem(260);
   }
 }
 
 .desktop-nml {
   margin-left: -$leftPagePadding;
+
+  @include screen(lg, max) {
+      margin-left: 0;
+  }
 }
 
 .c-scrollbar {
@@ -407,8 +444,7 @@ body {
       z-index: 2;
       height: 100%;
       display: flex;
-      align-items: center;
-      
+      align-items: center;      
   }
 
   &__bg {
@@ -473,6 +509,11 @@ body {
     line-height: calc(55/40);
     font-style: normal;
     opacity: 0.8;
+
+    @include screen(sm, max) {
+      margin: 0 0 px-to-rem(15);
+      font-size: px-to-rem(30);
+    }
   }
 
   &__text-2 {
@@ -483,6 +524,10 @@ body {
     line-height: calc(34/25);
     font-style: normal;
     opacity: 0.8;
+    
+    @include screen(sm, max) {
+      font-size: px-to-rem(20);
+    }
   }
   &__text-3 {
     display: block;
@@ -492,6 +537,10 @@ body {
     line-height: calc(34/25);
     font-style: normal;
     opacity: 0.8;
+
+    @include screen(sm, max) {
+      font-size: px-to-rem(20);
+    }
   }
 }
 
@@ -574,6 +623,10 @@ body {
 
   background: #fff;
   color: #000;
+
+  @include screen(md, max) {
+    padding: px-to-rem(60) 0 px-to-rem(100);
+  }
   
   &__inner {
   }
@@ -582,18 +635,37 @@ body {
   &__header {
     margin-bottom: px-to-rem(200);
 
+    @include screen(md, max) {
+      margin-bottom: px-to-rem(100);
+    }
+    
     &-inner {
       max-width: px-to-rem(1200);
     }
 
     &-row {
       display: flex;
+
+      @include screen(md, max) {
+          flex-direction: column-reverse;
+          align-items: center;
+      }
     }
 
     &-col-img {
       width: px-to-rem(340);
       flex-shrink: 0;
       margin-right: px-to-rem(60);
+      
+      @include screen(md, max) {
+        margin: 0;
+      }
+      
+    }
+    &-col-main {
+      @include screen(md, max) {
+        margin-bottom: 20px;
+      }
     }
 
     &-img {
@@ -653,16 +725,47 @@ body {
   &__text {
     font-size: px-to-rem(30);
 
+    @include screen(md, max) {
+      font-size: px-to-rem(24);
+    }
+
     &-title {
       @extend .page-title;
       margin-bottom: px-to-rem(60);
+
+      @include screen(md, max) {
+        margin-bottom: px-to-rem(40);
+      }
     }
 
     table {
+      // @include screen(sm, max) {
+      //   display: flex;
+      //   flex-direction: column;
+      // }
+
+      tr {
+        @include screen(sm, max) {
+          display: flex;
+          flex-direction: column;
+          border-bottom: 1px solid currentColor;
+          padding-bottom: px-to-rem(40);
+
+        }
+      }
+
       th,
       td {
         padding-bottom: px-to-rem(40);
+
+        @include screen(sm, max) {
+          padding-bottom: 2px;
+          text-align: left !important;
+          border: none;
+        }
+
       }
+      
     }
 
   }
@@ -671,8 +774,13 @@ body {
 
 
 .breadcrumbs-block {
-  @include rule(margin, (xs: 0 0 25px, lg: 0 0 35px));
+  margin-bottom: 35px;
   padding-top: px-to-rem(50);
+
+  @include screen(md, max) {
+    margin-bottom: 25px;
+    padding-top: px-to-rem(30);
+  }
 
   
 }
@@ -691,13 +799,13 @@ body {
   color: inherit;
   
   &__item {
-      display: inline-flex;
-      align-items: center;
-      font-weight: 400;
-      white-space: nowrap;
-      text-decoration: none;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 400;
+    white-space: nowrap;
+    text-decoration: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   &__link {
@@ -722,3 +830,14 @@ body {
 }
 
 
+
+
+@import 'header';
+@import 'footer';
+@import 'main-page';
+@import 'projects';
+@import 'services';
+@import 'directions';
+@import 'about';
+@import 'articles';
+@import 'contacts';

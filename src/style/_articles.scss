@@ -6,6 +6,12 @@
     height: 100vh;
     min-height: 500px;
     overflow: hidden;
+
+    @include screen(lg, max) {
+        height: 80vw;
+        min-height: 250px;
+        overflow: hidden;
+    }
     
     &__inner {
         position: relative;
@@ -43,17 +49,23 @@
         }
     }
 
+    
 
 
     &__block {
-        @extend .box-text-shadow;
-        @extend .box-text-shadow--higher;
+        // @extend .box-text-shadow;
+        // @extend .box-text-shadow--higher;
         max-width: px-to-rem(680);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
         @include screen('xl') {
             &::before {
                 opacity: 0;
                 transition: opacity 0.5s 0.3s;
+
+                .touch & {
+                    opacity: 1;
+                }
             }
             &.is-shadow::before {
                 opacity: 1;
@@ -125,21 +137,47 @@
     @extend .link-resset;
     display: flex;
     align-items: center;
+
+    @media (max-width: 450px) {
+        flex-direction: column-reverse;
+    }
     
     &__col-1 {
         width: 30%;
         flex-shrink: 0;
         padding: 0 px-to-rem(80) 0 0;
+
+        @include screen(xl, max) {
+            width: 35%;
+            padding-right: px-to-rem(30);
+        }
+        @include screen(sm, max) {
+            width: 35%;
+            padding-right: 10px;
+        }
+        @media (max-width: 450px) {
+            width: 200px;
+        }
+
     }
     &__col-2 {
         padding: 0 px-to-rem(30) 0 0;
         max-width: px-to-rem(700);
+
+        @include screen(lg, max) {
+            padding: 0;
+        }
+        @media (max-width: 450px) {
+            margin-bottom: 20px;
+        }
+
     }
 
     &__picture {
         display: block;
         position: relative;
         width: px-to-rem(310);
+        max-width: 100%;
 
         &::before {
             content: '';
@@ -163,6 +201,10 @@
             opacity: 0;
             transition: opacity 0.5s;
 
+            @include screen(md, max) {
+                opacity: 1;
+            }
+
             #{$b}:hover & {
                 opacity: 1;
             }
@@ -177,6 +219,23 @@
             font-size: px-to-rem(24);
             font-weight: 500;
             border-bottom: 1px solid currentColor;
+
+            @include screen(md, max) {
+                // top: px-to-rem(-35);
+                // left: 0;
+                // font-size: px-to-rem(20);
+                top: px-to-rem(15);
+                right: px-to-rem(15);
+                left: auto;
+                font-size: px-to-rem(20);
+            }
+            // @media (max-width: 450px) {
+            //     top: px-to-rem(15);
+            //     right: px-to-rem(15);
+            //     left: auto;
+            //     font-size: px-to-rem(20);
+            // }
+
         }
     }
     &__title {
@@ -185,10 +244,18 @@
         font-size: px-to-rem(30);
         line-height: calc(40/30);
         font-weight: 700;
+
+        @include screen(md, max) {
+            font-size: px-to-rem(24);
+        }
     }
     &__text {
         display: block;
         font-size: px-to-rem(18);
+
+        @include screen(md, max) {
+            font-size: 12px;
+        }
     }
 
 }
@@ -196,8 +263,18 @@
 .articles {
     margin: px-to-rem(-60) 0;
 
+    
+
     &__item {
         padding: px-to-rem(60) 0;
+
+        @include screen(lg, max) {
+            padding: px-to-rem(50) 0;
+        }
+        @include screen(sm, max) {
+            padding: px-to-rem(35) 0;
+        }
+
 
         &:not(:last-child) {
             border-bottom: 1px solid currentColor ;
@@ -207,6 +284,25 @@
 
 .s-articles {
     padding: px-to-rem(150) 0;
+    
+    @include screen(lg, max) {
+        padding: px-to-rem(120) 0;
+    }
+    @include screen(sm, max) {
+        padding: px-to-rem(80) 0;
+    }
+    
+    &__container {
+        @include screen(xl, max) {
+            padding: 0 px-to-rem(160);
+        }
+        @include screen(lg, max) {
+            padding: 0 px-to-rem(60);
+        }
+        @include screen(md, max) {
+            padding: 0 15px;
+        }
+    }
 }
 
 
@@ -266,6 +362,10 @@
             &::before {
                 opacity: 0;
                 transition: opacity 0.5s 0.3s;
+
+                .touch & {
+                    opacity: 1;
+                }
             }
             &.is-shadow::before {
                 opacity: 1;
@@ -278,6 +378,7 @@
         }
         &-text {
             margin: 0 0 px-to-rem(80);
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
             &-line-1 {
                 display: block;
