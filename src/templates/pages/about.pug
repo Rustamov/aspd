@@ -7,33 +7,106 @@ block variables
 
 block content
 	main.main
-		+b.SECTION.s-about-banner.desktop-nml(data-scroll-section)
-			+e.inner
-				.container
-					+e.block
-						+e.block-inner
-							+e.block-picture.js-scroll-fade-up(data-offset="30% 100%" data-delay="1")
-								+e.IMG.block-picture-img(src="/img/about-person.jpg" alt="")
+		//- +b.SECTION.s-about-banner.desktop-nml(data-scroll-section)
+		//- 	+e.inner
+		//- 		.container
+		//- 			+e.block
+		//- 				+e.block-inner
+		//- 					+e.block-picture.js-scroll-fade-up(data-offset="30% 100%" data-delay="1")
+		//- 						+e.IMG.block-picture-img(src="/img/about-person.jpg" alt="")
 
-							+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="0%")
-								+e.block-text-line-1.text.text-cover
-									h1 О нас
+		//- 					+e.block-text.text(data-scroll data-scroll-call="revMask" data-scroll-offset="0%")
+		//- 						+e.block-text-line-1.text.text-cover
+		//- 							h1 О нас
 
-								+e.block-text-line-2.text.text-cover
-									p Каждый из нас понимает очевидную вещь: внедрение современных методик требует анализа своевременного выполнения сверхзадачи. Идейные соображения высшего порядка.
-									p Следует отметить, что внедрение современных методик, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для своевременного выполнения сверхзадачи.
+		//- 						+e.block-text-line-2.text.text-cover
+		//- 							p Каждый из нас понимает очевидную вещь: внедрение современных методик требует анализа своевременного выполнения сверхзадачи. Идейные соображения высшего порядка.
+		//- 							p Следует отметить, что внедрение современных методик, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для своевременного выполнения сверхзадачи.
 
-							//- +e.A.block-more.js-scroll-fade-up(href='#' data-delay="1.3")
-							//- 	+e.block-more-icon
-							//- 		//- +icon('round-arrow-right')
-							//- 		svg.svg-icon(viewBox='0 0 67 67' fill='none' xmlns='http://www.w3.org/2000/svg')
-							//- 			circle(cx='33.5' cy='33.5' r='32' stroke-width='3')
-							//- 			path(d='M31 28l5.743 5.743L31 39.485' stroke-width='1.5' stroke-linecap='round')
+		//- 					//- +e.A.block-more.js-scroll-fade-up(href='#' data-delay="1.3")
+		//- 					//- 	+e.block-more-icon
+		//- 					//- 		//- +icon('round-arrow-right')
+		//- 					//- 		svg.svg-icon(viewBox='0 0 67 67' fill='none' xmlns='http://www.w3.org/2000/svg')
+		//- 					//- 			circle(cx='33.5' cy='33.5' r='32' stroke-width='3')
+		//- 					//- 			path(d='M31 28l5.743 5.743L31 39.485' stroke-width='1.5' stroke-linecap='round')
 
 							
 						
-			+e.bg
-				+e.IMG.bg-img.js-parallax-img(src="/img/about-banner-bg.jpg" alt="О нас" data-trigger=".s-about-banner")
+		//- 	+e.bg
+		//- 		+e.IMG.bg-img.js-parallax-img(src="/img/about-banner-bg.jpg" alt="О нас" data-trigger=".s-about-banner")
+		
+		+b.SECTION.s-about-top.desktop-nml(data-scroll-section)
+			.container-md
+				+e.H1.title О нас
+
+				+e.text-1.text
+					p Компания АСПД осуществляет проектирование, строительство и оснащение оборудованием новых или реконструкцию существующих объектов, на которых важен звук.
+
+				+e.row
+					+e.col-img
+						+e.picture
+							+e.IMG.picture-img(src="/img/about-person.jpg" alt="Николай Ковалев - Руководитель компании")
+							
+							+e.SPAN.picture-inf
+								+e.SPAN.picture-inf-label Николай Ковалев
+								+e.SPAN.picture-inf-year Руководитель компании
+
+					+e.col-text
+						+e.text-2.text
+							p Компания «АСПД» была основана в 2000 году. 
+							p «АСПД» расшифровывается как «Акустика, Строительство, Проектирование, Дизайн», что и является профильными направлениями деятельности фирмы в области архитектурно-строительной акустики. 
+							p В 2005 году заработал сайт компании на домене aspd.ru, и была сформирована концепция бизнеса, позволяющая найти индивидуальный подход к каждому заказчику: бесплатное первичное консультирование, тщательное изучение потребностей клиента, подбор инструментов для удачного решения поставленных задач. 
+							p Цель «АСПД» - предоставить полный и качественный спектр услуг в архитектурно-строительной акустике независимо от масштаба и сложности работ.
+
+		+b.SECTION.s-reviews.desktop-nml(data-scroll-section)
+			.container-md
+				+e.H2.title Отзывы о работах «АСПД»
+
+				+e.list
+					+e.list-item.--youtube
+						+b.review
+							+e.review
+								+e.person
+									+e.person-left
+										+e.person-picture
+											+e.IMG.person-picture-img(src="/img/review-1.png" alt="Михаил Шуфутинский")
+										
+									+e.person-right
+										+e.SPAN.person-name Михаил Шуфутинский
+										+e.SPAN.person-text.text об одном из наших проектов – студии «Маринс Групп» 
+
+								+e.link-wrap
+									+e.A.link(href="https://youtu.be/brbcxRzRzoo" data-fancybox) 
+										+icon('arrow-down-sm')
+										+e.SPAN.link-text Кликни, чтобы посмотреть отзыв
+
+								+e.preview
+									.youtube-iframe
+										iframe(src="https://www.youtube-nocookie.com/embed/brbcxRzRzoo?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+
+					+e.list-item
+						+b.review
+							+e.review
+								+e.person
+									+e.person-left
+										+e.person-picture
+											+e.IMG.person-picture-img(src="/img/review-2.png" alt="Карен Шахназаров")
+										
+									+e.person-right
+										+e.SPAN.person-name Карен Шахназаров
+										+e.SPAN.person-text.text о студии Dolby Premier на «Мосфильме», признанной одной из лучших в Европе 
+
+								+e.link-wrap
+									+e.A.link(href="http://thr.ru/interview/1146/" target="_blank") 
+										+icon('arrow-down-sm')
+										+e.SPAN.link-text Кликни, чтобы посмотреть отзыв
+
+								+e.preview
+									a(href="http://thr.ru/interview/1146/" target="_blank") 
+										img(src="/img/about-article-preview.jpg" alt="о студии Dolby Premier на «Мосфильме»")
+									
+
 
 
 		+b.SECTION.s-certificates.desktop-nml(data-scroll-section)

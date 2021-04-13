@@ -224,9 +224,18 @@ html,body {
   &__fields {
     margin: 0 0 60px;
 
+    @include screen(md, max) {
+      margin-bottom: 40px;
+    }
+
+
     &-item {
       &:not(:last-child) {
         margin-bottom: 35px;
+
+        @include screen(md, max) {
+          margin-bottom: 25px;            
+        }
       }
     }
   }
@@ -234,10 +243,26 @@ html,body {
   &__bottom {
     display: flex;
     align-items: center;
+    
+    @include screen(md, max) {
+      flex-direction: column-reverse;
+      text-align: center; 
+        
+    }
 
+    &-agree {
+      @include screen(md, max) {
+        margin-bottom: 20px;
+      }
+    }
     &-submit {
       margin: 0 50px 0 0;
       font-size: 20px;
+
+      @include screen(md, max) {
+        margin: 0;
+      }
+
     }
   }
 
@@ -301,6 +326,11 @@ html,body {
 .s-feedback {
   padding: px-to-rem(75) 0 px-to-rem(75);
   margin-bottom: px-to-rem(75);
+
+  @include screen(lg, max) {
+    padding: px-to-rem(40) 0;
+      
+  }
 
   &__form {
     max-width: px-to-rem(740);

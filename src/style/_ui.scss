@@ -1,5 +1,5 @@
 img,
-frame {
+iframe {
   max-width: 100%;
 }
 
@@ -300,16 +300,7 @@ h3 {
 
   }
 }
-.ui-sitemap {
-  li {
-    margin-bottom: 5px;
-  }
-  a {
-    // color: #fff;
-    @extend .link;
-    @extend .link--theme-white;
-  }
-}
+
 .ui-popups {
   padding: 40px 0;  
   .popup {
@@ -685,6 +676,13 @@ h3 {
   text-transform: none;
   font-style: normal;
   // @include screen('')
+
+  @include screen(lg, max) {
+    font-size: px-to-rem(36);
+  }
+  @include screen(md, max) {
+      font-size: px-to-rem(28);
+  }
 }
 
 .page-title {
@@ -709,9 +707,21 @@ h3 {
 .ui-sitemap {
   margin: 150px 0 0 100px;
 
+  @include screen(md, max) {
+    margin: 50px 0 0 30px;
+  }
+
   li {
     font-size: 1.2rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    @extend .link-resset;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -758,6 +768,10 @@ h3 {
   color: $color5;
   text-align: inherit;
   pointer-events: none;
+
+  @include screen(md, max) {
+    font-size: 11px;
+  }
 }
 
 textarea {
@@ -776,6 +790,10 @@ min-height: 120px;
   font-size: 18px;
   text-align: left;
 
+  @include screen(md, max) {
+      font-size: 16px;
+  }
+
   &__label {
     display: block;
     margin: 0;
@@ -786,6 +804,10 @@ min-height: 120px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    @include screen(md, max) {
+      font-size: 12px;
+    }
   }
 
   &__field {
@@ -804,6 +826,11 @@ min-height: 120px;
     outline: none;
     border-radius: 0;
     transition: color 0.2s, border 0.2s;
+
+    @include screen(md, max) {
+      padding: 16px 0 18px;
+    }
+
 
     &:hover,
     &:focus {
@@ -842,6 +869,14 @@ min-height: 120px;
     // color: $colorRed;
     background: none;
     // border-radius: 3px;
+
+    @include screen(md, max) {
+      top: 100%;
+      bottom: auto;
+      max-width: 100%;
+      margin-top: 2px;
+    }
+
   }    
   &--label .parsley-errors-list {
     @include rule(top, (xs: 38px, lg: 48px));
@@ -1092,5 +1127,26 @@ min-height: 120px;
       right: 0;
       bottom: 0;
       background: #ebebeb;
+  }
+}
+
+
+.youtube-iframe {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-bottom: 56.4%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // right: 0;
+    // bottom: 0;
+    width: 100%;
+    height: 100%;
   }
 }

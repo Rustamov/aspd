@@ -850,22 +850,22 @@ $(document).ready(function () {
                     {
                         breakpoint: window.globalOptions.sizes.lg,
                         settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
                         }
                     },
                     {
                         breakpoint: window.globalOptions.sizes.md,
                         settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
                         }
                     },
                     {
                         breakpoint: window.globalOptions.sizes.sm,
                         settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
                         }
                     }
                     // ,
@@ -936,6 +936,7 @@ $(document).ready(function () {
                 }
             });
         }
+
         
     }
 
@@ -1044,7 +1045,7 @@ $(document).ready(function () {
             
             
                     map.behaviors.disable('scrollZoom');
-                    if ( wWidth < window.globalOptions.sizes.lg ) {
+                    if ( isMobile() ) {
                         map.behaviors.disable('drag');
                     };
             

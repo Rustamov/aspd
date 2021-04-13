@@ -217,6 +217,7 @@
     @include screen(lg, max) {
         height: 80vw;
         min-height: 250px;
+        max-height: 100vh;
         overflow: hidden;
     }
     

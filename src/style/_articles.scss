@@ -10,6 +10,7 @@
     @include screen(lg, max) {
         height: 80vw;
         min-height: 250px;
+        max-height: 100vh;
         overflow: hidden;
     }
     
@@ -314,6 +315,13 @@
     height: 100vh;
     min-height: 500px;
     overflow: hidden;
+
+    @include screen(lg, max) {
+        height: 80vw;
+        min-height: 250px;
+        max-height: 100vh;
+        overflow: hidden;
+    }
     
     &__inner {
         position: relative;
@@ -321,7 +329,11 @@
         height: 100%;
         display: flex;
         align-items: flex-end;
-        padding: px-to-rem(60) 0;
+        padding: px-to-rem(60) 0 px-to-rem(80);
+
+        @include screen(sm, max) {
+            padding: px-to-rem(40) 0 px-to-rem(50);            
+        }
     }
 
     &__bg {
@@ -371,13 +383,20 @@
                 opacity: 1;
             }
         }
+
+        &::before {
+            @include screen(lg, max) {
+                opacity: 0.3;
+            }
+        }
+
         
         &-inner {
             position: relative;
             z-index: 1;
         }
         &-text {
-            margin: 0 0 px-to-rem(80);
+            margin: 0;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 
             &-line-1 {
@@ -386,6 +405,12 @@
                 font-size: px-to-rem(28);
                 font-weight: 700;
                 font-style: normal;
+
+                @include screen(lg, max) {
+                    font-size: px-to-rem(18);
+
+                }
+
              }
             &-line-2 {
                 @extend .page-title;
@@ -471,8 +496,17 @@
     background: #fff;
     color: #000;
 
+    @include screen(md, max) {
+        padding: px-to-rem(60) 0;
+    }
+
     &__row {
         display: flex;
+
+        @include screen(lg, max) {
+            flex-direction: column-reverse;
+        }
+
     }
     &__col-side {
         width: px-to-rem(300);
@@ -480,11 +514,20 @@
         flex-shrink: 0;
     }
     &__col-main {
-        max-width: px-to-rem(880)
+        max-width: px-to-rem(880);
+
+        @include screen(md, max) {
+            margin-bottom: px-to-rem(60);   
+        }
     }
 
     &__text {
         margin-bottom: px-to-rem(100);
+
+        @include screen(md, max) {
+            margin-bottom: px-to-rem(50);
+        }
+
     }
     &__picture {
         @extend .link-resset;

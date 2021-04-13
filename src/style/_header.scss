@@ -563,6 +563,12 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
 
+        @include screen(xl, max) {
+            padding-right: px-to-rem(10);
+            padding-left: px-to-rem(10);
+        }
+
+
         &--arrow {
             position: relative;
             padding-right: px-to-rem(36);
@@ -668,10 +674,15 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
+}
 
     &__nav {
         @include rule(display, (lg: none), max);
+
+        margin-right: px-to-rem(-100);
+
+        @include screen(xl, max) {
+            margin-right: px-to-rem(-150);        }
     }
 }
 

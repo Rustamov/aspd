@@ -4,9 +4,18 @@
     z-index: 1 ;
     height: 100vh;
     min-height: 500px;
+    max-height: 60vw;
     margin-top: -$headerHeight;
     padding-top: $headerHeight;
     overflow: hidden;
+    
+
+
+    @include screen(md, max) {
+      min-height: 550px;
+      max-height: 60vw;
+      // max-height: auto;
+    }
   
     &__inner {
       position: relative;
@@ -15,6 +24,15 @@
       display: flex;
       align-items: flex-end;
       padding-bottom: px-to-rem(100);
+      
+      @include screen(lg, max) {
+        // padding-top: 20vh;
+        padding-bottom: px-to-rem(50);
+      }
+      @include screen(md, max) {
+        // padding-top: 20vh;
+        padding-bottom: 5vh;
+      }
     }
   
     &__block {
@@ -25,6 +43,10 @@
       @extend .page-title;
       display: block;
       margin: 0 0 px-to-rem(95);
+
+      @include screen(md, max) {
+          margin-bottom: px-to-rem(50);
+      }
     }
   
     &__inf {
@@ -35,22 +57,50 @@
       font-weight: 400;
       line-height: calc(28/18); 
       border-top: 1px solid currentColor;
+
+      @include screen(lg, max) {
+        font-size: px-to-rem(20);
+      }
+      @include screen(md, max) {
+        flex-direction: column;
+      }
+
+      &-col-address {
+        @include screen(md, max) {
+          margin-bottom: px-to-rem(25);
+        }
+      }
+      &-col-email {
+        @include screen(md, max) {
+          margin-bottom: px-to-rem(25);
+        }
+      }
      
   
       &-email {
           display: block;
-          margin: 0 0 px-to-rem(42);
+          // margin: 0 0 px-to-rem(42);
   
           &-label {
             display: block;
             margin: 0 0 px-to-rem(20);
             font-weight: 700;
+
+            @include screen(md, max) {
+              margin-bottom: px-to-rem(5)
+            }
+
         }
   
           &-link {
               @extend .link-resset;
               font-size: px-to-rem(30);
               transition: color 0.3s;
+
+              @include screen(lg, max) {
+                font-size: px-to-rem(25);
+              }
+
               
               @include hover {
                   color: rgba(255,255,255, 0.7);
@@ -61,23 +111,33 @@
       
       &-address {
           display: block;
-          margin: 0 0 px-to-rem(42);
+          // margin: 0 0 px-to-rem(42);
           
           &-label {
             display: block;
             margin: 0 0 px-to-rem(20);
             font-weight: 700;
+
+            @include screen(md, max) {
+              margin-bottom: px-to-rem(5)
+            }
+
         }
       }
   
       &-phones {
           display: block;
-          margin: 0 0 px-to-rem(42);
+          // margin: 0 0 px-to-rem(42);
   
           &-label {
             display: block;
             margin: 0 0 px-to-rem(20);
             font-weight: 700;
+
+            @include screen(md, max) {
+              margin-bottom: px-to-rem(5)
+            }
+
         }
   
           &-item {
@@ -102,6 +162,11 @@
       // left: $leftPagePaddingNegative;
       left: -30px;
       pointer-events: none;
+
+      .touch & {
+        right: 0;
+        left: 0;
+      }
   
       &-inner {
         position: absolute;
@@ -109,14 +174,22 @@
         right: 0;
         bottom: 0;
         left: 0;
-        }
+      }
       
       &-video {
         @include center-block;
-        width: auto;
+        width: calc(100% + 30px);
         height: auto;
         min-width: 100%;
         min-height: 100%;
+
+        .touch &{
+          width: auto;
+          height: auto;
+          min-width: 100%;
+          min-height: 550px;
+          max-height: 60vw;
+        }
       }
     }
   }
@@ -128,22 +201,47 @@
       height: px-to-rem(500);
     //   min-height: 500px;
       overflow: hidden;
+
+      @include screen(lg, max) {
+        height: px-to-rem(400);
+      }
+      @include screen(sm, max) {
+        height: auto;
+      }
+
     }
   
     &__row {
       display: flex;
       height: 100%;
       padding: px-to-rem(25);
+
+      @include screen(sm, max) {
+        flex-direction: column;
+        padding: 15px;
+      }
     }
   
     &__col-img {
       width: 50%;
       flex-shrink: 0;
+
+      @include screen(sm, max) {
+        height: 250px;
+        width: 100%;
+        margin-bottom: px-to-rem(25);
+      }
     }
   
     &__col-map {
       width: 50%;
       padding-left: px-to-rem(25);
+      
+      @include screen(sm, max) {
+        width: 100%;
+        height: 250px;
+        padding-left: 0;
+      }
     }
   
     &__picture {
