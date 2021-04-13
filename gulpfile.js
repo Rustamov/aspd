@@ -134,7 +134,7 @@ gulp.task('templates', function () {
 gulp.task('js', function () {
     return gulp.src(path.src.js) //Найдем наш main файл
         .pipe(concat('scripts.js'))
-        .pipe(gulpIf(env !== 'dev',uglify()))//Сожмем наш js
+        //.pipe(gulpIf(env !== 'dev',uglify()))//Сожмем наш js
 
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(reload({stream: true})); //И перезагрузим сервер
@@ -149,10 +149,12 @@ gulp.task('style', function () {
             overrideBrowserslist: ['last 10 versions'],
             cascade: false
         }))) //Добавим вендорные префиксы
-        .pipe(gulpIf(env !== 'dev', groupCssMediaQueries())) //Группируем медиазапросы
-        .pipe(gulpIf(env !== 'dev', cssmin())) //Сожмем
+        // .pipe(gulpIf(env !== 'dev', groupCssMediaQueries())) //Группируем медиазапросы
+        // .pipe(gulpIf(env !== 'dev', cssmin())) //Сожмем
+        .pipe(groupCssMediaQueries()) //Группируем медиазапросы
+        .pipe(cssmin()) //Сожмем
         .pipe(cleanCSS())
-        .pipe(gulpIf(env == 'dev', sourcemaps.write('')))
+        // .pipe(gulpIf(env == 'dev', sourcemaps.write('')))
         .pipe(gulp.dest(path.build.css)) //И в build
         .pipe(reload({stream: true}));
 });

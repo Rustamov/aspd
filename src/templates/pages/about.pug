@@ -37,13 +37,13 @@ block content
 		
 		+b.SECTION.s-about-top.desktop-nml(data-scroll-section)
 			.container-md
-				+e.H1.title О нас
+				+e.H1.title.js-scroll-fade-up(data-offset="30% 90%") О нас
 
-				+e.text-1.text
+				+e.text-1.text.js-scroll-fade-up(data-offset="30% 90%")
 					p Компания АСПД осуществляет проектирование, строительство и оснащение оборудованием новых или реконструкцию существующих объектов, на которых важен звук.
 
 				+e.row
-					+e.col-img
+					+e.col-img.js-scroll-fade-up(data-offset="30% 90%")
 						+e.picture
 							+e.IMG.picture-img(src="/img/about-person.jpg" alt="Николай Ковалев - Руководитель компании")
 							
@@ -51,7 +51,7 @@ block content
 								+e.SPAN.picture-inf-label Николай Ковалев
 								+e.SPAN.picture-inf-year Руководитель компании
 
-					+e.col-text
+					+e.col-text.js-scroll-fade-up(data-offset="30% 90%")
 						+e.text-2.text
 							p Компания «АСПД» была основана в 2000 году. 
 							p «АСПД» расшифровывается как «Акустика, Строительство, Проектирование, Дизайн», что и является профильными направлениями деятельности фирмы в области архитектурно-строительной акустики. 
@@ -60,10 +60,10 @@ block content
 
 		+b.SECTION.s-reviews.desktop-nml(data-scroll-section)
 			.container-md
-				+e.H2.title Отзывы о работах «АСПД»
+				+e.H2.title.js-scroll-fade-up(data-offset="30% 90%") Отзывы о работах «АСПД»
 
 				+e.list
-					+e.list-item.--youtube
+					+e.list-item.--youtube.js-scroll-fade-up(data-offset="30% 90%")
 						+b.review
 							+e.review
 								+e.person
@@ -85,7 +85,7 @@ block content
 										iframe(src="https://www.youtube-nocookie.com/embed/brbcxRzRzoo?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
 
-					+e.list-item
+					+e.list-item.js-scroll-fade-up(data-offset="30% 90%")
 						+b.review
 							+e.review
 								+e.person
@@ -111,10 +111,10 @@ block content
 
 		+b.SECTION.s-certificates.desktop-nml(data-scroll-section)
 			.container-md
-				+e.top 
+				+e.top.js-scroll-fade-up
 					+e.H2.title Благодарственные письма
 
-				+e.main 
+				+e.main.js-scroll-fade-up
 					+e.slider-wrap.js-certificates-slider
 						+e.slider.js-certificates-slider-items
 							+e.slider-item
