@@ -39,6 +39,11 @@ h3 {
     font-size: 14px;
   }
 
+  @media (min-width: 3000px) and (min-height: 850px) {
+    font-size: px-to-rem(18);
+  }
+  
+
  
 
 
@@ -345,6 +350,13 @@ h3 {
   cursor: pointer;
   transition: color 0.3s;
 
+  @media (min-width: 3000px) and (min-height: 850px) {
+    padding: px-to-rem(22) px-to-rem(30);
+    border-width: 5px;
+    border-radius: px-to-rem(78);
+    font-size: px-to-rem(20);
+  }
+
   @include hover {
     color: rgba(255, 255, 255, 0.7);
   }
@@ -359,6 +371,14 @@ h3 {
     border-radius: 36px;
     font-weight: 400;
     font-size: 20px;
+
+    @media (min-width: 3000px) and (min-height: 850px) {
+      padding: px-to-rem(18) px-to-rem(47) px-to-rem(20);
+      border-width: 2px;
+      border-radius: px-to-rem(36);
+      font-size: px-to-rem(20);
+    }
+
     
   }
 
@@ -379,6 +399,12 @@ h3 {
         display: block;        
         width: 10px;
         height: 16px;
+
+        @media (min-width: 3000px) and (min-height: 850px) {
+          margin-top: px-to-rem(-3);
+          width: px-to-rem(10);
+          height: px-to-rem(16);
+        }
 
         // fill: none;
         // stroke: currentColor;
@@ -683,6 +709,10 @@ h3 {
   @include screen(md, max) {
       font-size: px-to-rem(28);
   }
+
+  @media (min-width: 3000px) and (min-height: 850px) {
+    font-size: px-to-rem(40);
+  }
 }
 
 .page-title {
@@ -700,6 +730,10 @@ h3 {
   @include screen(md, max) {
       font-size: px-to-rem(30);
   }
+  @media (min-width: 3000px) and (min-height: 850px) {
+    font-size: px-to-rem(60);
+  }
+  
 
   // @include screen('')
 }
@@ -769,6 +803,10 @@ h3 {
   text-align: inherit;
   pointer-events: none;
 
+  @media (min-width: 3000px) and (min-height: 850px) {
+    font-size: px-to-rem(12);
+  }
+
   @include screen(md, max) {
     font-size: 11px;
   }
@@ -790,8 +828,12 @@ min-height: 120px;
   font-size: 18px;
   text-align: left;
 
+  @media (min-width: 3000px) and (min-height: 850px) {
+    font-size: px-to-rem(18);
+  }
+
   @include screen(md, max) {
-      font-size: 16px;
+    font-size: 16px;
   }
 
   &__label {
@@ -804,6 +846,10 @@ min-height: 120px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+
+    @media (min-width: 3000px) and (min-height: 850px) {
+      font-size: px-to-rem(14);
+    }
 
     @include screen(md, max) {
       font-size: 12px;
@@ -826,6 +872,12 @@ min-height: 120px;
     outline: none;
     border-radius: 0;
     transition: color 0.2s, border 0.2s;
+
+    @media (min-width: 3000px) and (min-height: 850px) {
+      padding: px-to-rem(18) 0 px-to-rem(21);
+      border-bottom: 3px solid currentColor;
+
+    }
 
     @include screen(md, max) {
       padding: 16px 0 18px;
@@ -1114,7 +1166,7 @@ min-height: 120px;
 
 .map {
   position: relative;
-  @include rule(height, (xs: 300px, lg: 420px));
+  height: 420px;
   width: 100%;
 
   &__points {

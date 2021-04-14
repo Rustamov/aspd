@@ -148,6 +148,15 @@
             height: auto;
             min-width: 100%;
             min-height: 100%;
+
+            @include screen(lg, max) {
+                height: px-to-rem(700);
+                min-height: 300px;
+                margin-left: 0;
+            }
+            @include screen(md, max) {
+                height: 60vh;
+            }
         }
     }
 }
@@ -304,6 +313,11 @@
                 margin-bottom: px-to-rem(30);
                 font-size: px-to-rem(24);
             }
+
+            @media (min-width: 3000px) and (min-height: 850px) {
+                font-size: px-to-rem(40);
+            }
+
         }
 
         &-more {

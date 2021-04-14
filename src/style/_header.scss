@@ -537,9 +537,22 @@
         height: px-to-rem(60);
     }
 
+    &--dark-contur {
+        width: px-to-rem(150);
+        height: px-to-rem(80);
+        height: auto;
+
+        @include screen(md, max) {
+            width: px-to-rem(131);
+            height: px-to-rem(70);
+        }
+    }
+
+
     &__img {
         display: block;
         height: auto;
+        max-height: 100%;
     }
 }
 

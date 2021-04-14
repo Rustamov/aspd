@@ -103,6 +103,9 @@
         @media (min-height: 900px) {
             margin-bottom: px-to-rem(80);
         }
+        @media (min-height: 1300px) {
+            margin-bottom: 12vh;
+        }
 
         @include screen(lg, max) {
             margin-bottom: 20vw;
@@ -316,6 +319,10 @@
                 font-size: px-to-rem(30);
             }
 
+            @media (min-width: 3000px) and (min-height: 850px) {
+                font-size: px-to-rem(60);
+            }
+
             h1,
             h2,
             h3,
@@ -338,6 +345,7 @@
 
     &__text {
         max-width: px-to-rem(740);
+        text-align: justify;
     }
 }
 

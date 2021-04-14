@@ -36,6 +36,21 @@ body {
     font-size: 22px
   }
 }
+@media (min-width: 2000px) and (min-height: 850px) {
+  html,body {
+    font-size: 26px
+  }
+}
+@media (min-width: 2000px) and (min-height: 850px) {
+  html,body {
+    font-size: 26px
+  }
+}
+@media (min-width: 3000px) and (min-height: 850px) {
+  html,body {
+    font-size: 36px
+  }
+}
 html,body {
   @include screen(xl, max) {
     font-size: 16px;
@@ -120,18 +135,30 @@ html,body {
   padding: 0 15px;
   
   @include screen('sm') {
+    max-width: 100%;
     padding: 0 30px;
   }
+  @include screen('md') {
+    max-width: 100%;
+  }
   @include screen('lg') {
+    max-width: 100%;
     padding: 0 px-to-rem(160);
 
   }
   @include screen('xl') {
+    max-width: 100%;
     padding: 0 px-to-rem(160);
 
   }
   @include screen('xll') {
-    max-width: 1920px;
+    // max-width: 100%;
+    max-width: px-to-rem(1920);
+  }
+
+
+  @media (min-width: 3000px) and (min-height: 850px) {
+    max-width: 3000px;
   }
 }
 .container-md {
@@ -139,14 +166,23 @@ html,body {
   padding: 0 15px;
 
   @include screen('sm') {
+    max-width: 100%;
     padding: 0 30px;
   }
   @include screen('lg') {
+    max-width: 100%;
     padding: 0 px-to-rem(260);
   }
 
+  @include screen('xl') {
+    max-width: 100%;
+  }
   @include screen('xll') {
-    max-width: 1720px;
+    max-width: px-to-rem(1600);
+  }
+  @media (min-width: 3000px) and (min-height: 850px) {
+    max-width: 100%;
+    max-width: 2800px;
   }
 
   @include screen(xl, max) {
@@ -216,13 +252,13 @@ html,body {
 
   &__text {
     display: block;
-    margin: 0 0 20px;
+    margin: 0 0 px-to-rem(20);
     text-align: center;
-    font-size: 16px;
+    font-size: px-to-rem(16);
   }
 
   &__fields {
-    margin: 0 0 60px;
+    margin: 0 0 px-to-rem(60);
 
     @include screen(md, max) {
       margin-bottom: 40px;
@@ -231,7 +267,7 @@ html,body {
 
     &-item {
       &:not(:last-child) {
-        margin-bottom: 35px;
+        margin-bottom: px-to-rem(35);
 
         @include screen(md, max) {
           margin-bottom: 25px;            
@@ -256,8 +292,8 @@ html,body {
       }
     }
     &-submit {
-      margin: 0 50px 0 0;
-      font-size: 20px;
+      margin: 0 px-to-rem(50) 0 0;
+      font-size: px-to-rem(20);
 
       @include screen(md, max) {
         margin: 0;
@@ -267,8 +303,8 @@ html,body {
   }
 
   &__agree {
-    font-size: 14px;
-    max-width: 300px;
+    font-size: px-to-rem(14);
+    max-width: px-to-rem(300);
   }
   
   &__succeed {
@@ -288,8 +324,10 @@ html,body {
 
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: px-to-rem(18); 
     line-height: 1;
+
+
     
     .is-form-sent & {
       opacity: 1;
@@ -301,23 +339,23 @@ html,body {
       margin: 0 0 36px;
 
       .svg-icon {
-        width: 60px;
-        height: 60px;
+        width: px-to-rem(60);
+        height: px-to-rem(60);
         color: $color5;
 
-        @include screen('lg') {
-            width: 109px;
-            height: 109px;
-        }
+        // @include screen('lg') {
+        //     width: 109px;
+        //     height: 109px;
+        // }
       }
     }
 
     &-title {
-        margin: 0 0 24px;
+        margin: 0 0 px-to-rem(24);
     }
     &-text {
-        margin: 0 0 34px;
-        font-size: 16px;
+        margin: 0 0 px-to-rem(34);
+        font-size: px-to-rem(16);
     }
 
   }
@@ -362,9 +400,9 @@ html,body {
 
   &__text {
     display: block;
-    margin: 0 0 20px;
+    margin: 0 0 px-to-rem(20);
     text-align: center;
-    font-size: 16px;
+    font-size: px-to-rem(16);
   }
 
   &__fields {
@@ -387,13 +425,13 @@ html,body {
     align-items: center;
 
     &-submit {
-      margin: 0 50px 0 0;
-      font-size: 20px;
+      margin: 0 px-to-rem(50) 0 0;
+      font-size: px-to-rem(20);
     }
   }
 
   &__agree {
-    font-size: 14px;
+    font-size: px-to-rem(14);
     max-width: 300px;
   }
   
@@ -414,7 +452,7 @@ html,body {
 
     font-style: normal;
     font-weight: bold;
-    font-size: 18px;
+    font-size: px-to-rem(18);
     line-height: 1;
     
     .is-form-sent & {
@@ -424,26 +462,26 @@ html,body {
     }
 
     &-icon {
-      margin: 0 0 36px;
+      margin: 0 0 px-to-rem(36);
 
       .svg-icon {
-        width: 60px;
-        height: 60px;
+        width: px-to-rem(60);
+        height: px-to-rem(60);
         color: $color5;
 
         @include screen('lg') {
-            width: 109px;
-            height: 109px;
+            width: px-to-rem(109);
+            height: px-to-rem(109);
         }
       }
     }
 
     &-title {
-        margin: 0 0 24px;
+        margin: 0 0 px-to-rem(24);
     }
     &-text {
-        margin: 0 0 34px;
-        font-size: 16px;
+        margin: 0 0 px-to-rem(34);
+        font-size: px-to-rem(16);
     }
 
   }
@@ -699,7 +737,7 @@ html,body {
     }
 
     &-img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
     }
 
@@ -758,6 +796,11 @@ html,body {
     @include screen(md, max) {
       font-size: px-to-rem(24);
     }
+    @media (min-width: 3000px) and (min-height: 850px) {
+      font-size: px-to-rem(24);
+
+    }
+
 
     &-title {
       @extend .page-title;
@@ -805,8 +848,12 @@ html,body {
 
 .breadcrumbs-block {
   margin-bottom: 35px;
+  margin-left: -$leftPagePadding;
   padding-top: px-to-rem(50);
 
+  @include screen(lg, max) {
+    margin-left: 0;
+  }
   @include screen(md, max) {
     margin-bottom: 25px;
     padding-top: px-to-rem(30);
@@ -861,6 +908,9 @@ html,body {
 
 
 
+[data-scroll-section] {
+  backface-visibility: hidden;
+}
 
 @import 'header';
 @import 'footer';

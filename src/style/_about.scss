@@ -162,6 +162,11 @@
             font-size: px-to-rem(20);
             margin-bottom: px-to-rem(35);
         }
+
+        @media (min-width: 3000px) and (min-height: 850px) {
+            font-size: px-to-rem(24);
+        }
+
     }
 
     &__text-2 {
@@ -185,6 +190,13 @@
         @include screen(lg, max) {
             margin-bottom: px-to-rem(35);
         }
+
+      @media (min-width: 3000px) and (min-height: 850px) {
+            width: px-to-rem(370);
+            margin-right: px-to-rem(30);
+
+      }
+
     }
 
     &__picture {

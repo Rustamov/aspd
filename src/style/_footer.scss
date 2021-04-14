@@ -95,7 +95,7 @@
 .footer {
     margin-left:-$leftPagePadding;
 
-    padding: px-to-rem(100) 0 px-to-rem(150) px-to-rem(30);
+    padding: px-to-rem(100) 0 px-to-rem(150);
     background: #000;
     
     @include screen(lg, max) {
@@ -290,7 +290,7 @@
     &__copy {
         display: block;
         margin: 0;
-        font-size: 14px;
+        font-size: px-to-rem(16);
         font-weight: 500;
         color: rgba(255,255,255, 0.8);
     }
@@ -301,7 +301,7 @@
         margin: 0;
         transition: color 0.3s;
         font-weight: 400;
-        font-size: 14px;
+        font-size: px-to-rem(16);
 
         @include hover {
             color: rgba(255,255,255, 0.7);
