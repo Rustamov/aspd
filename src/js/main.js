@@ -605,7 +605,7 @@ $(document).ready(function () {
 
             gsap.utils.toArray(".js-parallax-img").forEach(layer => {
                 let section = $(layer).closest($(layer).data('trigger')),
-                    movement = (layer.offsetHeight / 1.2);
+                    movement = (layer.offsetHeight / 1);
 
                 gsap.set(layer, {
                     y: -(movement / 2)
@@ -617,7 +617,7 @@ $(document).ready(function () {
                     scroller: '.js-smooth-scroll',
                     //   start: "0% 0%",
                     //   end: "top botto",
-                    scrub: 0.1,
+                    scrub: 0,
                     toggleActions: "restart pause reverse none"
                     }
                 });
