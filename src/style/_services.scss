@@ -43,6 +43,11 @@
             opacity: 0;
             transform: translate(0px, 30px);
         }
+
+        .touch & {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
     }
     
     @include screen(lg, max) {
@@ -246,6 +251,18 @@
             // min-width: 100%;
             // min-height: 100%;
         }
+
+        &-span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
     }
 
 
